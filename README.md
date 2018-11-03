@@ -20,9 +20,12 @@ Simply [order here](http://logimic.com/iqrfboard/index.html#form1-8)
 
 ## How To
 
-1. Assembly board...
+1. Assembly board..
+2. Prepare IQRF network..
+3. Programme IQRF board..
 
 ## Examples
 
-1. Switch bi-stable relay
-2. Switch standard relay
+1. Turn-on LED on the board
+2. Switch bi-stable relay
+3. Switch standard relay

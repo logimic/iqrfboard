@@ -1,4 +1,5 @@
 ![](files/images/logimicLogo.png)
+
 Powered for you by [logimic.com](www.logimic.com)
 
 # [IQRFBB-10 Development Board](http://logimic.com/iqrfboard)

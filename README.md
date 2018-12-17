@@ -5,7 +5,7 @@
 
 # [IQRFBB-10 Development Board](http://logimic.com/iqrfboard)
 
-<center><img src="files/images/iqrfboard.png" height="350" align="center"></center>
+<center><img src="files/images/iqrfboardSystem.png" height="300" align="center"></center>
 
 IQRF development board helps you with your design of IQRF end devices (nodes) both sensors, actuators or others. Just connect sensors, load software and fully working IQRF node is here.
 
@@ -20,23 +20,17 @@ Logimic IQRFBB-10 Development Board.
 <img src="files/images/ds-start-04-case.jpg" width="80" align="left">
 
 **[Order.. DS-START-04](https://iqrf.org/products/ds-start-04)**
-IQRF Development set "START" - 3 devices
+You need this device if you do not have any working IQRF network.
 <br><br>
 
-## Documentation
+## IQRF Board Repository layout
 
-1. [Data sheet..](files/datasheet/IQRFBB10-Datasheet.pdf)
-2. [Schema of connectors, jumpers and diods..](files/datasheet/IQRFBB10-Connectors.pdf)
-3. [Detail hardware scheme..](files/datasheet/IQRFBB10_doc_sch.pdf)
+* [Quick Start on Wiki](https://github.com/logimic/iqrfboard/wiki) of the repository
+* Many Examples how to create end devices from the board
+* [Data sheet..](files/datasheet/IQRFBB10-Datasheet.pdf)
+* [Schema of connectors, jumpers and diods..](files/datasheet/IQRFBB10-Connectors.pdf)
+* [Detail hardware scheme..](files/datasheet/IQRFBB10_doc_sch.pdf)
 
-## How To
+## Licensing
 
-1. Assembly board..
-2. Prepare IQRF network..
-3. Programme IQRF board..
-
-## Examples
-
-1. Turn-on LED on the board
-2. Switch bi-stable relay
-3. Switch standard relay
+All content in the repository is licensed via the [MIT license](https://opensource.org/licenses/MIT)

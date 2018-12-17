@@ -4,7 +4,7 @@ Powered for you by [logimic.com](http://www.logimic.com)
 
 # [IQRFBB-10 Development Board](http://logimic.com/iqrfboard)
 
-<center><img src="files/images/iqrfboard.png" height="350"></center>
+<center><img src="files/images/iqrfboard.png" height="350" align="center"></center>
 
 IQRF development board helps you with your design of IQRF end devices (nodes) both sensors, actuators or others. Just connect sensors, load software and fully working IQRF node is here.
 

@@ -15,7 +15,7 @@ IQRF development board helps you with your design of IQRF end devices (nodes) bo
 
 **[Order.. IQRFBB-10](http://logimic.com/iqrfboard/index.html#form1-8)**
 Logimic IQRFBB-10 Development Board.
-<br><br>
+<br><br><br>
 
 <img src="files/images/ds-start-04-case.jpg" width="80" align="left">
 

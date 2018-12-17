@@ -1,7 +1,8 @@
 
 <img src="files/images/logimicLogo.png" align="right">
-
-Powered for you by [logimic.com](http://www.logimic.com)
+<br>
+<br>
+<p align="right">Powered for you by <a href="http://www.logimic.com" align="right">logimic.com</a></p>
 
 # [IQRFBB-10 Development Board](http://logimic.com/iqrfboard)
 

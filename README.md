@@ -1,6 +1,5 @@
 
-<img src="files/images/logimicLogo.png" align="right">
-<br>
+<img src="files/images/logimicLogo.png"  height="25" align="right">
 <br>
 <p align="right">Powered for you by <a href="http://www.logimic.com" align="right">logimic.com</a></p>
 

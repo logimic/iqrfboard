@@ -1,4 +1,5 @@
-![](files/images/logimicLogo.png)
+
+<img src="files/images/logimicLogo.png" align="right">
 
 Powered for you by [logimic.com](http://www.logimic.com)
 
@@ -10,13 +11,13 @@ IQRF development board helps you with your design of IQRF end devices (nodes) bo
 
 ## How to buy
 
-<img src="files/images/iqrfboard.png" height="50" align="left">
+<img src="files/images/iqrfboard.png" width="80" align="left">
 
 **[Order.. IQRFBB-10](http://logimic.com/iqrfboard/index.html#form1-8)**
 Logimic IQRFBB-10 Development Board.
 <br><br>
 
-<img src="files/images/ds-start-04-case.jpg" height="50" align="left">
+<img src="files/images/ds-start-04-case.jpg" width="100" align="left">
 
 **[Order.. DS-START-04](https://iqrf.org/products/ds-start-04)**
 IQRF Development set "START" - 3 devices

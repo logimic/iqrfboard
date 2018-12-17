@@ -17,12 +17,11 @@ IQRF development board helps you with your design of IQRF end devices (nodes) bo
 Logimic IQRFBB-10 Development Board.
 <br><br>
 
-<img src="files/images/ds-start-04-case.jpg" width="100" align="left">
+<img src="files/images/ds-start-04-case.jpg" width="80" align="left">
 
 **[Order.. DS-START-04](https://iqrf.org/products/ds-start-04)**
 IQRF Development set "START" - 3 devices
 <br><br>
-
 
 ## Documentation
 

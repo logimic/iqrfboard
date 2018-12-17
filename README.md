@@ -1,16 +1,27 @@
 ![](files/images/logimicLogo.png)
 
-Powered for you by [logimic.com](www.logimic.com)
+Powered for you by [logimic.com](http://www.logimic.com)
 
 # [IQRFBB-10 Development Board](http://logimic.com/iqrfboard)
 
-![](files/images/iqrfboard.png)
+<center><img src="files/images/iqrfboard.png" height="350"></center>
 
 IQRF development board helps you with your design of IQRF end devices (nodes) both sensors, actuators or others. Just connect sensors, load software and fully working IQRF node is here.
 
 ## How to buy
 
-Simply [order here](http://logimic.com/iqrfboard/index.html#form1-8)
+<img src="files/images/iqrfboard.png" height="50" align="left">
+
+**[Order.. IQRFBB-10](http://logimic.com/iqrfboard/index.html#form1-8)**
+Logimic IQRFBB-10 Development Board.
+<br><br>
+
+<img src="files/images/ds-start-04-case.jpg" height="50" align="left">
+
+**[Order.. DS-START-04](https://iqrf.org/products/ds-start-04)**
+IQRF Development set "START" - 3 devices
+<br><br>
+
 
 ## Documentation
 

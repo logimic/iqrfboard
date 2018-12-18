@@ -7,12 +7,12 @@
 
 <center><img src="files/images/iqrfboardSystem.png" height="300" align="center"></center>
 
-IQRF development board helps you with your design of IQRF end devices (nodes) both sensors, actuators or others. Just connect sensors, load software and fully working IQRF node is here.
+IQRF development board helps you to design IQRF wireless devices like sensors and actuators. Just connect sensors, load software and you get fully working IQRF prototype of device.
 
 ## IQRF Board Repository layout
 
-* [Getting Started with IQRFBB-10...](https://github.com/logimic/iqrfboard/wiki) can show how to configure IQRF network, how to configure and connect IQRFBB-10 board.
-* [Application examples](https://github.com/logimic/iqrfboard/tree/master/examples) how to create wireless sensor or actuator from IQRFBB-10 board.
+* [Getting Started with IQRFBB-10](https://github.com/logimic/iqrfboard/wiki) shows how to configure IQRF network, how to configure and connect IQRFBB-10 board into IQRF network and how to verify proper connectivity.
+* [Application examples](https://github.com/logimic/iqrfboard/tree/master/examples) are  hardware and software projects that you can use in your development for free. You are getting many working examples.
 * [IQRFBB-10 Data sheet..](files/datasheet/IQRFBB10-Datasheet.pdf)
 * [IQRFBB-10 Schema](files/datasheet/IQRFBB10-Connectors.pdf)
 * [IQRFBB-10 HW Drawing](files/datasheet/IQRFBB10_doc_sch.pdf)

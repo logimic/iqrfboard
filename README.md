@@ -9,6 +9,18 @@
 
 IQRF development board helps you with your design of IQRF end devices (nodes) both sensors, actuators or others. Just connect sensors, load software and fully working IQRF node is here.
 
+## IQRF Board Repository layout
+
+* [Quick Start on Wiki](https://github.com/logimic/iqrfboard/wiki) of the repository
+* Many Examples how to create end devices from the board
+* [Data sheet..](files/datasheet/IQRFBB10-Datasheet.pdf)
+* [Schema of connectors, jumpers and diods..](files/datasheet/IQRFBB10-Connectors.pdf)
+* [Detail hardware scheme..](files/datasheet/IQRFBB10_doc_sch.pdf)
+
+## Licensing
+
+All content in the repository is licensed via the [MIT license](https://opensource.org/licenses/MIT)
+
 ## How to buy
 
 <img src="files/images/iqrfboard.png" width="130" align="left">
@@ -23,16 +35,4 @@ IQRF development board helps you with your design of IQRF end devices (nodes) bo
 
 **[Order.. DS-START-04](https://iqrf.org/products/ds-start-04)**
 You need this device if you do not have any working IQRF network.
-<br><br>
-
-## IQRF Board Repository layout
-
-* [Quick Start on Wiki](https://github.com/logimic/iqrfboard/wiki) of the repository
-* Many Examples how to create end devices from the board
-* [Data sheet..](files/datasheet/IQRFBB10-Datasheet.pdf)
-* [Schema of connectors, jumpers and diods..](files/datasheet/IQRFBB10-Connectors.pdf)
-* [Detail hardware scheme..](files/datasheet/IQRFBB10_doc_sch.pdf)
-
-## Licensing
-
-All content in the repository is licensed via the [MIT license](https://opensource.org/licenses/MIT)
+<br><br><br>

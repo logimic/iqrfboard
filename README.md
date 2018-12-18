@@ -14,7 +14,13 @@ IQRF development board helps you with your design of IQRF end devices (nodes) bo
 <img src="files/images/iqrfboard.png" width="80" align="left">
 
 **[Order.. IQRFBB-10](http://logimic.com/iqrfboard/index.html#form1-8)**
-Logimic IQRFBB-10 Development Board.
+Logimic IQRFBB-10 Development Board (IQRF transciever is not included).
+<br><br><br>
+
+<img src="files/images/tr-76da-dimensions.jpg" width="80" align="left">
+
+**[Order.. TR-76DA](http://logimic.com/iqrfboard/index.html#form1-8)**
+IQRF transciever module for pin out.
 <br><br><br>
 
 <img src="files/images/ds-start-04-case.jpg" width="80" align="left">

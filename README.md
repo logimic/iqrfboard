@@ -11,19 +11,15 @@ IQRF development board helps you with your design of IQRF end devices (nodes) bo
 
 ## How to buy
 
-<img src="files/images/iqrfboard.png" width="80" align="left">
+<img src="files/images/iqrfboard.png" width="130" align="left">
 
 **[Order.. IQRFBB-10](http://logimic.com/iqrfboard/index.html#form1-8)**
-Logimic IQRFBB-10 Development Board (IQRF transciever is not included).
+* Logimic IQRFBB-10 Development Board
+* [TR-76DA](https://eshop.iqrf.org/products/detail/TR-76DA) transciever.
+* Cabling
 <br><br><br>
 
-<img src="files/images/tr-76da-dimensions.jpg" width="80" align="left">
-
-**[Order.. TR-76DA](https://eshop.iqrf.org/products/detail/TR-76DA)**
-IQRF transciever module for pin out.
-<br><br><br>
-
-<img src="files/images/ds-start-04-case.jpg" width="80" align="left">
+<img src="files/images/ds-start-04-case.jpg" width="130" align="left">
 
 **[Order.. DS-START-04](https://iqrf.org/products/ds-start-04)**
 You need this device if you do not have any working IQRF network.

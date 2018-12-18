@@ -19,7 +19,7 @@ Logimic IQRFBB-10 Development Board (IQRF transciever is not included).
 
 <img src="files/images/tr-76da-dimensions.jpg" width="80" align="left">
 
-**[Order.. TR-76DA](http://logimic.com/iqrfboard/index.html#form1-8)**
+**[Order.. TR-76DA](https://eshop.iqrf.org/products/detail/TR-76DA)**
 IQRF transciever module for pin out.
 <br><br><br>
 

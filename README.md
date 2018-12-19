@@ -13,9 +13,7 @@ IQRF development board helps you to design IQRF wireless devices like sensors an
 
 * [Getting Started with IQRFBB-10](https://github.com/logimic/iqrfboard/wiki) shows how to configure IQRF network, how to configure and connect IQRFBB-10 board into IQRF network and how to verify proper connectivity.
 * [Application examples](https://github.com/logimic/iqrfboard/tree/master/examples) are  hardware and software projects that you can use in your development for free. You are getting many working examples.
-* [IQRFBB-10 Data sheet..](files/datasheet/IQRFBB10-Datasheet.pdf)
-* [IQRFBB-10 Schema](files/datasheet/IQRFBB10-Connectors.pdf)
-* [IQRFBB-10 HW Drawing](files/datasheet/IQRFBB10_doc_sch.pdf)
+* [Documentation](https://github.com/logimic/iqrfboard/wiki/Getting-Started-with-IQRFBB-10#iqrfbb-10-documentation) like data sheets, drawings, guidelines etc...
 
 ## How to buy
 

@@ -10,15 +10,11 @@
 
 ### 3. Digital Output
 
-TBD
+ [/example-do](example-do), this example shows how to HI/LO digital output. The DO has connected external LED.
 
 ### 4. Bi-stable relay on board
 
 [/bistable-relay](bistable-relay), this example turns on/off the bi-stable relay on the IQRFBB-10 board.
-
-### 5. External diod
-
-TBD
 
 ### 6. Hall sensor
 

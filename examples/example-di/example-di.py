@@ -71,7 +71,7 @@ async def hello():
         response = await websocket.recv()
         print(f"Received < {response}")         
         
-        print("Connect EQ13 to GND...")
+        print("Press and hold button - connect EQ13 to GND...")
 
         # Wait 2 sec
         time.sleep(3)          

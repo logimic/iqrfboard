@@ -1,5 +1,7 @@
 # Digital Output
 
+![](example-do.jpg)
+
 This example shows how to set DO on board. We will power EQ6 (X10 SCL) pin.
 
 ## Prerequisities

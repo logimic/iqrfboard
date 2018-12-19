@@ -1,5 +1,7 @@
 # Digital Input
 
+![](example-di.jpg)
+
 This example shows how to detect DI on board. We will detect connection EQ13 pin to GRND. DI status is tested by testing software via reading all inputs.
 
 ## Prerequisities
@@ -10,7 +12,13 @@ This example shows how to detect DI on board. We will detect connection EQ13 pin
 
 ## Hardware wiring
 
-![](layout-di.png)
+![](../../files/datasheet/layout.png)
+
+_Fig.: IQRFBB10 schema_
+
+![](example-di_bb.jpg)
+
+_Fig.: External LED wiring_
 
 Connect EQ13 and GRND pins via button.
 

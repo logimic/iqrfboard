@@ -1,13 +1,13 @@
-# Digital Output
+# Hall Magnetic Sensor
 
-![](example-do.jpg)
+![](example-hall.jpg)
 
-This example shows how to set DO on board. We will power EQ6 (X10 SCL) pin.
+This example shows how to connect [KS0020 Hall Magnetic Sensor](http://wiki.keyestudio.com/index.php/Ks0020_keyestudio_Hall_Magnetic_Sensor) with the board.
 
 ## Prerequisities
 
 1. **IQRFBB-10** bonded in working IQRF network. More in [GettingStarted with IQRFBB-10](https://github.com/logimic/iqrfboard/wiki)
-2. **IQRF Gateway Daemon** running. More in [IQRF Gateway Daemon](https://github.com/logimic/iqrfboard/wiki/Get-IQRF-with-your-software#iqrf-gateway-daemon)
+2. **IQRF Gateway Daemon** working. More in [IQRF Gateway Daemon](https://github.com/logimic/iqrfboard/wiki/Get-IQRF-with-your-software#iqrf-gateway-daemon)
 3. **Python 3.6 with WebSockets module**. More in [Python 3.6 WbSockets example](https://github.com/logimic/iqrfboard/wiki/Get-IQRF-with-your-software#python-36-websocket-example)
 
 ## Hardware wiring
@@ -16,24 +16,23 @@ This example shows how to set DO on board. We will power EQ6 (X10 SCL) pin.
 
 _Fig.: IQRFBB10 schema_
 
-![](example-do_bb.png)
+![](example-hall_bb.jpg)
 
 _Fig.: External LED wiring_
 
-Connect EQ13 and GRN pins via button.
+Connect VO, EQ13 and GRND pins with [KS0020 Keyestudio Hall Magnetic Sensor](http://wiki.keyestudio.com/index.php/Ks0020_keyestudio_Hall_Magnetic_Sensor).
 
 ## Software
 
 * We use Standard DPA handler already loaded in board TR module.
 * Testing software:
-  - Set EQ6 (X10 SCL) as DO. EQ16 is **Q6, C6/RC3** genral I/O pin on TR-76DA.
-  - Set pin HI
-  - Wait 3sec
-  - Set pin LO
+  - Set EQ13 as DI. EQ13 is **Q13/RE3** pin on TR-76DA.
+  - Read all DI in the loop
+  - Parse response and make decision
 
 ### API JSON message
 
-We will use DPA messages handled via [Daemon JSON API](https://docs.iqrfsdk.org/iqrf-gateway-daemon/):
+We will use pure DPA messages handled via [Daemon JSON API](https://docs.iqrfsdk.org/iqrf-gateway-daemon/):
 
 * [RawHdp request  v1-0-0](https://apidocs.iqrf.org/iqrf-gateway-daemon/json/#iqrf/iqrfRawHdp-request-1-0-0.json), [..example](https://apidocs.iqrf.org/iqrf-gateway-daemon/json/iqrf/examples/iqrfRawHdp-request-1-0-0-example.json)
 * [RawHdp response  v1-0-0](https://apidocs.iqrf.org/iqrf-gateway-daemon/json/#iqrf/iqrfRawHdp-response-1-0-0.json), [..example](https://apidocs.iqrf.org/iqrf-gateway-daemon/json/iqrf/examples/iqrfRawHdp-response-1-0-0-example.json)
@@ -42,9 +41,8 @@ We will use DPA messages handled via [Daemon JSON API](https://docs.iqrfsdk.org/
 
 | NADR | PNUM | PCMD | HWPID |  PDATA   | What                       |
 |:----:|:----:|:----:|:-----:|:--------:| -------------------------- |
-| XXXX |  09  |  00  | FFFF  | 02.08.00 | Set RC3 (Address C3) as D0 |
-| XXXX |  09  |  01  | FFFF  | 02.08.08 | Set pin HI                 |
-| XXXX |  09  |  01  | FFFF  | 02.08.00 | Set pin LO                 |
+| XXXX |  09  |  00  | FFFF  | 10.08.08 | Set RE3 (Address E3) as DI |
+| XXXX |  09  |  02  | FFFF  |          | Read all DI pins           |
 
 * _NADR: must be your address of IQRFBB-10 in IQRF network._
 * _Numbers in table are in hex format._
@@ -71,7 +69,7 @@ The [example-di.py](example-di.py) code:
 # limitations under the License.
 #
 
-# Websockets example-do.py
+# Websockets example-hall.py
 import asyncio
 import websockets
 import json
@@ -81,7 +79,7 @@ import time
 boardAddr = 3
 
 # JSON messages by "https://docs.iqrfsdk.org/iqrf-gateway-daemon/api.html"
-RC3_OUT = {
+EQ13_IN = {
   "mType": "iqrfRawHdp",
   "data": {
     "msgId": "testRawHdp",
@@ -89,71 +87,63 @@ RC3_OUT = {
       "nAdr": boardAddr,
       "pNum": 9,
       "pCmd": 0,
-      "pData": [2, 8, 0]
+      "pData": [16, 8, 8]
     },
     "returnVerbose": True
   }
 }
 
-RC3_ON = {
+READ_ALL = {
   "mType": "iqrfRawHdp",
   "data": {
     "msgId": "testRawHdp",
     "req": {
       "nAdr": boardAddr,
       "pNum": 9,
-      "pCmd": 1,
-      "pData": [2, 8, 8]
+      "pCmd": 2
     },
     "returnVerbose": True
   }
 }
-
-RC3_OFF = {
-  "mType": "iqrfRawHdp",
-  "data": {
-    "msgId": "testRawHdp",
-    "req": {
-      "nAdr": boardAddr,
-      "pNum": 9,
-      "pCmd": 1,
-      "pData": [2, 8, 0]
-    },
-    "returnVerbose": True
-  }
-}
-
 
 async def hello():
     # Connect websockets
     async with websockets.connect(
             'ws://localhost:1338') as websocket:            
 
-        # Set RC3 OUT
-        await websocket.send(json.dumps(RC3_OUT))
-        print(f"Sent > {RC3_OUT}")
+        # Set EQ13 IN
+        await websocket.send(json.dumps(EQ13_IN))
+        print(f"Sent > {EQ13_IN}")
 
         response = await websocket.recv()
         print(f"Received < {response}")
 
-        # Set RC3 ON
-        await websocket.send(json.dumps(RC3_ON))
-        print(f"Sent > {RC3_ON}")        
+        count = 0
+        detected = False
+        while (count < 20 and detected == False):
+          print (f"The count is:{count}")
+          count = count + 1
+          # Read all pins
+          await websocket.send(json.dumps(READ_ALL))
+          print(f"Sent > {READ_ALL}")        
 
-        response = await websocket.recv()
-        print(f"Received < {response}")         
+          response = await websocket.recv()
+          print(f"Received < {response}")      
 
-        print("RC3 power ON...")
+          # Parse JSON response
+          data = json.loads(response)
+          pData = data["data"]["rsp"]["pData"]
+          button = pData[4]
 
-        # Wait 2 sec
-        time.sleep(3)          
+          # Check input detection
+          if button == 0:
+            detected = True
 
-        # Read all pins
-        await websocket.send(json.dumps(RC3_OFF))
-        print(f"Sent > {RC3_OFF}")        
-
-        response = await websocket.recv()
-        print(f"Received < {response}")       
+        # Check input detection
+        if detected == False:
+          print(f"NOTHING detected :(")
+        else:
+          print(f"Input detected!!! :)")      
 
 asyncio.get_event_loop().run_until_complete(hello())
 ```

@@ -12,13 +12,15 @@
 
  [/example-do](example-do), this example shows how to HI/LO digital output. The DO has connected external LED.
 
+### 4. Hall Magnetic Sensor
+
+ [/example-hall](example-hall), this example shows how to connect Hall Magentic Sensor with the board and detect event.
+
 ### 4. Bi-stable relay on board
 
-[/bistable-relay](bistable-relay), this example turns on/off the bi-stable relay on the IQRFBB-10 board.
-
-### 6. Hall sensor
-
 TBD
+
+
 
 ### 7. Motion detection
 

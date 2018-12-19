@@ -46,7 +46,8 @@ We will use pure DPA messages handled via [Daemon JSON API](https://docs.iqrfsdk
 | XXXX |  09  |  00  | FFFF  | 10.08.08 | Set RE3 (Address E3) as DI |
 | XXXX |  09  |  02  | FFFF  |          | Read all DI pins           |
 
-_NADR: must be your address of IQRFBB-10 in IQRF network._
+* _NADR: must be your address of IQRFBB-10 in IQRF network._
+* _Numbers in table are in hex format._
 
 ### Testing Software
 

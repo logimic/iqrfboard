@@ -5,7 +5,7 @@ This example turns bistable relay on/off.
 ## Prerequisities
 
 1. **IQRFBB-10** bonded in working IQRF network. More in [GettingStarted with IQRFBB-10](https://github.com/logimic/iqrfboard/wiki)
-2. **IQRF Gateway Daemon** working. More in [IQRF Gateway Daemon](https://github.com/logimic/iqrfboard/wiki/Get-IQRF-with-your-software#iqrf-gateway-daemon)
+2. **IQRF Gateway Daemon** running. More in [IQRF Gateway Daemon](https://github.com/logimic/iqrfboard/wiki/IQRF-Gateway-Daemon)
 3. **Python 3.6 with WebSockets module**. More in [Python 3.6 WbSockets example](https://github.com/logimic/iqrfboard/wiki/Get-IQRF-with-your-software#python-36-websocket-example)
 
 ## Hardware wiring
@@ -21,7 +21,7 @@ We use Standard DPA handler already loaded in board TR module.
 ### API JSON message
 
 We can manage diods via sending [Daemon JSON API](https://docs.iqrfsdk.org/iqrf-gateway-daemon/) messages.
-The bi-stable relay us ON when C1=L and C2=H and vice versa. 
+The bi-stable relay us ON when C1=L and C2=H and vice versa.
 
 * LD2 (Green DIOD) ON/OFF
   * [Set LEDG request v1-0-0](https://apidocs.iqrf.org/iqrf-gateway-daemon/json/#iqrf/iqrfEmbedLedg_Set-request-1-0-0.json), [..example](https://apidocs.iqrf.org/iqrf-gateway-daemon/json/iqrf/examples/iqrfEmbedLedg_Set-request-1-0-0-example.json)

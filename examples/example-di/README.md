@@ -7,7 +7,7 @@ This example shows how to detect DI on board. We will detect connection EQ13 pin
 ## Prerequisities
 
 1. **IQRFBB-10** bonded in working IQRF network. More in [GettingStarted with IQRFBB-10](https://github.com/logimic/iqrfboard/wiki)
-2. **IQRF Gateway Daemon** working. More in [IQRF Gateway Daemon](https://github.com/logimic/iqrfboard/wiki/Get-IQRF-with-your-software#iqrf-gateway-daemon)
+2. **IQRF Gateway Daemon** running. More in [IQRF Gateway Daemon](https://github.com/logimic/iqrfboard/wiki/IQRF-Gateway-Daemon)
 3. **Python 3.6 with WebSockets module**. More in [Python 3.6 WbSockets example](https://github.com/logimic/iqrfboard/wiki/Get-IQRF-with-your-software#python-36-websocket-example)
 
 ## Hardware wiring

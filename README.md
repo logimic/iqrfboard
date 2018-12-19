@@ -3,6 +3,7 @@
 
 <img src="files/images/logimicLogo.png"  height="25" align="right">
 <br>
+<br>
 <p align="right">Powered for you by <a href="http://www.logimic.com" align="right">logimic.com</a></p>
 
 <center><img src="files/images/iqrfboardSystem.png" height="300" align="center"></center>

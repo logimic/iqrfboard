@@ -1,9 +1,9 @@
 
+# [IQRFBB-10 Development Board](http://logimic.com/iqrfboard)
+
 <img src="files/images/logimicLogo.png"  height="25" align="right">
 <br>
 <p align="right">Powered for you by <a href="http://www.logimic.com" align="right">logimic.com</a></p>
-
-# [IQRFBB-10 Development Board](http://logimic.com/iqrfboard)
 
 <center><img src="files/images/iqrfboardSystem.png" height="300" align="center"></center>
 

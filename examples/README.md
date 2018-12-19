@@ -1,5 +1,10 @@
 # Examples
 
+| [/led-on-off](led-on-off) | LED on board |     |
+| -------------------------- | ------------ | --- |
+|                            |              |     |
+|                            |              |     |
+
 ## LED on board
 
 This example simple turns on/off RED and GREEN LED diod on the IQRFBB-10 board. This is first hello world example. [/led-on-off](/led-on-off)

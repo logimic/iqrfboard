@@ -1,9 +1,29 @@
 # Examples
 
-### LED on board
+### 1. LED2, LED3 on board
 
- [/led23-on-off](led23-on-off), this example simple turns on/off RED and GREEN LED diod on the IQRFBB-10 board. This is first hello world example.
+ [/example-led23](example-led23), this example simple turns on/off RED and GREEN diods on the IQRFBB-10 board. This is first hello world example.
 
-### Bi-stable relay on board
+### 2. Digital Input
+
+ [/example-di](example-di), this example shows how to detect digital input.
+
+### 3. Digital Output
+
+TBD
+
+### 4. Bi-stable relay on board
 
 [/bistable-relay](bistable-relay), this example turns on/off the bi-stable relay on the IQRFBB-10 board.
+
+### 5. External diod
+
+TBD
+
+### 6. Hall sensor
+
+TBD
+
+### 7. Motion detection
+
+TBD

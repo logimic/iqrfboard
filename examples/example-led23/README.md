@@ -32,7 +32,7 @@ We can manage diods via sending [Daemon JSON API](https://docs.iqrfsdk.org/iqrf-
 
 ### Testing Software
 
-The [led23-on-off.py](led23-on-off.py) script also prints sent and received JSON messages
+The [example-led23.py](example-led23.py) script also prints sent and received JSON messages
 
 ```py
 #
@@ -52,7 +52,7 @@ The [led23-on-off.py](led23-on-off.py) script also prints sent and received JSON
 # limitations under the License.
 #
 
-# Websockets led-on-off.py
+# Websockets example-led23.py
 import asyncio
 import websockets
 import json

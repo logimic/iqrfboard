@@ -1,14 +1,9 @@
 # Examples
 
-| [/led-on-off](led-on-off) | LED on board |     |
-| -------------------------- | ------------ | --- |
-|                            |              |     |
-|                            |              |     |
+### LED on board
 
-## LED on board
+ [/led-on-off](led-on-off), this example simple turns on/off RED and GREEN LED diod on the IQRFBB-10 board. This is first hello world example.
 
-This example simple turns on/off RED and GREEN LED diod on the IQRFBB-10 board. This is first hello world example. [/led-on-off](/led-on-off)
+### Bi-stable relay on board
 
-## Bi-stable relay on board
-
-This example turns on/off the bi-stable relay on the IQRFBB-10 board. [/bistable-relay](/bistable-relay)
+[/bistable-relay](bistable-relay), this example turns on/off the bi-stable relay on the IQRFBB-10 board.

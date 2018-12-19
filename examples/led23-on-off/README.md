@@ -1,4 +1,4 @@
-# Set LED on/off
+# Set LED2, LED3 on/off
 
 This example turns RED LED on, waits 2 seconds, then turns RED LED off and GREEN LED on, then after 2 seconds turns GREEN LED off.
 
@@ -32,7 +32,7 @@ We can manage diods via sending [Daemon JSON API](https://docs.iqrfsdk.org/iqrf-
 
 ### Testing Software
 
-The **led-on-off.py** script also prints sent and received JSON messages
+The [led23-on-off.py](led23-on-off.py) script also prints sent and received JSON messages
 
 ```py
 #

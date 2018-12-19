@@ -16,12 +16,10 @@
 
  [/example-hall](example-hall), this example shows how to connect Hall Magentic Sensor with the board and detect event.
 
+### 5. Motion detection (ePir)
+
+ [/example-ePir](example-ePir), this example shows how to connect motion sensor ePir to the board and detect event.
+
 ### 4. Bi-stable relay on board
-
-TBD
-
-
-
-### 7. Motion detection
 
 TBD

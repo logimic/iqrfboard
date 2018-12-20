@@ -35,9 +35,29 @@
 [/example-ePir](example-ePir), this example shows how to connect motion sensor ePir to the board and detect event.
 <br><br><br><br>
 
-### 4. Bi-stable relay on board
+### 6. Bi-stable relay on board
 
 <img src="../files/images/iqrfboard.png" width="130" align="left" style="margin-right: 20px;">
 
 [/example-bistable-relay](example-bistable-relay), this example shows how to switch bi-stable relay on board.
+<br><br><br><br>
+
+### 7. Temperature & Bar. Pressure Sensor
+
+<img src="example-GY-BME280/GY-BME280.jpg" width="130" align="left" style="margin-right: 20px;">
+
+Comming soon...
+<!--
+[/example-GY-BME280](example-GY-BME280), this example shows how to connect GY-BME280 Temperature and Barometric pressure sensor to board.
+-->
+<br><br><br><br>
+
+### 8. Temperature & Humidity Sensor
+
+<img src="example-HTU21D/HTU21D.jpg" width="130" align="left" style="margin-right: 20px;">
+
+Comming soon...
+<!--
+[/example-HTU21D](example-HTU21D), this example shows how to connect GY-BME280 Temperature and Barometric pressure sensor to board.
+-->
 <br><br><br><br>

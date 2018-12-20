@@ -15,7 +15,7 @@
 # limitations under the License.
 #
 
-# Websockets led-on-off.py
+# Websockets example-bistable-relay.py
 import asyncio
 import websockets
 import json
@@ -25,74 +25,140 @@ import time
 boardAddr = 3
 
 # JSON messages by "https://docs.iqrfsdk.org/iqrf-gateway-daemon/api.html"
-BI_ON = {
-  "mType": "iqrfBinaryoutput_SetOutput",
+C1_OUT = {
+  "mType": "iqrfRawHdp",
   "data": {
-    "msgId": "testEmbedBout",
+    "msgId": "testRawHdp",
     "req": {
       "nAdr": boardAddr,
-      "param": {
-        "binOuts": [
-          {
-            "index": 1,
-            "state": True
-          },
-          {
-            "index": 2,
-            "state": False
-          }          
-        ]
-      }
+      "pNum": 9,
+      "pCmd": 0,
+      "pData": [0, 1, 0]
     },
     "returnVerbose": True
   }
 }
 
-BI_OFF = {
-  "mType": "iqrfBinaryoutput_SetOutput",
+C1_ON = {
+  "mType": "iqrfRawHdp",
   "data": {
-    "msgId": "testEmbedBout",
+    "msgId": "testRawHdp",
     "req": {
       "nAdr": boardAddr,
-      "param": {
-        "binOuts": [
-          {
-            "index": 1,
-            "state": False
-          },
-          {
-            "index": 2,
-            "state": False
-          }
-        ]
-      }
+      "pNum": 9,
+      "pCmd": 1,
+      "pData": [0, 1, 1]
     },
     "returnVerbose": True
   }
 }
 
+C1_OFF = {
+  "mType": "iqrfRawHdp",
+  "data": {
+    "msgId": "testRawHdp",
+    "req": {
+      "nAdr": boardAddr,
+      "pNum": 9,
+      "pCmd": 1,
+      "pData": [0, 1, 0]
+    },
+    "returnVerbose": True
+  }
+}
+
+C2_OUT = {
+  "mType": "iqrfRawHdp",
+  "data": {
+    "msgId": "testRawHdp",
+    "req": {
+      "nAdr": boardAddr,
+      "pNum": 9,
+      "pCmd": 0,
+      "pData": [2, 4, 0]
+    },
+    "returnVerbose": True
+  }
+}
+
+C2_ON = {
+  "mType": "iqrfRawHdp",
+  "data": {
+    "msgId": "testRawHdp",
+    "req": {
+      "nAdr": boardAddr,
+      "pNum": 9,
+      "pCmd": 1,
+      "pData": [2, 4, 4]
+    },
+    "returnVerbose": True
+  }
+}
+
+C2_OFF = {
+  "mType": "iqrfRawHdp",
+  "data": {
+    "msgId": "testRawHdp",
+    "req": {
+      "nAdr": boardAddr,
+      "pNum": 9,
+      "pCmd": 1,
+      "pData": [2, 4, 0]
+    },
+    "returnVerbose": True
+  }
+}
 
 async def hello():
     # Connect websockets
     async with websockets.connect(
-            'ws://localhost:1338') as websocket:
+            'ws://localhost:1338') as websocket:            
 
-        # RED LED ON
-        await websocket.send(json.dumps(BI_ON))
-        print(f"Sent > {BI_ON}")
+        # Set C1 OUT
+        await websocket.send(json.dumps(C1_OUT))
+        print(f"Sent > {C1_OUT}")
+
+        response = await websocket.recv()
+        print(f"Received < {response}")
+
+        # Set C2 OUT
+        await websocket.send(json.dumps(C2_OUT))
+        print(f"Sent > {C2_OUT}")        
+
+        response = await websocket.recv()
+        print(f"Received < {response}")     
+
+        # Set C2 OFF
+        await websocket.send(json.dumps(C2_OFF))
+        print(f"Sent > {C2_OFF}")
+
+        response = await websocket.recv()
+        print(f"Received < {response}")           
+
+       # Set C1 ON
+        await websocket.send(json.dumps(C1_ON))
+        print(f"Sent > {C1_ON}")
 
         response = await websocket.recv()
         print(f"Received < {response}")
 
-        # Wait 2 sec
-        time.sleep(2)  
+        print("Waiting 3 secs then reswitch...")
+        # Wait 3 sec
+        time.sleep(3)       
 
-        # RED LED ON
-        await websocket.send(json.dumps(BI_OFF))
-        print(f"Sent > {BI_OFF}")
+        # Set C1 OFF
+        await websocket.send(json.dumps(C1_OFF))
+        print(f"Sent > {C1_OFF}")
 
         response = await websocket.recv()
-        print(f"Received < {response}")
+        print(f"Received < {response}")        
+
+        # Set C2 ON
+        await websocket.send(json.dumps(C2_ON))
+        print(f"Sent > {C1_ON}")
+
+        response = await websocket.recv()
+        print(f"Received < {response}")                     
         
 
 asyncio.get_event_loop().run_until_complete(hello())

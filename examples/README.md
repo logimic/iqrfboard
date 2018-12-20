@@ -22,4 +22,4 @@
 
 ### 4. Bi-stable relay on board
 
-TBD
+ [/example-bistable-relay](example-bistable-relay), this example shows how to switch bi-stable relay on board.

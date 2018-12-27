@@ -4,11 +4,11 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="None">
+        
         
         
         <link rel="shortcut icon" href="../img/favicon.ico">
-        <title>IQRFBB-10</title>
+        <title>IQRF Gateway Daemon - IQRFBB-10</title>
         <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../css/font-awesome.min.css" rel="stylesheet">
         <link href="../css/base.css" rel="stylesheet">
@@ -25,7 +25,7 @@
         <script>hljs.initHighlightingOnLoad();</script> 
     </head>
 
-    <body class="homepage">
+    <body>
 
         <div class="navbar navbar-default navbar-fixed-top" role="navigation">
             <div class="container">
@@ -39,7 +39,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="./">IQRFBB-10</a>
+                    <a class="navbar-brand" href="../examples/">IQRFBB-10</a>
                 </div>
 
                 <!-- Expanded navigation -->
@@ -52,11 +52,11 @@
                             <li >
                                 <a href="../SetupIqrfNetwork/">Setup IQRF Network</a>
                             </li>
-                            <li >
-                                <a href="../IqrfGatewayDaemon/">IQRF Gateway Daemon</a>
-                            </li>
                             <li class="active">
-                                <a href="./">Examples</a>
+                                <a href="./">IQRF Gateway Daemon</a>
+                            </li>
+                            <li >
+                                <a href="../examples/">Examples</a>
                             </li>
                         </ul>
 
@@ -67,12 +67,12 @@
                             </a>
                         </li>
                             <li >
-                                <a rel="next" href="../IqrfGatewayDaemon/">
+                                <a rel="next" href="../SetupIqrfNetwork/">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
-                            <li class="disabled">
-                                <a rel="prev" >
+                            <li >
+                                <a rel="prev" href="../examples/">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -84,57 +84,114 @@
         <div class="container">
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-        <li class="main active"><a href="#examples">Examples</a></li>
-            <li><a href="#1-led2-led3-on-board">1. LED2, LED3 on board</a></li>
-            <li><a href="#2-digital-input">2. Digital Input</a></li>
-            <li><a href="#3-digital-output">3. Digital Output</a></li>
-            <li><a href="#4-hall-magnetic-sensor">4. Hall Magnetic Sensor</a></li>
-            <li><a href="#5-motion-detection-epir">5. Motion detection (ePir)</a></li>
-            <li><a href="#6-bi-stable-relay-on-board">6. Bi-stable relay on board</a></li>
-            <li><a href="#7-temperature-barometric-pressure-sensor">7. Temperature &amp; Barometric Pressure Sensor</a></li>
-            <li><a href="#8-temperature-humidity-sensor">8. Temperature &amp; Humidity Sensor</a></li>
-            <li><a href="#9-ambient-light-sensor">9. Ambient Light Sensor</a></li>
+        <li class="main active"><a href="#iqrf-gateway-daemon">IQRF Gateway Daemon</a></li>
+            <li><a href="#run-daemon">Run Daemon</a></li>
+            <li><a href="#websockets-json-api">WebSockets JSON API</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
-<h1 id="examples">Examples</h1>
-<h3 id="1-led2-led3-on-board">1. LED2, LED3 on board</h3>
-<p><img src="../files/images/iqrfboard.png" width="130"></p>
-<p><a href="example-led23">/example-led23</a>, this example simple turns on/off RED and GREEN diods on the IQRFBB-10 board. This is first hello world example.</p>
-<h3 id="2-digital-input">2. Digital Input</h3>
-<p><img src="./example-di/example-di.jpg" width="130"></p>
-<p><a href="example-di">/example-di</a>, this example shows how to detect digital input.</p>
-<h3 id="3-digital-output">3. Digital Output</h3>
-<p><img src="./example-do/example-do.jpg" width="130"></p>
-<p><a href="example-do">/example-do</a>, this example shows how to HI/LO digital output. The DO has connected external LED.</p>
-<h3 id="4-hall-magnetic-sensor">4. Hall Magnetic Sensor</h3>
-<p><img src="./example-hall/hall.png" width="130"></p>
-<p><a href="example-hall">/example-hall</a>, this example shows how to connect Hall Magentic Sensor with the board and detect event.</p>
-<h3 id="5-motion-detection-epir">5. Motion detection (ePir)</h3>
-<p><img src="./example-ePir/epir.png" width="130"></p>
-<p><a href="example-ePir">/example-ePir</a>, this example shows how to connect motion sensor ePir to the board and detect event.</p>
-<h3 id="6-bi-stable-relay-on-board">6. Bi-stable relay on board</h3>
-<p><img src="../files/images/iqrfboard.png" width="130"></p>
-<p><a href="example-bistable-relay">/example-bistable-relay</a>, this example shows how to switch bi-stable relay on board.</p>
-<h3 id="7-temperature-barometric-pressure-sensor">7. Temperature &amp; Barometric Pressure Sensor</h3>
-<p><img src="example-GY-BME280/GY-BME280.jpg" width="130"></p>
-<p>Comming soon GY-BME280...
-<!--
-<a href="example-GY-BME280">/example-GY-BME280</a>, this example shows how to connect GY-BME280 Temperature and Barometric pressure sensor to board.
---></p>
-<h3 id="8-temperature-humidity-sensor">8. Temperature &amp; Humidity Sensor</h3>
-<p><img src="example-HTU21D/HTU21D.jpg" width="130"></p>
-<p>Comming soon HTU21D...
-<!--
-<a href="example-HTU21D">/example-HTU21D</a>, this example shows how to connect GY-BME280 Temperature and Barometric pressure sensor to board.
---></p>
-<h3 id="9-ambient-light-sensor">9. Ambient Light Sensor</h3>
-<p><img src="example-GY-49/GY49.jpg" width="130"></p>
-<p>Comming soon GY49...
-<!--
-<a href="example-GY-49">/example-GY-49</a>, this example shows how to connect GY-BME280 Temperature and Barometric pressure sensor to board.
---></p></div>
+<h1 id="iqrf-gateway-daemon">IQRF Gateway Daemon</h1>
+<p>IQRF network is hidden behind coordinator connected to your computer via USB, SPI, UART or other types of interface. Communication between your program and coordinator is ensured via <strong>IQRF Gateway Daemon</strong> software module.
+This is Open Source gateway piece of software for communicating (sending and receiving JSON API messages) with IQRF network. This is included in many IQRF gateways and you can also download it and build for your platform. In releases of this repo we prepared build for Win developers.</p>
+<ul>
+<li>Download sources: https://gitlab.iqrfsdk.org/gateway/iqrf-daemon</li>
+<li>Download releases: https://github.com/logimic/iqrfboard/releases</li>
+<li>Documentation: https://docs.iqrfsdk.org/iqrf-gateway-daemon/</li>
+</ul>
+<p>Demon provides many software interface channels:</p>
+<ul>
+<li>WebSockets</li>
+<li>MQTT</li>
+<li>MQ interprocess</li>
+</ul>
+<p>Every channel can be used for sending/receiving JSON API messages. Full API is described here: https://docs.iqrfsdk.org/iqrf-gateway-daemon/api.html</p>
+<h2 id="run-daemon">Run Daemon</h2>
+<p>Please follow instructions at releases: https://github.com/logimic/iqrfboard/releases</p>
+<h2 id="websockets-json-api">WebSockets JSON API</h2>
+<p>WebSockets port is opened during start o Daemon. The number of port is defined in <strong>IqrfDaemon\runcfg\iqrfgd2-WinCdc\configuration\iqrf__WebsocketMessaging.json</strong>.  You can change it, but please do not forget to restart Daemon then.</p>
+<h3 id="html-websocket-example">Html WebSocket example</h3>
+<ul>
+<li>Open html page <strong>https://github.com/logimic/iqrfboard/blob/master/tools/index-1338.html</strong></li>
+<li>Enter message:</li>
+</ul>
+<pre><code class="json">{
+  &quot;mType&quot;: &quot;iqrfEmbedLedg_Set&quot;,
+  &quot;data&quot;: {
+    &quot;msgId&quot;: &quot;testEmbedLedr&quot;,
+    &quot;req&quot;: {
+      &quot;nAdr&quot;: 0,
+      &quot;param&quot;: {
+        &quot;onOff&quot;: true
+      }
+    },
+    &quot;returnVerbose&quot;: true
+  }
+}
+</code></pre>
+
+<ul>
+<li>Press <strong>Send</strong> in html page and see that this turned on the LED diod on concentrator module.</li>
+<li>Similar way you can turn LED off:
+ ```json
+{
+  "mType": "iqrfEmbedLedg_Set",
+  "data": {
+    "msgId": "testEmbedLedr",
+    "req": {
+      "nAdr": 0,
+      "param": {
+        "onOff": false
+      }
+    },
+    "returnVerbose": true
+  }
+}</li>
+</ul>
+<pre><code>* Similarly for other nodes by changing **nAdr** parameter indicating the node address.
+* Full API description can be found here: https://docs.iqrfsdk.org/iqrf-gateway-daemon/api.html
+
+### Python 3.6 WebSocket example
+* Install ```pip install websockets```
+* Write simple program **[GreenLedOn.py](tools/GreenLedOn.py)**
+```py
+# WS client example
+import asyncio
+import websockets
+import json
+
+x = {
+  &quot;mType&quot;: &quot;iqrfEmbedLedg_Set&quot;,
+  &quot;data&quot;: {
+    &quot;msgId&quot;: &quot;testEmbedLedr&quot;,
+    &quot;req&quot;: {
+      &quot;nAdr&quot;: 0,
+      &quot;param&quot;: {
+        &quot;onOff&quot;: True
+      }
+    },
+    &quot;returnVerbose&quot;: False
+  }
+}
+
+async def hello():
+    async with websockets.connect(
+            'ws://localhost:1338') as websocket:
+
+        await websocket.send(json.dumps(x))
+        print(f&quot;Sent &gt; {x}&quot;)
+
+        greeting = await websocket.recv()
+        print(f&quot;Received &lt; {greeting}&quot;)
+
+asyncio.get_event_loop().run_until_complete(hello())
+</code></pre>
+
+<ul>
+<li>Run it <code>$ py ./GreenLedOn.py</code> and the green LED on coordinator turns on.</li>
+<li>Changing <strong>nAdr</strong> will address command to other node, the <strong>"onOff": False</strong> will turn LED off.</li>
+<li>Full API description can be found here: https://docs.iqrfsdk.org/iqrf-gateway-daemon/api.html</li>
+</ul></div>
         </div>
 
         <footer class="col-md-12">
@@ -214,8 +271,3 @@
 
     </body>
 </html>
-
-<!--
-MkDocs version : 1.0.4
-Build Date UTC : 2018-12-27 22:05:16
--->

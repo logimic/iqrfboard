@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>Setup IQRF Network - IQRFBB-10</title>
+        <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+        <script src="../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../js/bootstrap-3.0.3.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container">
+
+                <!-- Collapsed navigation -->
+                <div class="navbar-header">
+                    <!-- Expander button -->
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="../examples/">IQRFBB-10</a>
+                </div>
+
+                <!-- Expanded navigation -->
+                <div class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li >
+                                <a href="../">GettingStarted</a>
+                            </li>
+                            <li class="active">
+                                <a href="./">Setup IQRF Network</a>
+                            </li>
+                            <li >
+                                <a href="../IqrfGatewayDaemon/">IQRF Gateway Daemon</a>
+                            </li>
+                            <li >
+                                <a href="../examples/">Examples</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="disabled">
+                                <a rel="next" >
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li >
+                                <a rel="prev" href="../IqrfGatewayDaemon/">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="main active"><a href="#setup-iqrf-network">Setup IQRF Network</a></li>
+            <li><a href="#iqrf-documentation">IQRF Documentation</a></li>
+            <li><a href="#install-ide">Install IDE</a></li>
+            <li><a href="#install-iqrf-startup-package">Install IQRF Startup Package</a></li>
+            <li><a href="#first-start">First Start</a></li>
+            <li><a href="#configure-coordinator">Configure Coordinator</a></li>
+            <li><a href="#configure-nodes">Configure Nodes</a></li>
+            <li><a href="#upgrade-os-in-modules">Upgrade OS in modules</a></li>
+            <li><a href="#run-network">Run Network</a></li>
+            <li><a href="#send-dpa-messages">Send DPA messages</a></li>
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
+
+<h1 id="setup-iqrf-network">Setup IQRF Network</h1>
+<p><img alt="" src="https://iqrf.org/images/ds-start-04-case.jpg" /></p>
+<p>Start building your IQRF network with <strong>DS-START-04</strong> development kit.</p>
+<h2 id="iqrf-documentation">IQRF Documentation</h2>
+<ul>
+<li><a href="https://iqrf.org/products/ds-start-04">Order here</a></li>
+<li><a href="../files/iqrf/README_150909.pdf">The Content of the Starter Kit</a></li>
+<li><a href="https://github.com/logimic/iqrfboard/blob/master/files/iqrf/Quick_Start_Guide_IQRF_181018.pdf">IQRF Quick Start Guide</a></li>
+<li><a href="https://github.com/logimic/iqrfboard/blob/master/files/iqrf/User_Guide_CK-USB-04A_171109.pdf">CK-USB-04A</a>, <a href="https://iqrf.org/products/development-tools/development-kits/ck-usb-04a">online page...</a></li>
+<li><a href="https://iqrf.org/products/ds-start-04">...check for updates </a></li>
+</ul>
+<p>Following steps are taken from <strong>IQRF Quick Start Guide</strong> above.</p>
+<h2 id="install-ide">Install IDE</h2>
+<p><img alt="aaa" src="../files/images/SetupIqrfNetwork/iqrf-ide-4.jpg" /></p>
+<p>IDE is a basic programming tool for IQRF devices. Download and install <a href="https://www.iqrf.org/technology/iqrf-ide/iqrf-ide-gui">https://www.iqrf.org/technology/iqrf-ide/iqrf-ide-gui</a></p>
+<h2 id="install-iqrf-startup-package">Install IQRF Startup Package</h2>
+<p>Download <a href="https://www.iqrf.org/support/download&amp;kat=34&amp;ids=82">IQRF Startup package</a> and unpack anywhere to your hard drive.</p>
+<h2 id="first-start">First Start</h2>
+<ul>
+<li>
+<p>Start your IDE, navigate to your installed <strong>IQRF Startup package</strong> e.g. <em>d:\IQRF_OS403_7xD\Examples\DPA\StartUp</em> and open <strong>HWP-demo.iqrfprj</strong></p>
+</li>
+<li>
+<p>Insert any IQRF module to programmer <a href="https://iqrf.org/products/development-tools/development-kits/ck-usb-04a">CK-USB-04A</a> and connect to PC via USB.</p>
+</li>
+</ul>
+<p><img alt="image" src="../files/images/SetupIqrfNetwork/50103857-e4acfb80-0228-11e9-88f1-a1ad28f00ad7.png" /></p>
+<ul>
+<li>In IDE you will probably see <strong>USB device not connected</strong> in bottom panel.</li>
+</ul>
+<p><img alt="image" src="../files/images/SetupIqrfNetwork/50103939-1c1ba800-0229-11e9-94af-0bcc89113d04.png" /></p>
+<ul>
+<li>Go to menu <strong>Tools/USB Classes/Swith to Custom Device mode</strong> and select listed COM (USB) port. If you do not see any port please follow troubleshooting on IQRF support. You need driver update. Successful selection will show dialogue like this.</li>
+</ul>
+<p><img alt="image" src="../files/images/SetupIqrfNetwork/50104128-951aff80-0229-11e9-847e-c5b43c73facd.png" /></p>
+<ul>
+<li>Click <strong>Switch</strong> and the bottom panel will show <strong>Module ready - communication mode</strong></li>
+</ul>
+<p><img alt="image" src="../files/images/SetupIqrfNetwork/50104213-c693cb00-0229-11e9-8b1a-eaa285ab2e12.png" /></p>
+<ul>
+<li>It might show dialogue about firmware update, then click <strong>Yes</strong>.</li>
+</ul>
+<p><img alt="image" src="../files/images/SetupIqrfNetwork/50104292-e925e400-0229-11e9-944c-48f94d5933d0.png" /></p>
+<ul>
+<li>Click <strong>Upload</strong> button, wait for firmware update, then press <strong>Close</strong>.</li>
+</ul>
+<p><img alt="image" src="../files/images/SetupIqrfNetwork/50104371-20949080-022a-11e9-9835-adef5a4ccb4f.png" /></p>
+<h2 id="configure-coordinator">Configure Coordinator</h2>
+<p>A Concentrator is the node connected with PC or Gateway gathering data from all nodes.
+<strong>! When you insert or remove TR from holder, always press SW2 button (nearer to SIM slot). It breaks power.</strong></p>
+<ul>
+<li>In left panel check <strong>HWP-Coordinator-...iqrf</strong> file</li>
+</ul>
+<p><img alt="image" src="../files/images/SetupIqrfNetwork/50106144-38bade80-022f-11e9-84f2-e2ac42f16666.png" /></p>
+<ul>
+<li>Double click on <strong>DPA-config.xml</strong> in left panel. Set items in dialogue as picture shows and click <strong>Upload</strong> button.</li>
+</ul>
+<p><img alt="image" src="../files/images/SetupIqrfNetwork/50106039-d661de00-022e-11e9-8fc5-74a5a7c65aad.png" /></p>
+<p><img alt="image" src="../files/images/SetupIqrfNetwork/50106117-1b861000-022f-11e9-95ed-6d19edda9113.png" /></p>
+<ul>
+<li>In menu select <strong>Programming/Upload/Upload Selected Items</strong>. If the system complains that uploading version is not for the connected TR module, please upgrade OS in module. See <strong>Upgrade OS in TR module</strong> section.</li>
+</ul>
+<h2 id="configure-nodes">Configure Nodes</h2>
+<p>A Node is a module communication within mesh with Concentrator.
+<strong>! When you insert or remove TR from holder, always press SW2 button (nearer to SIM slot). It breaks power.</strong></p>
+<ul>
+<li>
+<p>Insert TR module to be node into programmer</p>
+</li>
+<li>
+<p>In left panel of IDE check <strong>HWP-Node-STD-...</strong></p>
+</li>
+</ul>
+<p><img alt="image" src="../files/images/SetupIqrfNetwork/50108583-e630f080-0235-11e9-9843-d5ec00d6e3de.png" /></p>
+<ul>
+<li>
+<p>Keep the <strong>DPA-config.xml</strong> settings as previously at concentrator.</p>
+</li>
+<li>
+<p>Upload all your nodes. If the system complains that uploading version is not for the connected TR module, please upgrade OS in module. See <strong>Upgrade OS in TR module</strong> section.</p>
+</li>
+</ul>
+<h2 id="upgrade-os-in-modules">Upgrade OS in modules</h2>
+<ul>
+<li>
+<p>In menu select <strong>Tools/Change IQRF OS Wizard</strong> and follow wizard.</p>
+</li>
+<li>
+<p>Use <strong>SPI</strong> as upload method.</p>
+</li>
+</ul>
+<p><img alt="image" src="../files/images/SetupIqrfNetwork/50106475-3311c880-0230-11e9-80ea-061aae079706.png" /></p>
+<ul>
+<li>Then select version to be uploaded</li>
+</ul>
+<p><img alt="image" src="../files/images/SetupIqrfNetwork/50106345-e62df200-022f-11e9-9212-d1594fe6a943.png" /></p>
+<ul>
+<li><strong>!If your modules are older you might need to repeat the upgrade OS more times</strong></li>
+</ul>
+<h2 id="run-network">Run Network</h2>
+<ul>
+<li>
+<p>Insert coordinator configured TR module to programmer CK-USB-04A and nodes to other DK-EVAL-04A modules.</p>
+</li>
+<li>
+<p>In IDE in menu start <strong>Tools/IQMESH Network Manager</strong> and fill out the dialogue as shown (TX power, Auto address, ...).</p>
+</li>
+</ul>
+<p><img alt="image" src="../files/images/SetupIqrfNetwork/50110959-dfa57780-023b-11e9-981a-a1f883e7cac8.png" /></p>
+<ul>
+<li>
+<p>Then pres <strong>Clear All Bonds</strong> for remove any previous bonded modules. Red diods of modules are blinking.</p>
+</li>
+<li>
+<p>Then pres <strong>Bond Node</strong> and during bonding period press and hold SW1 button at one node until green red turns on. Repeat for each node.</p>
+</li>
+</ul>
+<p><img alt="image" src="../files/images/SetupIqrfNetwork/50111045-1aa7ab00-023c-11e9-9cf2-87ef0281bfc2.png" /></p>
+<ul>
+<li>Now you should see two spots indicating successful bonding. Now click <strong>Discovery</strong> and spots are in blue.</li>
+</ul>
+<p><img alt="image" src="../files/images/SetupIqrfNetwork/50111460-1e87fd00-023d-11e9-84e3-dad67435fbf2.png" /></p>
+<ul>
+<li>Switch in IDE to <strong>Map View</strong> and you should see node structure</li>
+</ul>
+<p><img alt="image" src="../files/images/SetupIqrfNetwork/50111497-31023680-023d-11e9-85c5-4a8288baeb72.png" /></p>
+<ul>
+<li>Click right mouse button on node 1 and select <strong>LED Red On</strong></li>
+</ul>
+<p><img alt="image" src="../files/images/SetupIqrfNetwork/50111606-6b6bd380-023d-11e9-9030-746fe0c9a3f9.png" /></p>
+<ul>
+<li>Now you can see that the <strong>RED LED</strong> of node 1 is on. In similar way you can turn-off or play with LEDs.</li>
+</ul>
+<h2 id="send-dpa-messages">Send DPA messages</h2>
+<p>Direct Peripheral Access (DPA) protocol is a simple byte-oriented protocol used to control nodes and network. Detail description of <a href="https://www.iqrf.org/DpaTechGuide/">DPA Framework</a></p>
+<ul>
+<li>DPA can be sent via IDE. Open <strong>Terminal</strong> and click <strong>Set LEDR on</strong> which prefills data into <strong>Data to send</strong> fields. Change only <strong>NADR=0001</strong> which indicates node 1 and click <strong>Send</strong>.</li>
+</ul>
+<p><img alt="image" src="../files/images/SetupIqrfNetwork/50230461-00d9a580-03ad-11e9-9842-85226f02f424.png" /></p>
+<ul>
+<li>This DPA command turned on RED diod on node 1.</li>
+<li>You can define any other DPA messages.</li>
+</ul></div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js" defer></script>
+        <script src="../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form role="form">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="Keyboard Shortcuts Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Keyboard Shortcuts</h4>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

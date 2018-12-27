@@ -1,6 +1,0 @@
-site_name: My Docs
-docs_dir: ../../examples
-nav:
-- Home: 'README.md'
-- Examples: 'examples/README.md'
-

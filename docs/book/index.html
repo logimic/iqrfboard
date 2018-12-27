@@ -49,14 +49,24 @@
                             <li >
                                 <a href="./">GettingStarted</a>
                             </li>
-                            <li >
-                                <a href="SetupIqrfNetwork/">Setup IQRF Network</a>
-                            </li>
-                            <li >
-                                <a href="IqrfGatewayDaemon/">IQRF Gateway Daemon</a>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">IQRF Network <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="SetupIqrfNetwork/">Setup IQRF Network</a>
+</li>
+                                    
+<li >
+    <a href="IqrfGatewayDaemon/">IQRF Gateway Daemon</a>
+</li>
+                                </ul>
                             </li>
                             <li >
                                 <a href="examples/">Examples</a>
+                            </li>
+                            <li >
+                                <a href="About/">About</a>
                             </li>
                         </ul>
 
@@ -75,7 +85,7 @@
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
         <li class="main active"><a href="#getting-started-with-iqrfbb-10">Getting Started with IQRFBB-10</a></li>
-            <li><a href="#documentation">Documentation</a></li>
+            <li><a href="#links">Links</a></li>
             <li><a href="#prepare-iqrf-network">Prepare IQRF network</a></li>
             <li><a href="#assemble-board">Assemble Board</a></li>
             <li><a href="#connect-programmer">Connect Programmer</a></li>
@@ -91,8 +101,10 @@
 <p><img alt="" src="files/images/iqrfboardSystem.png" /></p>
 <p>IQRFBB-10 board is a node of IQRF network. In this tutorial we will demonstrate how to connect board into IQRF network and make any sensor or actuator from it.
 Then we will connect the device to IQRF gateway software and show you many examples how to read or send data from your software.</p>
-<h2 id="documentation">Documentation</h2>
+<h2 id="links">Links</h2>
 <ul>
+<li><a href="http://logimic.com/iqrfboard">IQRFBB-10 Presentation &amp; Orders</a></li>
+<li><a href="https://github.com/logimic/iqrfboard">IQRFBB-10 GitHub pages</a></li>
 <li><a href="files/datasheet/IQRFBB10-Datasheet.pdf">IQRFBB-10 Data Sheet</a></li>
 <li><a href="files/datasheet/IQRFBB10-Connectors.pdf">IQRFBB-10 Board Schema</a></li>
 <li><a href="files/datasheet/IQRFBB10_doc_sch.pdf">IQRFBB-10 Hardware Drawing</a></li>
@@ -279,5 +291,5 @@ Then we will connect the device to IQRF gateway software and show you many examp
 
 <!--
 MkDocs version : 1.0.4
-Build Date UTC : 2018-12-27 22:05:16
+Build Date UTC : 2018-12-27 22:32:24
 -->

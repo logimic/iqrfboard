@@ -3,7 +3,9 @@ docs_dir: documents
 site_dir: docs/book
 
 nav:
-    - GettingStarted: ./
-    - Setup IQRF Network: SetupIqrfNetwork.md
-    - IQRF Gateway Daemon: IqrfGatewayDaemon.md
-    - Examples: examples/README.md
+- GettingStarted: ./
+- IQRF Network:
+  - Setup IQRF Network: SetupIqrfNetwork.md
+  - IQRF Gateway Daemon: IqrfGatewayDaemon.md
+- Examples: examples/README.md
+- About: About.md

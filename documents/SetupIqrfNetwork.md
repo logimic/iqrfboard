@@ -4,14 +4,12 @@
 
 Start building your IQRF network with **DS-START-04** development kit.
 
-## IQRF Documentation
+## Links
 * [Order here](https://iqrf.org/products/ds-start-04)
 * [The Content of the Starter Kit](files/iqrf/README_150909.pdf)
 * [IQRF Quick Start Guide](https://github.com/logimic/iqrfboard/blob/master/files/iqrf/Quick_Start_Guide_IQRF_181018.pdf)
 * [CK-USB-04A](https://github.com/logimic/iqrfboard/blob/master/files/iqrf/User_Guide_CK-USB-04A_171109.pdf), [online page...](https://iqrf.org/products/development-tools/development-kits/ck-usb-04a)
 * [...check for updates ](https://iqrf.org/products/ds-start-04)
-
-Following steps are taken from **IQRF Quick Start Guide** above.
 
 ## Install IDE
 

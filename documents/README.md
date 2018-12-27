@@ -4,7 +4,9 @@
 IQRFBB-10 board is a node of IQRF network. In this tutorial we will demonstrate how to connect board into IQRF network and make any sensor or actuator from it.
 Then we will connect the device to IQRF gateway software and show you many examples how to read or send data from your software.
 
-## Documentation
+## Links
+* [IQRFBB-10 Presentation & Orders](http://logimic.com/iqrfboard)
+* [IQRFBB-10 GitHub pages](https://github.com/logimic/iqrfboard)
 * [IQRFBB-10 Data Sheet](files/datasheet/IQRFBB10-Datasheet.pdf)
 * [IQRFBB-10 Board Schema](files/datasheet/IQRFBB10-Connectors.pdf)
 * [IQRFBB-10 Hardware Drawing](files/datasheet/IQRFBB10_doc_sch.pdf)

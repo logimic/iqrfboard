@@ -2,8 +2,6 @@ site_name: IQRFBB-10
 docs_dir: documents
 site_dir: docs/book
 site_url: http://logimic.com/iqrfboard/book/
-repo_url: https://github.com/logimic/iqrfboard
-edit_uri: blob/master
 site_author: Logimic
 copyright: Copyright 2018, All rights reserved, Logimic, s.r.o.
 

@@ -27,7 +27,7 @@ _Fig. External LED wiring_
 
 ### Custom DPA Handler
 
-We use Custom DPA Handler [CustomDpaHandler-HTU21D-i2c.c](CustomDpaHandler-HTU21D-i2c.c) in this repo. Copy the file into IQRF SDK folders and load to TR module as [described here](http://127.0.0.1:8000/SetupIqrfNetwork/#load-custom-dpa-handler).
+We use Custom DPA Handler [CustomDpaHandler-HTU21D-i2c.c](CustomDpaHandler-HTU21D-i2c.c) in this repo. Copy the file into IQRF SDK folders and load to TR module as [described here](../../SetupIqrfNetwork.md#load-custom-dpa-handler).
 
 ```cpp
 // ***********************************************************************************

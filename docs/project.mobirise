@@ -36,7 +36,7 @@
     "path": "@PROJECT_PATH@",
     "versionFirst": "4.8.2",
     "siteFonts": [],
-    "uniqCompNum": 43,
+    "uniqCompNum": 44,
     "versionPublish": "4.8.10",
     "screenshot": "screenshot.png"
   },
@@ -44,8 +44,8 @@
     "index.html": {
       "settings": {
         "main": true,
-        "title": "IQRD development board",
-        "meta_descr": "",
+        "title": "IQRF Development Board",
+        "meta_descr": "Logimic IQRF Development Board.",
         "header_custom": "",
         "footer_custom": "",
         "html_before": ""
@@ -923,6 +923,21 @@
           "_global": false,
           "_once": false,
           "_params": {}
+        },
+        {
+          "_styles": {
+            "padding-top": "(@paddingTop * 15px)",
+            "padding-bottom": "(@paddingBottom * 15px)",
+            "background-color": "@bgColor"
+          },
+          "_name": "content8",
+          "_customHTML": "<section class=\"mbr-section content8\">\n\n    <mbr-parameters>\n    <!-- Block parameters controls (Blue \"Gear\" panel) -->\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"8\" step=\"1\" value=\"1\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"8\" step=\"1\" value=\"4\">\n        <input type=\"color\" title=\"Backgroud Color\" name=\"bgColor\" value=\"#4863e6\">\n    <!-- End block parameters -->\n    </mbr-parameters>\n\n    <div class=\"container\">\n        <div class=\"media-container-row title\">\n            <div class=\"col-12 col-md-8\">\n                <div class=\"mbr-section-btn align-center\" mbr-buttons mbr-theme-style=\"display-4\" data-toolbar=\"-mbrBtnMove\"><a class=\"btn btn-primary\" href=\"http://logimic.com/iqrfboard/book/\" data-app-placeholder=\"Type Text\">Getting Started</a></div>\n            </div>\n        </div>\n    </div>\n</section>",
+          "_cid": "rdvTU1iGWE",
+          "_protectedParams": [],
+          "_global": false,
+          "_once": false,
+          "_params": {},
+          "_anchor": "content8-17"
         },
         {
           "_styles": {

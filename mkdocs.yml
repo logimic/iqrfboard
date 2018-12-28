@@ -7,6 +7,7 @@ copyright: Copyright 2018, All rights reserved, Logimic, s.r.o.
 
 nav:
 - GettingStarted: README.md
+- Datasheet: IQRFBB10-Datasheet.md
 - IQRF Network:
   - Setup IQRF Network: SetupIqrfNetwork.md
   - IQRF Gateway Daemon: IqrfGatewayDaemon.md

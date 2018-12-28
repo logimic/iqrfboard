@@ -4,6 +4,10 @@
 
 This example shows how to set DO on board. We will power EQ6 (X10 SCL) pin.
 
+## Links
+
+* [IQRFBB-10 Datasheet](../../IQRFBB10-Datasheet.md)
+
 ## Prerequisities
 
 1. **IQRFBB-10** bonded in working IQRF network. More in [GettingStarted with IQRFBB-10](https://github.com/logimic/iqrfboard/wiki)

@@ -49,6 +49,9 @@
                             <li >
                                 <a href="..">GettingStarted</a>
                             </li>
+                            <li >
+                                <a href="../IQRFBB10-Datasheet/">Datasheet</a>
+                            </li>
                             <li class="dropdown active">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">IQRF Network <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
@@ -77,7 +80,7 @@
                             </a>
                         </li>
                             <li >
-                                <a rel="next" href="..">
+                                <a rel="next" href="../IQRFBB10-Datasheet/">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
@@ -104,13 +107,16 @@
             <li><a href="#upgrade-os-in-modules">Upgrade OS in modules</a></li>
             <li><a href="#run-network">Run Network</a></li>
             <li><a href="#send-dpa-messages">Send DPA messages</a></li>
+            <li><a href="#load-custom-dpa-handler">Load Custom DPA Handler</a></li>
+            <li><a href="#your-own-iqrf-devices">Your own IQRF devices</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
 <h1 id="setup-iqrf-network">Setup IQRF Network</h1>
 <p><img alt="" src="https://iqrf.org/images/ds-start-04-case.jpg" /></p>
-<p>Start building your IQRF network with <strong>DS-START-04</strong> development kit.</p>
+<p>You can get many pieces of information about IQRF at <a href="iqrf.org">iqrf.org</a> page. Simply said IQRF network is mesh kind of network working very well indoor and outdoor (up to 500m). It has one device as <strong>concentrator</strong> connected to gateway or your PC and the rest of devices are <strong>wireless nodes</strong>.</p>
+<p>The best start with IQRF is with their <strong>DS-START-04</strong> development kit. It helps you to create your first IQRF network for testing purposes. In this tutorial we will show you how to create IQRF network with this kit.</p>
 <h2 id="links">Links</h2>
 <ul>
 <li><a href="https://iqrf.org/products/ds-start-04">Order here</a></li>
@@ -118,6 +124,7 @@
 <li><a href="https://github.com/logimic/iqrfboard/blob/master/files/iqrf/Quick_Start_Guide_IQRF_181018.pdf">IQRF Quick Start Guide</a></li>
 <li><a href="https://github.com/logimic/iqrfboard/blob/master/files/iqrf/User_Guide_CK-USB-04A_171109.pdf">CK-USB-04A</a>, <a href="https://iqrf.org/products/development-tools/development-kits/ck-usb-04a">online page...</a></li>
 <li><a href="https://iqrf.org/products/ds-start-04">...check for updates </a></li>
+<li><a href="http://iqrf.org/weben/downloads.php?id=441">TR-76D Datasheet</a></li>
 <li><a href="https://www.iqrf.org/DpaTechGuide/">DPA Framework on-line</a></li>
 </ul>
 <h2 id="install-ide">Install IDE</h2>
@@ -250,7 +257,27 @@
 <ul>
 <li>This DPA command turned on RED diod on node 1.</li>
 <li>You can define any other DPA messages.</li>
-</ul></div>
+</ul>
+<h2 id="load-custom-dpa-handler">Load Custom DPA Handler</h2>
+<p><strong>Custom DPA Handler</strong> is software routine which is executed within transceiver MCU and where you can put your customer code to modify.</p>
+<p>In <strong>IDE Project</strong> window you can see actually loaded <strong>CustomDpaHandler</strong> under <strong>Source</strong> item. Under <strong>Output HEX</strong> is its compiled code.
+You can click right mouse button above source of <strong>CustomDpaHandler-..</strong> file and choose <strong>Build</strong> from menu for rebuilding of handler.</p>
+<p><img alt="image" src="../files/images/SetupIqrfNetwork/CustomDpaHandler.png" /></p>
+<p>You can load any other Custom DPA Handler from prepared set in IQRF SDK here: <strong>./IQRF_OS403_7xD/Examples/DPA/CustomDpaHandlerExamples</strong> or you can modify any or write your own. <strong>Note:</strong> When you create your own handler, put it into <strong>CustomDpaHandlerExamples</strong> folder to be available others IQRF header files.</p>
+<p><strong>Adding of your Custom DPA Handler:</strong></p>
+<ol>
+<li>Right-click on any existing Custom DPA Handler under <strong>Source</strong>.</li>
+<li>From context menu select <strong>Add/Add Existing Item</strong> and select your <strong>CustomDpaHandler.c</strong> file.</li>
+<li>Make sure your handler is selected and via right-click select <strong>Build</strong> for its rebuild.</li>
+<li>You will see its compiled <strong>.hex</strong> state under <strong>Output Hex</strong> item.
+<img alt="image" src="../files/images/SetupIqrfNetwork/CustomDpaHandler2.png" /></li>
+<li>Right-click on the <strong>.hex</strong> file and select <strong>Upload</strong>. Now the handler will be uploaded to TR module.
+<img alt="image" src="../files/images/SetupIqrfNetwork/CustomDpaHandler3.png" /></li>
+<li>Then double-click on <strong>DPA-config.xml</strong> and in dialogue tick <strong>Custom DPA Handler</strong> and then <strong>Upload</strong>.
+<img alt="image" src="../files/images/SetupIqrfNetwork/CustomDpaHandler4.png" /></li>
+</ol>
+<h2 id="your-own-iqrf-devices">Your own IQRF devices</h2>
+<p>Now it's time to build your own IQRF device. The best start is with IQRFBB-10 development board from <a href="http://www.logimic.com">Logimic</a> because it has many examples and you can reuse board layout and design for your later product development. Let's go with <a href="..">IQRFBB-10 board</a></p></div>
         </div>
 
         <footer class="col-md-12">

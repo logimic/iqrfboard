@@ -49,6 +49,9 @@
                             <li class="active">
                                 <a href=".">GettingStarted</a>
                             </li>
+                            <li >
+                                <a href="IQRFBB10-Datasheet/">Datasheet</a>
+                            </li>
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">IQRF Network <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
@@ -82,7 +85,7 @@
                                 </a>
                             </li>
                             <li >
-                                <a rel="prev" href="SetupIqrfNetwork/">
+                                <a rel="prev" href="IQRFBB10-Datasheet/">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -109,8 +112,15 @@
 
 <h1 id="getting-started-with-iqrfbb-10">Getting Started with IQRFBB-10</h1>
 <p><img alt="" src="files/images/iqrfboardSystem.png" /></p>
-<p>IQRFBB-10 board is a node of IQRF network. In this tutorial we will demonstrate how to connect board into IQRF network and make any sensor or actuator from it.
-Then we will connect the device to IQRF gateway software and show you many examples how to read or send data from your software.</p>
+<p>IQRFBB-10 development board helps you to design IOT devices for IQRF wireless network. Simply connect sensor or actuator you want to, join the board to IQRF network and device is ready.
+If you are satisfied with such working device scale IQRFBB-10 layout to final product and your IOT product is done.</p>
+<p>In this tutorial we will show you:</p>
+<ul>
+<li>How to prepare IQRF network.</li>
+<li>How to connect IQRFBB-10 to the IQRF network as a node.</li>
+<li>How to connect different sensors to the board.</li>
+<li>How to communicate with the board from your software via IQRF gateway.</li>
+</ul>
 <h2 id="links">Links</h2>
 <ul>
 <li><a href="http://logimic.com/iqrfboard">IQRFBB-10 Presentation &amp; Orders</a></li>
@@ -118,10 +128,10 @@ Then we will connect the device to IQRF gateway software and show you many examp
 <li><a href="files/datasheet/IQRFBB10-Datasheet.pdf">IQRFBB-10 Data Sheet</a></li>
 <li><a href="files/datasheet/IQRFBB10-Connectors.pdf">IQRFBB-10 Board Schema</a></li>
 <li><a href="files/datasheet/IQRFBB10_doc_sch.pdf">IQRFBB-10 Hardware Drawing</a></li>
-<li><a href="files/iqrf/TR-76D_datasheet.pdf">TR-76D Data Sheet</a></li>
+<li><a href="http://iqrf.org/weben/downloads.php?id=441">TR-76D Datasheet</a></li>
 </ul>
 <h2 id="prepare-iqrf-network">Prepare IQRF network</h2>
-<p>Firs check IQRF network around you. If you do not have any, let's start with <a href="SetupIqrfNetwork/">SetupIqrfNetwork</a>.</p>
+<p>Firs check IQRF network around you. If you do not have any, let's start with this tutorial <a href="SetupIqrfNetwork/">SetupIqrfNetwork</a>.</p>
 <h2 id="assemble-board">Assemble Board</h2>
 <p><img alt="" src="files/datasheet/layout.png" /></p>
 <p><img alt="" src="files/images/assemble1.png" /></p>
@@ -138,7 +148,16 @@ Then we will connect the device to IQRF gateway software and show you many examp
 <p>Unplug USB cable from CK-USB-04A</p>
 </li>
 <li>
+<p>Unplug IQRFBB-10 from microUSB and JP6=OFF.</p>
+</li>
+<li>
+<p>Unplug TR module JP1=OFF.</p>
+</li>
+<li>
 <p>Make wiring</p>
+</li>
+<li>
+<p>Plug JP4=ON, JP1=OFF.</p>
 </li>
 <li>
 <p>Plug micro-USB to IQRFBB-10 to power-on. Indication LD1=ON (charging battery), LD4=ON</p>
@@ -146,9 +165,12 @@ Then we will connect the device to IQRF gateway software and show you many examp
 <li>
 <p>Plug micro-USB to CK-USB-04A</p>
 </li>
+<li>
+<p>Now the board is ready for software loading</p>
+</li>
 </ol>
 <h2 id="load-software">Load Software</h2>
-<p>If we are talking about software loading, we always mean loading to IQRF transciever TR-76D mounted on IQRFBB-10. Now we will configure board (transciever) as a node of IQRF network.</p>
+<p>If we are talking about software loading, we always mean loading software to IQRF transceiver TR-76D mounted on IQRFBB-10. Via software load you configure transceiver within IQRF network. Now we will configure board (transceiver) as a node of IQRF network.</p>
 <ol>
 <li>
 <p>Make sure you made a proper wiring and both USB power sources (programmer + board) are on.</p>
@@ -218,7 +240,7 @@ Then we will connect the device to IQRF gateway software and show you many examp
 </li>
 </ol>
 <h2 id="examples">Examples</h2>
-<p>Then turn the IQRFBB-10 board into any wireless sensor or actuator <a href="examples/">with many examples</a></p></div>
+<p>Now we can make from IQRFBB-10 any wireless sensor or actuator by wiring proper sensor or actuators. Let's continue to <a href="examples/">our examples</a></p></div>
         </div>
 
         <footer class="col-md-12">
@@ -302,5 +324,5 @@ Then we will connect the device to IQRF gateway software and show you many examp
 
 <!--
 MkDocs version : 1.0.4
-Build Date UTC : 2018-12-28 00:09:30
+Build Date UTC : 2018-12-28 23:52:37
 -->

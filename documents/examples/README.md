@@ -30,20 +30,19 @@
 
 [/example-bistable-relay](example-bistable-relay), this example shows how to switch bi-stable relay on board.
 
-### 7. Temperature & Barometric Pressure Sensor
+### 7. HTU21D - Temp & Humidity
+<img src="example-HTU21D/HTU21D.jpg" width="130">
+
+Comming soon HTU21D...
+
+[/example-HTU21D](example-HTU21D), this example shows how to connect HTU21D Temperature and Humidity sensor to board.
+
+### 8. GY-BME280 - Temp & Baro
 <img src="example-GY-BME280/GY-BME280.jpg" width="130">
 
 Comming soon GY-BME280...
 <!--
 [/example-GY-BME280](example-GY-BME280), this example shows how to connect GY-BME280 Temperature and Barometric pressure sensor to board.
--->
-
-### 8. Temperature & Humidity Sensor
-<img src="example-HTU21D/HTU21D.jpg" width="130">
-
-Comming soon HTU21D...
-<!--
-[/example-HTU21D](example-HTU21D), this example shows how to connect GY-BME280 Temperature and Barometric pressure sensor to board.
 -->
 
 ### 9. Ambient Light Sensor

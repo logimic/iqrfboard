@@ -4,6 +4,10 @@
 
 This example shows how to detect DI on board. We will detect connection EQ13 pin to GRND. DI status is tested by testing software via reading all inputs.
 
+## Links
+
+* [IQRFBB-10 Datasheet](../../IQRFBB10-Datasheet.md)
+
 ## Prerequisities
 
 1. **IQRFBB-10** bonded in working IQRF network. More in [GettingStarted with IQRFBB-10](https://github.com/logimic/iqrfboard/wiki)

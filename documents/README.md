@@ -1,8 +1,15 @@
 # Getting Started with IQRFBB-10
 ![](files/images/iqrfboardSystem.png)
 
-IQRFBB-10 board is a node of IQRF network. In this tutorial we will demonstrate how to connect board into IQRF network and make any sensor or actuator from it.
-Then we will connect the device to IQRF gateway software and show you many examples how to read or send data from your software.
+IQRFBB-10 development board helps you to design IOT devices for IQRF wireless network. Simply connect sensor or actuator you want to, join the board to IQRF network and device is ready.
+If you are satisfied with such working device scale IQRFBB-10 layout to final product and your IOT product is done.
+
+In this tutorial we will show you:
+
+* How to prepare IQRF network.
+* How to connect IQRFBB-10 to the IQRF network as a node.
+* How to connect different sensors to the board.
+* How to communicate with the board from your software via IQRF gateway.
 
 ## Links
 * [IQRFBB-10 Presentation & Orders](http://logimic.com/iqrfboard)
@@ -10,10 +17,10 @@ Then we will connect the device to IQRF gateway software and show you many examp
 * [IQRFBB-10 Data Sheet](files/datasheet/IQRFBB10-Datasheet.pdf)
 * [IQRFBB-10 Board Schema](files/datasheet/IQRFBB10-Connectors.pdf)
 * [IQRFBB-10 Hardware Drawing](files/datasheet/IQRFBB10_doc_sch.pdf)
-* [TR-76D Data Sheet](files/iqrf/TR-76D_datasheet.pdf)
+* [TR-76D Datasheet](http://iqrf.org/weben/downloads.php?id=441)
 
 ## Prepare IQRF network
-Firs check IQRF network around you. If you do not have any, let's start with [SetupIqrfNetwork](SetupIqrfNetwork.md).
+Firs check IQRF network around you. If you do not have any, let's start with this tutorial [SetupIqrfNetwork](SetupIqrfNetwork.md).
 
 ## Assemble Board
 ![](files/datasheet/layout.png)
@@ -31,14 +38,22 @@ Firs check IQRF network around you. If you do not have any, let's start with [Se
 
 1. Unplug USB cable from CK-USB-04A
 
-2. Make wiring
+2. Unplug IQRFBB-10 from microUSB and JP6=OFF.
 
-3. Plug micro-USB to IQRFBB-10 to power-on. Indication LD1=ON (charging battery), LD4=ON
+3. Unplug TR module JP1=OFF.
 
-4. Plug micro-USB to CK-USB-04A
+4. Make wiring
+
+5. Plug JP4=ON, JP1=OFF.
+
+6. Plug micro-USB to IQRFBB-10 to power-on. Indication LD1=ON (charging battery), LD4=ON
+
+7. Plug micro-USB to CK-USB-04A
+
+8. Now the board is ready for software loading
 
 ## Load Software
-If we are talking about software loading, we always mean loading to IQRF transciever TR-76D mounted on IQRFBB-10. Now we will configure board (transciever) as a node of IQRF network.
+If we are talking about software loading, we always mean loading software to IQRF transceiver TR-76D mounted on IQRFBB-10. Via software load you configure transceiver within IQRF network. Now we will configure board (transceiver) as a node of IQRF network.
 
 1. Make sure you made a proper wiring and both USB power sources (programmer + board) are on.
 
@@ -88,4 +103,4 @@ Now you have fully configured IQRFBB-10 board. You can check operability this wa
 ![image](files/images/SetupIqrfNetwork/50150771-3a33e780-02bf-11e9-89e6-dce0b8d8afeb.png)
 
 ## Examples
-Then turn the IQRFBB-10 board into any wireless sensor or actuator [with many examples](examples/README.md)
+Now we can make from IQRFBB-10 any wireless sensor or actuator by wiring proper sensor or actuators. Let's continue to [our examples](examples/README.md)

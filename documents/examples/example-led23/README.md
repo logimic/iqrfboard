@@ -2,6 +2,10 @@
 
 This example turns RED LED on, waits 2 seconds, then turns RED LED off and GREEN LED on, then after 2 seconds turns GREEN LED off.
 
+## Links
+
+* [IQRFBB-10 Datasheet](../../IQRFBB10-Datasheet.md)
+
 ## Prerequisities
 
 1. **IQRFBB-10** bonded in working IQRF network. More in [GettingStarted with IQRFBB-10](https://github.com/logimic/iqrfboard/wiki)

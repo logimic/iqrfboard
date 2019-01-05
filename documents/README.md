@@ -12,11 +12,12 @@ In this tutorial we will show you:
 * How to communicate with the board from your software via IQRF gateway.
 
 ## Links
-* [IQRFBB-10 Presentation & Orders](http://logimic.com/iqrfboard)
+* [IQRFBB-10 Presentation & Buy](http://logimic.com/iqrfboard)
 * [IQRFBB-10 GitHub pages](https://github.com/logimic/iqrfboard)
-* [IQRFBB-10 Data Sheet](files/datasheet/IQRFBB10-Datasheet.pdf)
-* [IQRFBB-10 Board Schema](files/datasheet/IQRFBB10-Connectors.pdf)
-* [IQRFBB-10 Hardware Drawing](files/datasheet/IQRFBB10_doc_sch.pdf)
+* [IQRFBB-10 Data Sheet](IQRFBB10-Datasheet.md)
+    - [IQRFBB-10 Data Sheet (pdf)](files/datasheet/IQRFBB10-Datasheet.pdf)
+    - [IQRFBB-10 Board Schema (pdf)](files/datasheet/IQRFBB10-Connectors.pdf)
+    - [IQRFBB-10 Hardware Drawing (pdf)](files/datasheet/IQRFBB10_doc_sch.pdf)
 * [TR-76D Transciever](https://iqrf.org/products/transceivers/tr-76d)
     - [TR-76D Datasheet](http://iqrf.org/weben/downloads.php?id=441)
 
@@ -104,4 +105,4 @@ Now you have fully configured IQRFBB-10 board. You can check operability this wa
 ![image](files/images/SetupIqrfNetwork/50150771-3a33e780-02bf-11e9-89e6-dce0b8d8afeb.png)
 
 ## Examples
-Now we can make from IQRFBB-10 any wireless sensor or actuator by wiring proper sensor or actuators. Let's continue to [our examples](examples/README.md)
+Now we can make from IQRFBB-10 any wireless sensor or actuator by wiring proper sensor or actuators. Let's continue to [our examples](Examples.md)

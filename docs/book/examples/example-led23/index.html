@@ -46,11 +46,26 @@
                 <div class="navbar-collapse collapse">
                         <!-- Main navigation -->
                         <ul class="nav navbar-nav">
-                            <li >
-                                <a href="../..">GettingStarted</a>
-                            </li>
-                            <li >
-                                <a href="../../IQRFBB10-Datasheet/">Datasheet</a>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">GettingStarted <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../..">Getting Started with IQRFBB-10</a>
+</li>
+                                    
+<li >
+    <a href="../../Examples/">Examples</a>
+</li>
+                                    
+<li >
+    <a href="../../IQRFBB10-Datasheet/">Data Sheet</a>
+</li>
+                                    
+<li >
+    <a href="http://logimic.com/iqrfboard/index.html#pricing-tables2-16">Buy</a>
+</li>
+                                </ul>
                             </li>
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">IQRF Network <b class="caret"></b></a>
@@ -64,9 +79,6 @@
     <a href="../../IqrfGatewayDaemon/">IQRF Gateway Daemon</a>
 </li>
                                 </ul>
-                            </li>
-                            <li >
-                                <a href="../">Examples</a>
                             </li>
                             <li >
                                 <a href="../../About/">About</a>
@@ -342,5 +354,5 @@ asyncio.get_event_loop().run_until_complete(hello())
 
 <!--
 MkDocs version : 1.0.4
-Build Date UTC : 2019-01-05 09:56:03
+Build Date UTC : 2019-01-05 23:28:00
 -->

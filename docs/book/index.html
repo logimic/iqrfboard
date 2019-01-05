@@ -4,11 +4,11 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="None">
+        
         <meta name="author" content="Logimic">
         <link rel="canonical" href="http://logimic.com/iqrfboard/book/">
         <link rel="shortcut icon" href="img/favicon.ico">
-        <title>IQRFBB-10</title>
+        <title>Getting Started with IQRFBB-10 - IQRFBB-10</title>
         <link href="css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="css/font-awesome.min.css" rel="stylesheet">
         <link href="css/base.css" rel="stylesheet">
@@ -25,7 +25,7 @@
         <script>hljs.initHighlightingOnLoad();</script> 
     </head>
 
-    <body class="homepage">
+    <body>
 
         <div class="navbar navbar-default navbar-fixed-top" role="navigation">
             <div class="container">
@@ -46,11 +46,26 @@
                 <div class="navbar-collapse collapse">
                         <!-- Main navigation -->
                         <ul class="nav navbar-nav">
-                            <li class="active">
-                                <a href=".">GettingStarted</a>
-                            </li>
-                            <li >
-                                <a href="IQRFBB10-Datasheet/">Datasheet</a>
+                            <li class="dropdown active">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">GettingStarted <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li class="active">
+    <a href=".">Getting Started with IQRFBB-10</a>
+</li>
+                                    
+<li >
+    <a href="Examples/">Examples</a>
+</li>
+                                    
+<li >
+    <a href="IQRFBB10-Datasheet/">Data Sheet</a>
+</li>
+                                    
+<li >
+    <a href="http://logimic.com/iqrfboard/index.html#pricing-tables2-16">Buy</a>
+</li>
+                                </ul>
                             </li>
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">IQRF Network <b class="caret"></b></a>
@@ -64,9 +79,6 @@
     <a href="IqrfGatewayDaemon/">IQRF Gateway Daemon</a>
 </li>
                                 </ul>
-                            </li>
-                            <li >
-                                <a href="examples/">Examples</a>
                             </li>
                             <li >
                                 <a href="About/">About</a>
@@ -88,7 +100,7 @@
                                 </a>
                             </li>
                             <li >
-                                <a rel="prev" href="IQRFBB10-Datasheet/">
+                                <a rel="prev" href="Examples/">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -126,11 +138,14 @@ If you are satisfied with such working device scale IQRFBB-10 layout to final pr
 </ul>
 <h2 id="links">Links</h2>
 <ul>
-<li><a href="http://logimic.com/iqrfboard">IQRFBB-10 Presentation &amp; Orders</a></li>
+<li><a href="http://logimic.com/iqrfboard">IQRFBB-10 Presentation &amp; Buy</a></li>
 <li><a href="https://github.com/logimic/iqrfboard">IQRFBB-10 GitHub pages</a></li>
-<li><a href="files/datasheet/IQRFBB10-Datasheet.pdf">IQRFBB-10 Data Sheet</a></li>
-<li><a href="files/datasheet/IQRFBB10-Connectors.pdf">IQRFBB-10 Board Schema</a></li>
-<li><a href="files/datasheet/IQRFBB10_doc_sch.pdf">IQRFBB-10 Hardware Drawing</a></li>
+<li><a href="IQRFBB10-Datasheet/">IQRFBB-10 Data Sheet</a><ul>
+<li><a href="files/datasheet/IQRFBB10-Datasheet.pdf">IQRFBB-10 Data Sheet (pdf)</a></li>
+<li><a href="files/datasheet/IQRFBB10-Connectors.pdf">IQRFBB-10 Board Schema (pdf)</a></li>
+<li><a href="files/datasheet/IQRFBB10_doc_sch.pdf">IQRFBB-10 Hardware Drawing (pdf)</a></li>
+</ul>
+</li>
 <li><a href="https://iqrf.org/products/transceivers/tr-76d">TR-76D Transciever</a><ul>
 <li><a href="http://iqrf.org/weben/downloads.php?id=441">TR-76D Datasheet</a></li>
 </ul>
@@ -246,7 +261,7 @@ If you are satisfied with such working device scale IQRFBB-10 layout to final pr
 </li>
 </ol>
 <h2 id="examples">Examples</h2>
-<p>Now we can make from IQRFBB-10 any wireless sensor or actuator by wiring proper sensor or actuators. Let's continue to <a href="examples/">our examples</a></p></div>
+<p>Now we can make from IQRFBB-10 any wireless sensor or actuator by wiring proper sensor or actuators. Let's continue to <a href="Examples/">our examples</a></p></div>
         </div>
 
         <footer class="col-md-12">
@@ -327,8 +342,3 @@ If you are satisfied with such working device scale IQRFBB-10 layout to final pr
 
     </body>
 </html>
-
-<!--
-MkDocs version : 1.0.4
-Build Date UTC : 2019-01-05 09:56:03
--->

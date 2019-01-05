@@ -4,11 +4,11 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="None">
+        
         <meta name="author" content="Logimic">
-        <link rel="canonical" href="http://logimic.com/iqrfboard/book/examples/">
+        <link rel="canonical" href="http://logimic.com/iqrfboard/book/Examples/">
         <link rel="shortcut icon" href="../img/favicon.ico">
-        <title>IQRFBB-10</title>
+        <title>Examples - IQRFBB-10</title>
         <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../css/font-awesome.min.css" rel="stylesheet">
         <link href="../css/base.css" rel="stylesheet">
@@ -25,7 +25,7 @@
         <script>hljs.initHighlightingOnLoad();</script> 
     </head>
 
-    <body class="homepage">
+    <body>
 
         <div class="navbar navbar-default navbar-fixed-top" role="navigation">
             <div class="container">
@@ -46,11 +46,26 @@
                 <div class="navbar-collapse collapse">
                         <!-- Main navigation -->
                         <ul class="nav navbar-nav">
-                            <li >
-                                <a href="..">GettingStarted</a>
-                            </li>
-                            <li >
-                                <a href="../IQRFBB10-Datasheet/">Datasheet</a>
+                            <li class="dropdown active">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">GettingStarted <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="..">Getting Started with IQRFBB-10</a>
+</li>
+                                    
+<li class="active">
+    <a href="./">Examples</a>
+</li>
+                                    
+<li >
+    <a href="../IQRFBB10-Datasheet/">Data Sheet</a>
+</li>
+                                    
+<li >
+    <a href="http://logimic.com/iqrfboard/index.html#pricing-tables2-16">Buy</a>
+</li>
+                                </ul>
                             </li>
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">IQRF Network <b class="caret"></b></a>
@@ -64,9 +79,6 @@
     <a href="../IqrfGatewayDaemon/">IQRF Gateway Daemon</a>
 </li>
                                 </ul>
-                            </li>
-                            <li class="active">
-                                <a href="./">Examples</a>
                             </li>
                             <li >
                                 <a href="../About/">About</a>
@@ -83,12 +95,12 @@
                             </a>
                         </li>
                             <li >
-                                <a rel="next" href="../IqrfGatewayDaemon/">
+                                <a rel="next" href="..">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li >
-                                <a rel="prev" href="../About/">
+                                <a rel="prev" href="../IQRFBB10-Datasheet/">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -100,59 +112,69 @@
         <div class="container">
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-        <li class="main active"><a href="#examples">Examples</a></li>
+        <li class="main active"><a href="#basic-examples">Basic examples</a></li>
             <li><a href="#1-led2-led3-on-board">1. LED2, LED3 on board</a></li>
-            <li><a href="#2-standard-light">2. Standard Light</a></li>
-            <li><a href="#3-digital-output">3. Digital Output</a></li>
-            <li><a href="#4-digital-input">4. Digital Input</a></li>
-            <li><a href="#5-hall-magnetic-sensor">5. Hall Magnetic Sensor</a></li>
-            <li><a href="#6-motion-detection-epir">6. Motion detection (ePir)</a></li>
-            <li><a href="#7-bi-stable-relay-on-board">7. Bi-stable relay on board</a></li>
-            <li><a href="#8-htu21d-temp-humidity">8. HTU21D - Temp &amp; Humidity</a></li>
-            <li><a href="#9-gy-bme280-temp-baro">9. GY-BME280 - Temp &amp; Baro</a></li>
-            <li><a href="#10-ambient-light-sensor">10. Ambient Light Sensor</a></li>
+            <li><a href="#2-digital-output">2. Digital Output</a></li>
+            <li><a href="#3-digital-input">3. Digital Input</a></li>
+        <li class="main "><a href="#standard-things">Standard Things</a></li>
+            <li><a href="#1-standard-light">1. Standard Light</a></li>
+            <li><a href="#2-standard-binary-output">2. Standard Binary Output</a></li>
+        <li class="main "><a href="#others">Others..</a></li>
+            <li><a href="#1-hall-magnetic-sensor">1. Hall Magnetic Sensor</a></li>
+            <li><a href="#2-motion-detection-epir">2. Motion detection (ePir)</a></li>
+            <li><a href="#3-bi-stable-relay-on-board">3. Bi-stable relay on board</a></li>
+            <li><a href="#4-htu21d-temp-humidity">4. HTU21D - Temp &amp; Humidity</a></li>
+            <li><a href="#5-gy-bme280-temp-baro">5. GY-BME280 - Temp &amp; Baro</a></li>
+            <li><a href="#6-ambient-light-sensor">6. Ambient Light Sensor</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
-<h1 id="examples">Examples</h1>
-<h4 id="1-led2-led3-on-board">1. LED2, LED3 on board</h4>
-<p><img src="../files/images/iqrfboard.png" width="130"></p>
-<p>First hello world example which turns on/off RED and GREEN diods on the IQRFBB-10 board.</p>
-<p><a href="example-led23">Enter example...</a></p>
-<h3 id="2-standard-light">2. Standard Light</h3>
-<p><img src="../files/images/iqrfboard.png" width="130"></p>
-<p>This example shows how to create "Standard light" from your board which means that entire world will know that your device is just a light and will be able to manage it (turn on/off, dim, get status and more). Your hardware design on the top of board is not limited...</p>
-<p><a href="example-standardLight">Enter example...</a></p>
-<h3 id="3-digital-output">3. Digital Output</h3>
-<p><img src="./example-do/example-do.jpg" width="130"></p>
-<p>This example shows how to set HI/LO digital output. The DO has connected external LED.</p>
-<p><a href="example-do">Enter example..</a></p>
-<h3 id="4-digital-input">4. Digital Input</h3>
-<p><img src="./example-di/example-di.jpg" width="130"></p>
-<p>This example explains how to detect digital input on board PIN.</p>
-<p><a href="example-di">Enter example...</a>,</p>
-<h3 id="5-hall-magnetic-sensor">5. Hall Magnetic Sensor</h3>
-<p><img src="./example-hall/hall.png" width="130"></p>
+<h1 id="basic-examples">Basic examples</h1>
+<h2 id="1-led2-led3-on-board">1. LED2, LED3 on board</h2>
+<p><img alt="" src="../files/images/iqrfboard_120x100.png" /></p>
+<p>First hello world example which turns on/off RED and GREEN diods on the IQRFBB-10 board.
+<a href="/examples/example-led23">Enter example...</a></p>
+<h2 id="2-digital-output">2. Digital Output</h2>
+<p><img alt="" src="../examples/example-do/example-do-120x90.png" /></p>
+<p>This example shows how to set HI/LO digital output. The DO has connected external LED.
+<a href="/examples/example-do">Enter example..</a></p>
+<h2 id="3-digital-input">3. Digital Input</h2>
+<p><img alt="" src="../examples/example-di/example-di-120x90.png" /></p>
+<p>This example explains how to detect digital input on board PIN.
+<a href="/examples/example-di">Enter example...</a>,</p>
+<h1 id="standard-things">Standard Things</h1>
+<p>Standard things have pre-defined JSON API and all IQRF gateways know them.  If you implement your device in TR module as <strong>Standard Light</strong>, <strong>Standard Binary Output</strong>, <strong>Standard Sensor</strong> and more you have ensured compatibility of your device with IOT world.</p>
+<h2 id="1-standard-light">1. Standard Light</h2>
+<p><img alt="" src="../files/images/iqrfboard_120x100.png" /></p>
+<p>This example shows how to create "Standard light" from your board which means that entire world will know that your device is just a light and will be able to manage it (turn on/off, dim, get status and more). Your hardware design on the top of board is not limited.
+<a href="/examples/example-standardLight">Enter example...</a></p>
+<h2 id="2-standard-binary-output">2. Standard Binary Output</h2>
+<p><img alt="" src="../examples/example-standardBinOutput/example-standardBinOutput-120x90.png" /></p>
+<p>This example shows how to create one or more standard binary outputs on the board.
+<a href="/examples/example-standardBinOutput">Enter example..</a></p>
+<h1 id="others">Others..</h1>
+<h2 id="1-hall-magnetic-sensor">1. Hall Magnetic Sensor</h2>
+<p><img alt="" src="../examples/example-hall/example-hall-120x90.png" /></p>
 <p><a href="example-hall">/example-hall</a>, this example shows how to connect Hall Magentic Sensor with the board and detect event.</p>
-<h3 id="6-motion-detection-epir">6. Motion detection (ePir)</h3>
-<p><img src="./example-ePir/epir.png" width="130"></p>
+<h2 id="2-motion-detection-epir">2. Motion detection (ePir)</h2>
+<p><img alt="" src="../examples/example-ePir/epir-120x90.png" /></p>
 <p><a href="example-ePir">/example-ePir</a>, this example shows how to connect motion sensor ePir to the board and detect event.</p>
-<h3 id="7-bi-stable-relay-on-board">7. Bi-stable relay on board</h3>
-<p><img src="../files/images/iqrfboard.png" width="130"></p>
+<h2 id="3-bi-stable-relay-on-board">3. Bi-stable relay on board</h2>
+<p><img alt="" src="../files/images/iqrfboard_120x100.png" /></p>
 <p><a href="example-bistable-relay">/example-bistable-relay</a>, this example shows how to switch bi-stable relay on board.</p>
-<h3 id="8-htu21d-temp-humidity">8. HTU21D - Temp &amp; Humidity</h3>
-<p><img src="example-HTU21D/HTU21D.jpg" width="130"></p>
+<h2 id="4-htu21d-temp-humidity">4. HTU21D - Temp &amp; Humidity</h2>
+<p><img alt="" src="../examples/example-HTU21D/HTU21D-120x90.png" /></p>
 <p>Comming soon HTU21D...</p>
 <p><a href="example-HTU21D">/example-HTU21D</a>, this example shows how to connect HTU21D Temperature and Humidity sensor to board.</p>
-<h3 id="9-gy-bme280-temp-baro">9. GY-BME280 - Temp &amp; Baro</h3>
-<p><img src="example-GY-BME280/GY-BME280.jpg" width="130"></p>
+<h2 id="5-gy-bme280-temp-baro">5. GY-BME280 - Temp &amp; Baro</h2>
+<p><img alt="" src="../examples/example-GY-BME280/GY-BME280-120x90.png" /></p>
 <p>Comming soon GY-BME280...
 <!--
 <a href="example-GY-BME280">/example-GY-BME280</a>, this example shows how to connect GY-BME280 Temperature and Barometric pressure sensor to board.
 --></p>
-<h3 id="10-ambient-light-sensor">10. Ambient Light Sensor</h3>
-<p><img src="example-GY-49/GY49.jpg" width="130"></p>
+<h2 id="6-ambient-light-sensor">6. Ambient Light Sensor</h2>
+<p><img alt="" src="../examples/example-GY-49/GY49-120x90.png" /></p>
 <p>Comming soon GY49...
 <!--
 <a href="example-GY-49">/example-GY-49</a>, this example shows how to connect GY-BME280 Temperature and Barometric pressure sensor to board.
@@ -237,8 +259,3 @@
 
     </body>
 </html>
-
-<!--
-MkDocs version : 1.0.4
-Build Date UTC : 2019-01-05 09:56:03
--->

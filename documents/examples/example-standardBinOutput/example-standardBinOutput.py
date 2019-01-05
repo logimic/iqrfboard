@@ -37,14 +37,49 @@ BINOUT_ENUM = {
   }
 }
 
-BINOUT1_ON = {
+ALL_OFF = {
   "mType": "iqrfBinaryoutput_SetOutput",
   "data": {
     "msgId": "testEmbedBout",
     "req": {
       "nAdr": boardAddr,
       "param": {
-        "binOuts": [
+        "binouts": [
+          {
+            "index": 0,
+            "state": False
+          },
+          {
+            "index": 1,
+            "state": False
+          },
+          {
+            "index": 2,
+            "state": False
+          },
+          {
+            "index": 3,
+            "state": False
+          },
+          {
+            "index": 4,
+            "state": False
+          }                                        
+        ]
+      }
+    },
+    "returnVerbose": True
+  }
+}
+
+LED3_ON = {
+  "mType": "iqrfBinaryoutput_SetOutput",
+  "data": {
+    "msgId": "testEmbedBout",
+    "req": {
+      "nAdr": boardAddr,
+      "param": {
+        "binouts": [
           {
             "index": 0,
             "state": True
@@ -56,14 +91,14 @@ BINOUT1_ON = {
   }
 }
 
-BINOUT1_OFF = {
+LED3_OFF = {
   "mType": "iqrfBinaryoutput_SetOutput",
   "data": {
     "msgId": "testEmbedBout",
     "req": {
       "nAdr": boardAddr,
       "param": {
-        "binOuts": [
+        "binouts": [
           {
             "index": 0,
             "state": False
@@ -75,14 +110,14 @@ BINOUT1_OFF = {
   }
 }
 
-BINOUT2_ON = {
+LED2_ON = {
   "mType": "iqrfBinaryoutput_SetOutput",
   "data": {
     "msgId": "testEmbedBout",
     "req": {
       "nAdr": boardAddr,
       "param": {
-        "binOuts": [
+        "binouts": [
           {
             "index": 1,
             "state": True
@@ -94,18 +129,102 @@ BINOUT2_ON = {
   }
 }
 
-BINOUT2_OFF = {
+LED2_OFF = {
   "mType": "iqrfBinaryoutput_SetOutput",
   "data": {
     "msgId": "testEmbedBout",
     "req": {
       "nAdr": boardAddr,
       "param": {
-        "binOuts": [
+        "binouts": [
           {
             "index": 1,
             "state": False
           }
+        ]
+      }
+    },
+    "returnVerbose": True
+  }
+}
+
+RELAY_ON = {
+  "mType": "iqrfBinaryoutput_SetOutput",
+  "data": {
+    "msgId": "testEmbedBout",
+    "req": {
+      "nAdr": boardAddr,
+      "param": {
+        "binouts": [
+          {
+            "index": 2,
+            "state": True
+          },
+          {
+            "index": 3,
+            "state": False
+          }          
+        ]
+      }
+    },
+    "returnVerbose": True
+  }
+}
+
+RELAY_OFF = {
+  "mType": "iqrfBinaryoutput_SetOutput",
+  "data": {
+    "msgId": "testEmbedBout",
+    "req": {
+      "nAdr": boardAddr,
+      "param": {
+        "binouts": [
+          {
+            "index": 2,
+            "state": False
+          },
+          {
+            "index": 3,
+            "state": True
+          }          
+        ]
+      }
+    },
+    "returnVerbose": True
+  }
+}
+
+LED_ON = {
+  "mType": "iqrfBinaryoutput_SetOutput",
+  "data": {
+    "msgId": "testEmbedBout",
+    "req": {
+      "nAdr": boardAddr,
+      "param": {
+        "binouts": [
+          {
+            "index": 4,
+            "state": True
+          }        
+        ]
+      }
+    },
+    "returnVerbose": True
+  }
+}
+
+LED_OFF = {
+  "mType": "iqrfBinaryoutput_SetOutput",
+  "data": {
+    "msgId": "testEmbedBout",
+    "req": {
+      "nAdr": boardAddr,
+      "param": {
+        "binouts": [
+          {
+            "index": 4,
+            "state": False
+          }        
         ]
       }
     },
@@ -126,46 +245,102 @@ async def hello():
         print(f"Received < {response}")         
 
         data = json.loads(response)
-        numOuts = 0; # data["data"]["rsp"]["result"]["binOuts"]
+        numOuts = data["data"]["rsp"]["result"]["binouts"]
         
         print("-------------------------------------")
-        print(f"Node has implemented {numOuts} ligts!")
+        print(f"Node has implemented {numOuts} binary outputs!")
         print("-------------------------------------")
         print("wait...")
 
         # Wait 3 sec
         time.sleep(3)
 
-        # 
-        await websocket.send(json.dumps(BINOUT1_ON))
-        print(f"Sent > {BINOUT1_ON}")
+        # Set all DO as LO
+        await websocket.send(json.dumps(ALL_OFF))
+        print(f"Sent > {ALL_OFF}")
+
+        response = await websocket.recv()
+        print(f"Received < {response}")        
+
+        # Set LED2 as HI
+        await websocket.send(json.dumps(LED2_ON))
+        print(f"Sent > {LED2_ON}")
 
         response = await websocket.recv()
         print(f"Received < {response}")
 
-        # 
-        await websocket.send(json.dumps(BINOUT2_OFF))
-        print(f"Sent > {BINOUT2_OFF}")
-
-        response = await websocket.recv()
-        print(f"Received < {response}")        
-
+        print("\n---> LED2 is ON")
 
         # Wait 2 sec
         time.sleep(2)
-                
-        # 
-        await websocket.send(json.dumps(BINOUT1_OFF))
-        print(f"Sent > {BINOUT1_OFF}")
+
+        # Set LED2 as LO
+        await websocket.send(json.dumps(LED2_OFF))
+        print(f"Sent > {LED2_OFF}")
 
         response = await websocket.recv()
         print(f"Received < {response}")        
+                
+        # LED3 = HI
+        await websocket.send(json.dumps(LED3_ON))
+        print(f"Sent > {LED3_ON}")
 
-        # 
-        await websocket.send(json.dumps(BINOUT2_ON))
-        print(f"Sent > {BINOUT2_ON}")
+        response = await websocket.recv()
+        print(f"Received < {response}")   
+
+        print("\n---> LED3 is ON")        
+        
+        # Wait 2 sec
+        time.sleep(2)             
+
+        # LED3 = LO
+        await websocket.send(json.dumps(LED3_OFF))
+        print(f"Sent > {LED3_OFF}")
+
+        response = await websocket.recv()
+        print(f"Received < {response}")  
+
+        await websocket.send(json.dumps(RELAY_OFF))
+        print(f"Sent > {RELAY_OFF}")
+
+        response = await websocket.recv()
+        print(f"Received < {response}")      
+
+        await websocket.send(json.dumps(RELAY_ON))
+        print(f"Sent > {RELAY_ON}")
+
+        response = await websocket.recv()
+        print(f"Received < {response}")     
+
+        print("\n---> Now bi-stable relay")
+
+        # Wait 2 sec
+        time.sleep(2)      
+
+        await websocket.send(json.dumps(RELAY_OFF))
+        print(f"Sent > {RELAY_OFF}")
 
         response = await websocket.recv()
         print(f"Received < {response}")         
+        
+        # Wait 2 sec
+        time.sleep(2)    
+
+        await websocket.send(json.dumps(LED_ON))
+        print(f"Sent > {LED_ON}")
+
+        response = await websocket.recv()
+        print(f"Received < {response}")    
+
+        print("\n---> Now plays SCL/EQ13 out with external LED...")
+
+        # Wait 2 sec
+        time.sleep(5)    
+
+        await websocket.send(json.dumps(LED_OFF))
+        print(f"Sent > {LED_OFF}")
+
+        response = await websocket.recv()
+        print(f"Received < {response}")   
 
 asyncio.get_event_loop().run_until_complete(hello())

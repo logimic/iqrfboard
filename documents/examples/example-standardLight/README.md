@@ -27,12 +27,11 @@ No hardware wiring needed, lights will be demonstrated by LED2 and LED3.
 The [example-standardLight.c](example-standardLight.c) implements two lights on LED2 and LED3 outputs.
 Please load this "Custom DPA Handler" to TR module on board. [Load Custom DPA Handler](../../SetupIqrfNetwork.md#load-custom-dpa-handler) manual.
 
-
 ## API JSON message
 
 Since we implemented standard light we can use standardized JSON messages for [management of Lights](https://docs.iqrfsdk.org/iqrf-gateway-daemon/api.html#light) via JSON API of gateways.
 
-#### Python code
+## Testing Python code
 
 The [example-standardLight.py](example-standardLight.py) turns RED LED on, waits 2 seconds, then turns RED LED off and GREEN LED on, then after 2 seconds turns GREEN LED off.
 

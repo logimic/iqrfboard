@@ -6,11 +6,13 @@ site_author: Logimic
 copyright: Copyright 2018, All rights reserved, Logimic, s.r.o.
 
 nav:
-- GettingStarted: README.md
-- Datasheet: IQRFBB10-Datasheet.md
+- GettingStarted:
+  - Getting Started with IQRFBB-10: README.md
+  - Examples: Examples.md
+  - Data Sheet: IQRFBB10-Datasheet.md
+  - Buy: http://logimic.com/iqrfboard/index.html#pricing-tables2-16
 - IQRF Network:
   - Setup IQRF Network: SetupIqrfNetwork.md
   - IQRF Gateway Daemon: IqrfGatewayDaemon.md
-- Examples: examples/README.md
 - About: About.md
 - GitHub Repo: https://github.com/logimic/iqrfboard

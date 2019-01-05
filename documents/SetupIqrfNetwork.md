@@ -14,6 +14,7 @@ The best start with IQRF is with their **DS-START-04** development kit. It helps
 * [...check for updates ](https://iqrf.org/products/ds-start-04)
 * [TR-76D Datasheet](http://iqrf.org/weben/downloads.php?id=441)
 * [DPA Framework on-line](https://www.iqrf.org/DpaTechGuide/)
+* [IQRF Standards](* [IQRF Standards](https://www.iqrfalliance.org/techDocs/))
 
 ## Install IDE
 

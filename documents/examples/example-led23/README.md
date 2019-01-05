@@ -5,26 +5,29 @@ This example turns RED LED on, waits 2 seconds, then turns RED LED off and GREEN
 ## Links
 
 * [IQRFBB-10 Datasheet](../../IQRFBB10-Datasheet.md)
+* [IQRF Gateway Daemon Documentation](https://docs.iqrfsdk.org/iqrf-gateway-daemon/index.html)
 
 ## Prerequisities
 
-1. **IQRFBB-10** bonded in working IQRF network. More in [GettingStarted with IQRFBB-10](https://github.com/logimic/iqrfboard/wiki)
-2. **IQRF Gateway Daemon** running. More in [IQRF Gateway Daemon](https://github.com/logimic/iqrfboard/wiki/IQRF-Gateway-Daemon)
-3. **Python 3.6 with WebSockets module**. More in [Python 3.6 WbSockets example](https://github.com/logimic/iqrfboard/wiki/Get-IQRF-with-your-software#python-36-websocket-example)
+1. **IQRFBB-10** bonded in working IQRF network. More in [Getting Started](../../README.md)
+2. **IQRF Gateway Daemon** working. More in [IQRF Gateway Daemon](../../IqrfGatewayDaemon.md)
+3. **Python 3.6 with WebSockets module**. More in [Python WebSockets example](../../IqrfGatewayDaemon.md#python-websocket-example)
 
 ## Hardware wiring
 
 ![](../../files/datasheet/layout.png)
 
-No hardware wiring needed, both LED2 and LED3 are mounted on the board and connected to C1 and C2. See. [Documentation](https://github.com/logimic/iqrfboard/wiki/Getting-Started-with-IQRFBB-10#iqrfbb-10-documentation)
+No hardware wiring needed, both LED2 and LED3 are mounted on the board and connected to C1 and C2.
 
 ## Software
 
-We use Standard DPA handler already loaded in board TR module.
+### A. Embedded JSON messages
 
-### API JSON message
+We use standard DPA handler already loaded in board TR module.
 
-We can manage diods via sending [Daemon JSON API](https://docs.iqrfsdk.org/iqrf-gateway-daemon/) messages.
+#### API JSON message
+
+We can manage diods via sending [Daemon JSON API](https://docs.iqrfsdk.org/iqrf-gateway-daemon/api.html) messages.
 
 * LD2 (Green DIOD) ON/OFF
   * [Set LEDG request v1-0-0](https://apidocs.iqrf.org/iqrf-gateway-daemon/json/#iqrf/iqrfEmbedLedg_Set-request-1-0-0.json), [..example](https://apidocs.iqrf.org/iqrf-gateway-daemon/json/iqrf/examples/iqrfEmbedLedg_Set-request-1-0-0-example.json)
@@ -36,7 +39,8 @@ We can manage diods via sending [Daemon JSON API](https://docs.iqrfsdk.org/iqrf-
 
 ### Testing Software
 
-The [example-led23.py](example-led23.py) script also prints sent and received JSON messages
+The [example-led23.py](example-led23.py) script also prints sent and received JSON messages.
+**Note:** Parameter **boardAddr** must be IQRFBB-10 node address in IQRF network.
 
 ```py
 #

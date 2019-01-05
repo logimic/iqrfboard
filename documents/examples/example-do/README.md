@@ -2,17 +2,18 @@
 
 ![](example-do.jpg)
 
-This example shows how to set DO on board. We will power EQ6 (X10 SCL) pin.
+This example shows how to set EQ6 (X10 SCL) pin of the board.
 
 ## Links
 
 * [IQRFBB-10 Datasheet](../../IQRFBB10-Datasheet.md)
+* [IQRF Gateway Daemon Documentation](https://docs.iqrfsdk.org/iqrf-gateway-daemon/index.html)
 
 ## Prerequisities
 
-1. **IQRFBB-10** bonded in working IQRF network. More in [GettingStarted with IQRFBB-10](https://github.com/logimic/iqrfboard/wiki)
-2. **IQRF Gateway Daemon** running. More in [IQRF Gateway Daemon](https://github.com/logimic/iqrfboard/wiki/IQRF-Gateway-Daemon)
-3. **Python 3.6 with WebSockets module**. More in [Python 3.6 WbSockets example](https://github.com/logimic/iqrfboard/wiki/Get-IQRF-with-your-software#python-36-websocket-example)
+1. **IQRFBB-10** bonded in working IQRF network. More in [Getting Started](../../README.md)
+2. **IQRF Gateway Daemon** working. More in [IQRF Gateway Daemon](../../IqrfGatewayDaemon.md)
+3. **Python 3.6 with WebSockets module**. More in [Python WebSockets example](../../IqrfGatewayDaemon.md#python-websocket-example)
 
 ## Hardware wiring
 
@@ -24,13 +25,13 @@ _Fig.: IQRFBB10 schema_
 
 _Fig.: External LED wiring_
 
-Connect EQ13 and GRN pins via button.
+Connect SCL and GRN pins via button.
 
 ## Software
 
 * We use Standard DPA handler already loaded in board TR module.
 * Testing software:
-  - Set EQ6 (X10 SCL) as DO. EQ16 is **Q6, C6/RC3** genral I/O pin on TR-76DA.
+  - Set EQ6 (X10 SCL) as DO. EQ6 is **Q6, C6/RC3** genral I/O pin on TR-76DA.
   - Set pin HI
   - Wait 3sec
   - Set pin LO
@@ -126,7 +127,6 @@ RC3_OFF = {
     "returnVerbose": True
   }
 }
-
 
 async def hello():
     # Connect websockets

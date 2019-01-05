@@ -101,28 +101,29 @@
 
 <h1 id="digital-output">Digital Output</h1>
 <p><img alt="" src="example-do.jpg" /></p>
-<p>This example shows how to set DO on board. We will power EQ6 (X10 SCL) pin.</p>
+<p>This example shows how to set EQ6 (X10 SCL) pin of the board.</p>
 <h2 id="links">Links</h2>
 <ul>
 <li><a href="../../IQRFBB10-Datasheet/">IQRFBB-10 Datasheet</a></li>
+<li><a href="https://docs.iqrfsdk.org/iqrf-gateway-daemon/index.html">IQRF Gateway Daemon Documentation</a></li>
 </ul>
 <h2 id="prerequisities">Prerequisities</h2>
 <ol>
-<li><strong>IQRFBB-10</strong> bonded in working IQRF network. More in <a href="https://github.com/logimic/iqrfboard/wiki">GettingStarted with IQRFBB-10</a></li>
-<li><strong>IQRF Gateway Daemon</strong> running. More in <a href="https://github.com/logimic/iqrfboard/wiki/IQRF-Gateway-Daemon">IQRF Gateway Daemon</a></li>
-<li><strong>Python 3.6 with WebSockets module</strong>. More in <a href="https://github.com/logimic/iqrfboard/wiki/Get-IQRF-with-your-software#python-36-websocket-example">Python 3.6 WbSockets example</a></li>
+<li><strong>IQRFBB-10</strong> bonded in working IQRF network. More in <a href="../..">Getting Started</a></li>
+<li><strong>IQRF Gateway Daemon</strong> working. More in <a href="../../IqrfGatewayDaemon/">IQRF Gateway Daemon</a></li>
+<li><strong>Python 3.6 with WebSockets module</strong>. More in <a href="../../IqrfGatewayDaemon/#python-websocket-example">Python WebSockets example</a></li>
 </ol>
 <h2 id="hardware-wiring">Hardware wiring</h2>
 <p><img alt="" src="../../files/datasheet/layout.png" /></p>
 <p><em>Fig.: IQRFBB10 schema</em></p>
 <p><img alt="" src="example-do_bb.png" /></p>
 <p><em>Fig.: External LED wiring</em></p>
-<p>Connect EQ13 and GRN pins via button.</p>
+<p>Connect SCL and GRN pins via button.</p>
 <h2 id="software">Software</h2>
 <ul>
 <li>We use Standard DPA handler already loaded in board TR module.</li>
 <li>Testing software:</li>
-<li>Set EQ6 (X10 SCL) as DO. EQ16 is <strong>Q6, C6/RC3</strong> genral I/O pin on TR-76DA.</li>
+<li>Set EQ6 (X10 SCL) as DO. EQ6 is <strong>Q6, C6/RC3</strong> genral I/O pin on TR-76DA.</li>
 <li>Set pin HI</li>
 <li>Wait 3sec</li>
 <li>Set pin LO</li>
@@ -247,7 +248,6 @@ RC3_OFF = {
   }
 }
 
-
 async def hello():
     # Connect websockets
     async with websockets.connect(
@@ -364,5 +364,5 @@ asyncio.get_event_loop().run_until_complete(hello())
 
 <!--
 MkDocs version : 1.0.4
-Build Date UTC : 2018-12-28 23:57:19
+Build Date UTC : 2019-01-05 09:56:03
 -->

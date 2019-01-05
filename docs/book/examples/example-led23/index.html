@@ -104,20 +104,22 @@
 <h2 id="links">Links</h2>
 <ul>
 <li><a href="../../IQRFBB10-Datasheet/">IQRFBB-10 Datasheet</a></li>
+<li><a href="https://docs.iqrfsdk.org/iqrf-gateway-daemon/index.html">IQRF Gateway Daemon Documentation</a></li>
 </ul>
 <h2 id="prerequisities">Prerequisities</h2>
 <ol>
-<li><strong>IQRFBB-10</strong> bonded in working IQRF network. More in <a href="https://github.com/logimic/iqrfboard/wiki">GettingStarted with IQRFBB-10</a></li>
-<li><strong>IQRF Gateway Daemon</strong> running. More in <a href="https://github.com/logimic/iqrfboard/wiki/IQRF-Gateway-Daemon">IQRF Gateway Daemon</a></li>
-<li><strong>Python 3.6 with WebSockets module</strong>. More in <a href="https://github.com/logimic/iqrfboard/wiki/Get-IQRF-with-your-software#python-36-websocket-example">Python 3.6 WbSockets example</a></li>
+<li><strong>IQRFBB-10</strong> bonded in working IQRF network. More in <a href="../..">Getting Started</a></li>
+<li><strong>IQRF Gateway Daemon</strong> working. More in <a href="../../IqrfGatewayDaemon/">IQRF Gateway Daemon</a></li>
+<li><strong>Python 3.6 with WebSockets module</strong>. More in <a href="../../IqrfGatewayDaemon/#python-websocket-example">Python WebSockets example</a></li>
 </ol>
 <h2 id="hardware-wiring">Hardware wiring</h2>
 <p><img alt="" src="../../files/datasheet/layout.png" /></p>
-<p>No hardware wiring needed, both LED2 and LED3 are mounted on the board and connected to C1 and C2. See. <a href="https://github.com/logimic/iqrfboard/wiki/Getting-Started-with-IQRFBB-10#iqrfbb-10-documentation">Documentation</a></p>
+<p>No hardware wiring needed, both LED2 and LED3 are mounted on the board and connected to C1 and C2.</p>
 <h2 id="software">Software</h2>
-<p>We use Standard DPA handler already loaded in board TR module.</p>
-<h3 id="api-json-message">API JSON message</h3>
-<p>We can manage diods via sending <a href="https://docs.iqrfsdk.org/iqrf-gateway-daemon/">Daemon JSON API</a> messages.</p>
+<h3 id="a-embedded-json-messages">A. Embedded JSON messages</h3>
+<p>We use standard DPA handler already loaded in board TR module.</p>
+<h4 id="api-json-message">API JSON message</h4>
+<p>We can manage diods via sending <a href="https://docs.iqrfsdk.org/iqrf-gateway-daemon/api.html">Daemon JSON API</a> messages.</p>
 <ul>
 <li>LD2 (Green DIOD) ON/OFF</li>
 <li><a href="https://apidocs.iqrf.org/iqrf-gateway-daemon/json/#iqrf/iqrfEmbedLedg_Set-request-1-0-0.json">Set LEDG request v1-0-0</a>, <a href="https://apidocs.iqrf.org/iqrf-gateway-daemon/json/iqrf/examples/iqrfEmbedLedg_Set-request-1-0-0-example.json">..example</a></li>
@@ -131,7 +133,8 @@
 <li><a href="https://apidocs.iqrf.org/iqrf-gateway-daemon/json/#iqrf/iqrfEmbedLedr_Set-response-1-0-0.json">Set LEDR response v1-0-0</a>, <a href="https://apidocs.iqrf.org/iqrf-gateway-daemon/json/iqrf/examples/iqrfEmbedLedr_Set-response-1-0-0-example.json">..example</a></li>
 </ul>
 <h3 id="testing-software">Testing Software</h3>
-<p>The <a href="example-led23.py">example-led23.py</a> script also prints sent and received JSON messages</p>
+<p>The <a href="example-led23.py">example-led23.py</a> script also prints sent and received JSON messages.
+<strong>Note:</strong> Parameter <strong>boardAddr</strong> must be IQRFBB-10 node address in IQRF network.</p>
 <pre><code class="py">#
 # Copyright 2018 Logimic,s.r.o.
 # www.logimic.com
@@ -339,5 +342,5 @@ asyncio.get_event_loop().run_until_complete(hello())
 
 <!--
 MkDocs version : 1.0.4
-Build Date UTC : 2018-12-28 23:57:20
+Build Date UTC : 2019-01-05 09:56:03
 -->

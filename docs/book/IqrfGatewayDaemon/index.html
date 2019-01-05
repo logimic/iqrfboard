@@ -101,6 +101,7 @@
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
         <li class="main active"><a href="#iqrf-gateway-daemon">IQRF Gateway Daemon</a></li>
+            <li><a href="#links">Links</a></li>
             <li><a href="#run-daemon">Run Daemon</a></li>
             <li><a href="#websockets-json-api">WebSockets JSON API</a></li>
     </ul>
@@ -109,21 +110,19 @@
 
 <h1 id="iqrf-gateway-daemon">IQRF Gateway Daemon</h1>
 <p>IQRF network is hidden behind coordinator connected to your computer via USB, SPI, UART or other types of interface. Communication between your program and coordinator is ensured via <strong>IQRF Gateway Daemon</strong> software module.
-This is Open Source gateway piece of software for communicating (sending and receiving JSON API messages) with IQRF network. This is included in many IQRF gateways and you can also download it and build for your platform. In releases of this repo we prepared build for Win developers.</p>
+This is Open Source gateway piece of software for communicating (sending and receiving JSON API messages) with IQRF network. This is included in many IQRF gateways and you can also download it and build for your platform.</p>
+<h2 id="links">Links</h2>
 <ul>
-<li>Download sources: https://gitlab.iqrfsdk.org/gateway/iqrf-daemon</li>
-<li>Download releases: https://github.com/logimic/iqrfboard/releases</li>
-<li>Documentation: https://docs.iqrfsdk.org/iqrf-gateway-daemon/</li>
+<li><a href="https://gitlab.iqrfsdk.org/gateway/iqrf-daemon">IQRF Gateway Daemon Sources</a></li>
+<li><a href="https://github.com/logimic/iqrfboard/releases">IQRF Gateway Daemon Release for Win</a></li>
+<li><a href="https://docs.iqrfsdk.org/iqrf-gateway-daemon/">IQRF Gateway Daemon Documentation</a></li>
 </ul>
-<p>Demon provides many software interface channels:</p>
-<ul>
-<li>WebSockets</li>
-<li>MQTT</li>
-<li>MQ interprocess</li>
-</ul>
-<p>Every channel can be used for sending/receiving JSON API messages. Full API is described here: https://docs.iqrfsdk.org/iqrf-gateway-daemon/api.html</p>
 <h2 id="run-daemon">Run Daemon</h2>
-<p>Please follow instructions at releases: https://github.com/logimic/iqrfboard/releases</p>
+<p>You can run Daemon on any computer with Lin or Win platform where you have connected concentrator via USB or otherwise. The most simply way is to connect concentrator via USB to your local PC and run Daemon here.</p>
+<h3 id="windows-developers">Windows Developers</h3>
+<p>We prepared <a href="https://github.com/logimic/iqrfboard/releases">IQRF Gateway Daemon Release for Win</a>, please follow instruction how to install and start.</p>
+<h3 id="linux-developers">Linux Developers</h3>
+<p>Please install from packages as described in <a href="https://docs.iqrfsdk.org/iqrf-gateway-daemon/">IQRF Gateway Daemon Documentation</a>. After restart of your Linux machine Dameon will really run as "Daemon".</p>
 <h2 id="websockets-json-api">WebSockets JSON API</h2>
 <p>WebSockets port is opened during start o Daemon. The number of port is defined in <strong>IqrfDaemon\runcfg\iqrfgd2-WinCdc\configuration\iqrf__WebsocketMessaging.json</strong>.  You can change it, but please do not forget to restart Daemon then.</p>
 <h3 id="html-websocket-example">Html WebSocket example</h3>
@@ -148,30 +147,34 @@ This is Open Source gateway piece of software for communicating (sending and rec
 
 <ul>
 <li>Press <strong>Send</strong> in html page and see that this turned on the LED diod on concentrator module.</li>
-<li>Similar way you can turn LED off:
- ```json
-{
-  "mType": "iqrfEmbedLedg_Set",
-  "data": {
-    "msgId": "testEmbedLedr",
-    "req": {
-      "nAdr": 0,
-      "param": {
-        "onOff": false
+<li>Similar way you can turn LED off:</li>
+</ul>
+<pre><code class="json">{
+  &quot;mType&quot;: &quot;iqrfEmbedLedg_Set&quot;,
+  &quot;data&quot;: {
+    &quot;msgId&quot;: &quot;testEmbedLedr&quot;,
+    &quot;req&quot;: {
+      &quot;nAdr&quot;: 0,
+      &quot;param&quot;: {
+        &quot;onOff&quot;: false
       }
     },
-    "returnVerbose": true
+    &quot;returnVerbose&quot;: true
   }
-}</li>
-</ul>
-<pre><code>* Similarly for other nodes by changing **nAdr** parameter indicating the node address.
-* Full API description can be found here: https://docs.iqrfsdk.org/iqrf-gateway-daemon/api.html
+}
+</code></pre>
 
-### Python 3.6 WebSocket example
-* Install ```pip install websockets```
-* Write simple program **[GreenLedOn.py](tools/GreenLedOn.py)**
-```py
-# WS client example
+<ul>
+<li>Similarly for other nodes by changing <strong>nAdr</strong> parameter indicating the node address.</li>
+<li>Full API description can be found here: https://docs.iqrfsdk.org/iqrf-gateway-daemon/api.html</li>
+</ul>
+<h3 id="python-websocket-example">Python WebSocket example</h3>
+<ul>
+<li>Install Python 3.6</li>
+<li>Install <code>pip install websockets</code></li>
+<li>Write simple program <strong><a href="../tools/GreenLedOn.py">GreenLedOn.py</a></strong></li>
+</ul>
+<pre><code class="py"># WS client example
 import asyncio
 import websockets
 import json
@@ -206,7 +209,6 @@ asyncio.get_event_loop().run_until_complete(hello())
 <ul>
 <li>Run it <code>$ py ./GreenLedOn.py</code> and the green LED on coordinator turns on.</li>
 <li>Changing <strong>nAdr</strong> will address command to other node, the <strong>"onOff": False</strong> will turn LED off.</li>
-<li>Full API description can be found here: https://docs.iqrfsdk.org/iqrf-gateway-daemon/api.html</li>
 </ul></div>
         </div>
 

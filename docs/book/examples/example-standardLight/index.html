@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="None">
         <meta name="author" content="Logimic">
-        <link rel="canonical" href="http://logimic.com/iqrfboard/book/examples/example-bistable-relay/">
+        <link rel="canonical" href="http://logimic.com/iqrfboard/book/examples/example-standardLight/">
         <link rel="shortcut icon" href="../../img/favicon.ico">
         <title>IQRFBB-10</title>
         <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
@@ -90,115 +90,41 @@
         <div class="container">
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-        <li class="main active"><a href="#bi-stable-relay">Bi-stable relay</a></li>
+        <li class="main active"><a href="#standard-light">Standard Light</a></li>
             <li><a href="#links">Links</a></li>
             <li><a href="#prerequisities">Prerequisities</a></li>
             <li><a href="#hardware-wiring">Hardware wiring</a></li>
-            <li><a href="#software">Software</a></li>
+            <li><a href="#software-in-tr-module">Software in TR module</a></li>
+            <li><a href="#api-json-message">API JSON message</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
-<h1 id="bi-stable-relay">Bi-stable relay</h1>
-<p>This example turns bistable relay on/off.</p>
+<h1 id="standard-light">Standard Light</h1>
+<p>This example shows how to create "Standard light" which means that entire world will know that your device is just a light and will be able to manage it (turn on/off, dim, get status and more). This is possible thanks to standardized API and IQRF gateways.</p>
+<p>Standardization does not limit your hardware creativity, your light can be whatever you connect. The software in TR module makes connection with API. In following we will show how to implement two lights on the one board. The lights will be LED2 and LED3.</p>
 <h2 id="links">Links</h2>
 <ul>
 <li><a href="../../IQRFBB10-Datasheet/">IQRFBB-10 Datasheet</a></li>
+<li><a href="https://docs.iqrfsdk.org/iqrf-gateway-daemon/index.html">IQRF Gateway Daemon Documentation</a></li>
+<li><a href="https://www.iqrfalliance.org/techDocs/">IQRF Standards</a></li>
 </ul>
 <h2 id="prerequisities">Prerequisities</h2>
 <ol>
-<li><strong>IQRFBB-10</strong> bonded in working IQRF network. More in <a href="https://github.com/logimic/iqrfboard/wiki">GettingStarted with IQRFBB-10</a></li>
-<li><strong>IQRF Gateway Daemon</strong> running. More in <a href="https://github.com/logimic/iqrfboard/wiki/IQRF-Gateway-Daemon">IQRF Gateway Daemon</a></li>
-<li><strong>Python 3.6 with WebSockets module</strong>. More in <a href="https://github.com/logimic/iqrfboard/wiki/Get-IQRF-with-your-software#python-36-websocket-example">Python 3.6 WbSockets example</a></li>
+<li><strong>IQRFBB-10</strong> bonded in working IQRF network. More in <a href="../..">Getting Started</a></li>
+<li><strong>IQRF Gateway Daemon</strong> working. More in <a href="../../IqrfGatewayDaemon/">IQRF Gateway Daemon</a></li>
+<li><strong>Python 3.6 with WebSockets module</strong>. More in <a href="../../IqrfGatewayDaemon/#python-websocket-example">Python WebSockets example</a></li>
 </ol>
 <h2 id="hardware-wiring">Hardware wiring</h2>
 <p><img alt="" src="../../files/datasheet/layout.png" /></p>
-<p>No hardware wiring needed, bistable relay is managed via C1 and C2 signals. See. <a href="https://github.com/logimic/iqrfboard/wiki/Getting-Started-with-IQRFBB-10#iqrfbb-10-documentation">Documentation</a></p>
-<h2 id="software">Software</h2>
-<ul>
-<li>We use Standard DPA handler already loaded in board TR module.</li>
-<li>Testing software:</li>
-<li>Set EQ14 as DO. EQ14 is <strong>Q14/C1/RA0</strong> pin on TR-76DA.</li>
-<li>Set EQ15 as DO. EQ15 is <strong>Q15/C2/RC2</strong> pin on TR-76DA.</li>
-<li>Set C2=LO, C1=HI</li>
-<li>Wait 3secs</li>
-<li>Set C2=HI, C1=LO</li>
-</ul>
-<h3 id="api-json-message">API JSON message</h3>
-<p>We will use pure DPA messages handled via <a href="https://docs.iqrfsdk.org/iqrf-gateway-daemon/">Daemon JSON API</a>:</p>
-<ul>
-<li><a href="https://apidocs.iqrf.org/iqrf-gateway-daemon/json/#iqrf/iqrfRawHdp-request-1-0-0.json">RawHdp request  v1-0-0</a>, <a href="https://apidocs.iqrf.org/iqrf-gateway-daemon/json/iqrf/examples/iqrfRawHdp-request-1-0-0-example.json">..example</a></li>
-<li><a href="https://apidocs.iqrf.org/iqrf-gateway-daemon/json/#iqrf/iqrfRawHdp-response-1-0-0.json">RawHdp response  v1-0-0</a>, <a href="https://apidocs.iqrf.org/iqrf-gateway-daemon/json/iqrf/examples/iqrfRawHdp-response-1-0-0-example.json">..example</a></li>
-</ul>
-<p><strong>DPA commands:</strong></p>
-<table>
-<thead>
-<tr>
-<th align="center">NADR</th>
-<th align="center">PNUM</th>
-<th align="center">PCMD</th>
-<th align="center">HWPID</th>
-<th align="center">PDATA</th>
-<th>What</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="center">XXXX</td>
-<td align="center">09</td>
-<td align="center">00</td>
-<td align="center">-</td>
-<td align="center">00.01.00</td>
-<td>Set C1 Output</td>
-</tr>
-<tr>
-<td align="center">XXXX</td>
-<td align="center">09</td>
-<td align="center">00</td>
-<td align="center">-</td>
-<td align="center">02.04.00</td>
-<td>Set C2 Output</td>
-</tr>
-<tr>
-<td align="center">XXXX</td>
-<td align="center">09</td>
-<td align="center">01</td>
-<td align="center">-</td>
-<td align="center">00.01.01</td>
-<td>Set C1 ON</td>
-</tr>
-<tr>
-<td align="center">XXXX</td>
-<td align="center">09</td>
-<td align="center">01</td>
-<td align="center">-</td>
-<td align="center">00.01.00</td>
-<td>Set C1 OFF</td>
-</tr>
-<tr>
-<td align="center">XXXX</td>
-<td align="center">09</td>
-<td align="center">01</td>
-<td align="center">-</td>
-<td align="center">02.04.04</td>
-<td>Set C2 ON</td>
-</tr>
-<tr>
-<td align="center">XXXX</td>
-<td align="center">09</td>
-<td align="center">01</td>
-<td align="center">-</td>
-<td align="center">02.04.00</td>
-<td>Set C2 OFF</td>
-</tr>
-</tbody>
-</table>
-<ul>
-<li><em>NADR: must be your address of IQRFBB-10 in IQRF network.</em></li>
-<li><em>Numbers in table are in hex format.</em></li>
-</ul>
-<h3 id="testing-software">Testing Software</h3>
-<p>The <a href="example-bistable-relay.py">example-bistable-relay.py</a> script.</p>
+<p>No hardware wiring needed, lights will be demonstrated by LED2 and LED3.</p>
+<h2 id="software-in-tr-module">Software in TR module</h2>
+<p>The <a href="example-standardLight.c">example-standardLight.c</a> implements two lights on LED2 and LED3 outputs.
+Please load this "Custom DPA Handler" to TR module on board. <a href="../../SetupIqrfNetwork/#load-custom-dpa-handler">Load Custom DPA Handler</a> manual.</p>
+<h2 id="api-json-message">API JSON message</h2>
+<p>Since we implemented standard light we can use standardized JSON messages for <a href="https://docs.iqrfsdk.org/iqrf-gateway-daemon/api.html#light">management of Lights</a> via JSON API of gateways.</p>
+<h4 id="python-code">Python code</h4>
+<p>The <a href="example-standardLight.py">example-standardLight.py</a> turns RED LED on, waits 2 seconds, then turns RED LED off and GREEN LED on, then after 2 seconds turns GREEN LED off.</p>
 <pre><code class="py">#
 # Copyright 2018 Logimic,s.r.o.
 # www.logimic.com
@@ -216,7 +142,7 @@
 # limitations under the License.
 #
 
-# Websockets example-bistable-relay.py
+# Websockets led-on-off.py
 import asyncio
 import websockets
 import json
@@ -226,85 +152,89 @@ import time
 boardAddr = 3
 
 # JSON messages by &quot;https://docs.iqrfsdk.org/iqrf-gateway-daemon/api.html&quot;
-C1_OUT = {
-  &quot;mType&quot;: &quot;iqrfRawHdp&quot;,
+LIGHT_ENUM = {
+  &quot;mType&quot;: &quot;iqrfLight_Enumerate&quot;,
   &quot;data&quot;: {
-    &quot;msgId&quot;: &quot;testRawHdp&quot;,
+    &quot;msgId&quot;: &quot;testEmbedLight&quot;,
     &quot;req&quot;: {
       &quot;nAdr&quot;: boardAddr,
-      &quot;pNum&quot;: 9,
-      &quot;pCmd&quot;: 0,
-      &quot;pData&quot;: [0, 1, 0]
+      &quot;param&quot;: {}
     },
     &quot;returnVerbose&quot;: True
   }
 }
 
-C1_ON = {
-  &quot;mType&quot;: &quot;iqrfRawHdp&quot;,
+LIGHT1_ON = {
+  &quot;mType&quot;: &quot;iqrfLight_SetPower&quot;,
   &quot;data&quot;: {
-    &quot;msgId&quot;: &quot;testRawHdp&quot;,
+    &quot;msgId&quot;: &quot;testEmbedLight&quot;,
     &quot;req&quot;: {
       &quot;nAdr&quot;: boardAddr,
-      &quot;pNum&quot;: 9,
-      &quot;pCmd&quot;: 1,
-      &quot;pData&quot;: [0, 1, 1]
+      &quot;param&quot;: {
+        &quot;lights&quot;: [
+          {
+            &quot;index&quot;: 0,
+            &quot;power&quot;: 100
+          }
+        ]
+      }
     },
     &quot;returnVerbose&quot;: True
   }
 }
 
-C1_OFF = {
-  &quot;mType&quot;: &quot;iqrfRawHdp&quot;,
+LIGHT1_OFF = {
+  &quot;mType&quot;: &quot;iqrfLight_SetPower&quot;,
   &quot;data&quot;: {
-    &quot;msgId&quot;: &quot;testRawHdp&quot;,
+    &quot;msgId&quot;: &quot;testEmbedLight&quot;,
     &quot;req&quot;: {
       &quot;nAdr&quot;: boardAddr,
-      &quot;pNum&quot;: 9,
-      &quot;pCmd&quot;: 1,
-      &quot;pData&quot;: [0, 1, 0]
+      &quot;param&quot;: {
+        &quot;lights&quot;: [
+          {
+            &quot;index&quot;: 0,
+            &quot;power&quot;: 0
+          }
+        ]
+      }
     },
     &quot;returnVerbose&quot;: True
   }
 }
 
-C2_OUT = {
-  &quot;mType&quot;: &quot;iqrfRawHdp&quot;,
+LIGHT2_ON = {
+  &quot;mType&quot;: &quot;iqrfLight_SetPower&quot;,
   &quot;data&quot;: {
-    &quot;msgId&quot;: &quot;testRawHdp&quot;,
+    &quot;msgId&quot;: &quot;testEmbedLight&quot;,
     &quot;req&quot;: {
       &quot;nAdr&quot;: boardAddr,
-      &quot;pNum&quot;: 9,
-      &quot;pCmd&quot;: 0,
-      &quot;pData&quot;: [2, 4, 0]
+      &quot;param&quot;: {
+        &quot;lights&quot;: [
+          {
+            &quot;index&quot;: 1,
+            &quot;power&quot;: 100
+          }
+        ]
+      }
     },
     &quot;returnVerbose&quot;: True
   }
 }
 
-C2_ON = {
-  &quot;mType&quot;: &quot;iqrfRawHdp&quot;,
+LIGHT2_OFF = {
+  &quot;mType&quot;: &quot;iqrfLight_SetPower&quot;,
   &quot;data&quot;: {
-    &quot;msgId&quot;: &quot;testRawHdp&quot;,
+    &quot;msgId&quot;: &quot;testEmbedLight&quot;,
     &quot;req&quot;: {
       &quot;nAdr&quot;: boardAddr,
-      &quot;pNum&quot;: 9,
-      &quot;pCmd&quot;: 1,
-      &quot;pData&quot;: [2, 4, 4]
-    },
-    &quot;returnVerbose&quot;: True
-  }
-}
-
-C2_OFF = {
-  &quot;mType&quot;: &quot;iqrfRawHdp&quot;,
-  &quot;data&quot;: {
-    &quot;msgId&quot;: &quot;testRawHdp&quot;,
-    &quot;req&quot;: {
-      &quot;nAdr&quot;: boardAddr,
-      &quot;pNum&quot;: 9,
-      &quot;pCmd&quot;: 1,
-      &quot;pData&quot;: [2, 4, 0]
+      &quot;param&quot;: {
+        &quot;lights&quot;: [
+          {
+            &quot;index&quot;: 1,
+            &quot;power&quot;: 0
+          }
+        ]
+      }
     },
     &quot;returnVerbose&quot;: True
   }
@@ -313,54 +243,59 @@ C2_OFF = {
 async def hello():
     # Connect websockets
     async with websockets.connect(
-            'ws://localhost:1338') as websocket:            
+            'ws://localhost:1338') as websocket:
 
-        # Set C1 OUT
-        await websocket.send(json.dumps(C1_OUT))
-        print(f&quot;Sent &gt; {C1_OUT}&quot;)
-
-        response = await websocket.recv()
-        print(f&quot;Received &lt; {response}&quot;)
-
-        # Set C2 OUT
-        await websocket.send(json.dumps(C2_OUT))
-        print(f&quot;Sent &gt; {C2_OUT}&quot;)        
+        # List Lights...
+        await websocket.send(json.dumps(LIGHT_ENUM))
+        print(f&quot;Sent &gt; {LIGHT_ENUM}&quot;)
 
         response = await websocket.recv()
-        print(f&quot;Received &lt; {response}&quot;)     
+        print(f&quot;Received &lt; {response}&quot;)         
 
-        # Set C2 OFF
-        await websocket.send(json.dumps(C2_OFF))
-        print(f&quot;Sent &gt; {C2_OFF}&quot;)
+        data = json.loads(response)
+        numLight = data[&quot;data&quot;][&quot;rsp&quot;][&quot;result&quot;][&quot;lights&quot;]
 
-        response = await websocket.recv()
-        print(f&quot;Received &lt; {response}&quot;)           
+        print(&quot;-------------------------------------&quot;)
+        print(f&quot;Node has implemented {numLight} ligts!&quot;)
+        print(&quot;-------------------------------------&quot;)
+        print(&quot;wait...&quot;)
 
-       # Set C1 ON
-        await websocket.send(json.dumps(C1_ON))
-        print(f&quot;Sent &gt; {C1_ON}&quot;)
-
-        response = await websocket.recv()
-        print(f&quot;Received &lt; {response}&quot;)
-
-        print(&quot;Waiting 3 secs then reswitch...&quot;)
         # Wait 3 sec
-        time.sleep(3)       
+        time.sleep(3)
 
-        # Set C1 OFF
-        await websocket.send(json.dumps(C1_OFF))
-        print(f&quot;Sent &gt; {C1_OFF}&quot;)
+        # RED LED ON
+        await websocket.send(json.dumps(LIGHT1_ON))
+        print(f&quot;Sent &gt; {LIGHT1_ON}&quot;)
+
+        response = await websocket.recv()
+        print(f&quot;Received &lt; {response}&quot;)
+
+        # Wait 2 sec
+        time.sleep(2)
+
+        # RED LED OFF
+        await websocket.send(json.dumps(LIGHT1_OFF))
+        print(f&quot;Sent &gt; {LIGHT1_OFF}&quot;)
 
         response = await websocket.recv()
         print(f&quot;Received &lt; {response}&quot;)        
 
-        # Set C2 ON
-        await websocket.send(json.dumps(C2_ON))
-        print(f&quot;Sent &gt; {C1_ON}&quot;)
+        # GREEN LED ON
+        await websocket.send(json.dumps(LIGHT2_ON))
+        print(f&quot;Sent &gt; {LIGHT2_ON}&quot;)
 
         response = await websocket.recv()
-        print(f&quot;Received &lt; {response}&quot;)                     
+        print(f&quot;Received &lt; {response}&quot;)        
 
+        # Wait 2 sec
+        time.sleep(2)
+
+        # GREEN LED OFF
+        await websocket.send(json.dumps(LIGHT2_OFF))
+        print(f&quot;Sent &gt; {LIGHT2_OFF}&quot;)
+
+        response = await websocket.recv()
+        print(f&quot;Received &lt; {response}&quot;)            
 
 asyncio.get_event_loop().run_until_complete(hello())
 </code></pre></div>
@@ -447,5 +382,5 @@ asyncio.get_event_loop().run_until_complete(hello())
 
 <!--
 MkDocs version : 1.0.4
-Build Date UTC : 2019-01-05 09:56:03
+Build Date UTC : 2019-01-05 09:56:04
 -->

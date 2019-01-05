@@ -17,7 +17,8 @@ In this tutorial we will show you:
 * [IQRFBB-10 Data Sheet](files/datasheet/IQRFBB10-Datasheet.pdf)
 * [IQRFBB-10 Board Schema](files/datasheet/IQRFBB10-Connectors.pdf)
 * [IQRFBB-10 Hardware Drawing](files/datasheet/IQRFBB10_doc_sch.pdf)
-* [TR-76D Datasheet](http://iqrf.org/weben/downloads.php?id=441)
+* [TR-76D Transciever](https://iqrf.org/products/transceivers/tr-76d)
+    - [TR-76D Datasheet](http://iqrf.org/weben/downloads.php?id=441)
 
 ## Prepare IQRF network
 Firs check IQRF network around you. If you do not have any, let's start with this tutorial [SetupIqrfNetwork](SetupIqrfNetwork.md).

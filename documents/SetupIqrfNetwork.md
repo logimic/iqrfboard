@@ -7,14 +7,13 @@ You can get many pieces of information about IQRF at [iqrf.org](iqrf.org) page. 
 The best start with IQRF is with their **DS-START-04** development kit. It helps you to create your first IQRF network for testing purposes. In this tutorial we will show you how to create IQRF network with this kit.
 
 ## Links
-* [Order here](https://iqrf.org/products/ds-start-04)
-* [The Content of the Starter Kit](files/iqrf/README_150909.pdf)
-* [IQRF Quick Start Guide](https://github.com/logimic/iqrfboard/blob/master/files/iqrf/Quick_Start_Guide_IQRF_181018.pdf)
-* [CK-USB-04A](https://github.com/logimic/iqrfboard/blob/master/files/iqrf/User_Guide_CK-USB-04A_171109.pdf), [online page...](https://iqrf.org/products/development-tools/development-kits/ck-usb-04a)
-* [...check for updates ](https://iqrf.org/products/ds-start-04)
-* [TR-76D Datasheet](http://iqrf.org/weben/downloads.php?id=441)
+* [DS-START-04 development kit page](https://iqrf.org/products/ds-start-04)
+    * [IQRF Quick Start Guide](http://www.iqrf.org/weben/downloads.php?id=235)
+    * [IQRF Startup Package](http://www.iqrf.org/weben/downloads.php?id=82)
+    * [CK-USB-04A (programmer)](https://iqrf.org/products/development-tools/development-kits/ck-usb-04a)
 * [DPA Framework on-line](https://www.iqrf.org/DpaTechGuide/)
-* [IQRF Standards](* [IQRF Standards](https://www.iqrfalliance.org/techDocs/))
+* [IQRF Standards](https://www.iqrfalliance.org/techDocs/)
+* [IQRF Repository API](https://repository.iqrfalliance.org/doc/api/)
 
 ## Install IDE
 

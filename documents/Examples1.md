@@ -3,7 +3,7 @@
 ![](files/images/iqrfboard_120x100.png)
 
 First hello world example which turns on/off RED and GREEN diods on the IQRFBB-10 board.
-[Enter example...](/examples/example-led23)
+[Enter example...](examples/example-led23/README.md)
 
 ## 2. Digital Output
 ![](examples/example-do/example-do-120x90.png)

@@ -8,7 +8,7 @@ copyright: Copyright 2018, All rights reserved, Logimic, s.r.o.
 nav:
 - GettingStarted:
   - Getting Started with IQRFBB-10: README.md
-  - Examples: Examples.md
+  - Examples: Examples1.md
   - Data Sheet: IQRFBB10-Datasheet.md
   - Buy: http://logimic.com/iqrfboard/index.html#pricing-tables2-16
 - IQRF Network:

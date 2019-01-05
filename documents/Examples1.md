@@ -9,13 +9,13 @@ First hello world example which turns on/off RED and GREEN diods on the IQRFBB-1
 ![](examples/example-do/example-do-120x90.png)
 
 This example shows how to set HI/LO digital output. The DO has connected external LED.
-[Enter example..](/examples/example-do)
+[Enter example..](examples/example-do/README.md)
 
 ## 3. Digital Input
 ![](examples/example-di/example-di-120x90.png)
 
 This example explains how to detect digital input on board PIN.
-[Enter example...](/examples/example-di),
+[Enter example...](examples/example-di/README.md),
 
 # Standard Things
 
@@ -25,30 +25,30 @@ Standard things have pre-defined JSON API and all IQRF gateways know them.  If y
 ![](files/images/iqrfboard_120x100.png)
 
 This example shows how to create "Standard light" from your board which means that entire world will know that your device is just a light and will be able to manage it (turn on/off, dim, get status and more). Your hardware design on the top of board is not limited.
-[Enter example...](/examples/example-standardLight)
+[Enter example...](examples/example-standardLight/README.md)
 
 ## 2. Standard Binary Output
 ![](examples/example-standardBinOutput/example-standardBinOutput-120x90.png)
 
 This example shows how to create one or more standard binary outputs on the board.
-[Enter example..](/examples/example-standardBinOutput)
+[Enter example..](examples/example-standardBinOutput/README.md)
 
 # Others..
 
 ## 1. Hall Magnetic Sensor
 ![](examples/example-hall/example-hall-120x90.png)
 
-[/example-hall](example-hall), this example shows how to connect Hall Magentic Sensor with the board and detect event.
+[/example-hall](examples/example-hall/README.md), this example shows how to connect Hall Magentic Sensor with the board and detect event.
 
 ## 2. Motion detection (ePir)
 ![](examples/example-ePir/epir-120x90.png)
 
-[/example-ePir](example-ePir), this example shows how to connect motion sensor ePir to the board and detect event.
+[/example-ePir](examples/example-ePir/README.md), this example shows how to connect motion sensor ePir to the board and detect event.
 
 ## 3. Bi-stable relay on board
 ![](files/images/iqrfboard_120x100.png)
 
-[/example-bistable-relay](example-bistable-relay), this example shows how to switch bi-stable relay on board.
+[/example-bistable-relay](examples/example-bistable-relay/README.md), this example shows how to switch bi-stable relay on board.
 
 ## 4. HTU21D - Temp & Humidity
 ![](examples/example-HTU21D/HTU21D-120x90.png)

@@ -1,24 +1,23 @@
 // ****************************************************************************
-//   Custom DPA Handler code example - Standard Lights - Template             *
+//   Custom DPA Handler code example - IQRFBB-10 Development Board     *
 // ****************************************************************************
-// Copyright (c) IQRF Tech s.r.o.
+// Copyright (c) Logimic, s.r.o.
 //
-// File:    $RCSfile: 1002_Light-Template.c,v $
-// Version: $Revision: 1.16 $
-// Date:    $Date: 2018/10/25 09:51:28 $
+// File:    example-standardBinOutput.c
+// Version: Revision: 1.0
+// Date:    Date: 2019/01/05
 //
 // Revision history:
-//   2018/10/25  Release for DPA 3.03
-//   2017/11/16  Release for DPA 3.02
-//   2017/08/14  Release for DPA 3.01
+//   2019/01/05  Release for DPA 3.02
 //
 // *********************************************************************
 
 // Online DPA documentation http://www.iqrf.org/DpaTechGuide/
 
-// This example implements 2 Lights according to the IQRF Lights standard
-//  Index 0: Red LED, only on/off, i.e. 2 levels (0 or 100 %)
-//  Index 1: Green LED, only on/off, i.e. 2 levels (0 or 100 %)
+// This example implements 3 Lights according to the IQRF Lights standard
+//  Index 0: LED3 only on/off, i.e. 2 levels (0 or 100 %)
+//  Index 1: LED2, only on/off, i.e. 2 levels (0 or 100 %)
+//  Index 2: External LED on SCL/EQ6 pin, only on/off
 
 // Default IQRF include (modify the path according to your setup)
 #include "IQRF.h"
@@ -38,7 +37,7 @@
 //############################################################################################
 
 // Number of implemented lights
-#define	LIGHTS_COUNT 2
+#define	LIGHTS_COUNT 3
 
 // Light power levels array: every light has 2 bytes, 1st byte is actual power, 2nd byte is requested power
 uns16	Powers[LIGHTS_COUNT];
@@ -48,6 +47,10 @@ uns8 SetLight( uns8 index, uns8 reqPower );
 static uns8 PrevActualPower;
 // Sets FSR0 to point to the 2 bytes of the light powers
 void FSR0PowerPointer( uns8 index );
+
+//  C.3 = C6 = Simple DO
+#define	RELAY3_LAT	LATC.3 
+#define	RELAY3_TRIS	TRISC.3
 
 // Must be the 1st defined function in the source code in order to be placed at the correct FLASH location!
 //############################################################################################
@@ -338,6 +341,9 @@ _ERROR_DATA:
     case DpaEvent_Init:
       // Do a one time initialization work before main loop starts
 
+      RELAY3_LAT = 0;
+      RELAY3_TRIS = 0;
+
   // Setup TMR6 to generate 10 ms ticks
 #if F_OSC == 16000000
       PR6 = 250 - 1;
@@ -477,8 +483,24 @@ uns8 SetLight( uns8 index @ _index, uns8 reqPower @ _reqPower )
 #pragma computedGoto 1
   goto set0;
   goto set1;
+  goto set2;
 #pragma computedGoto 0
   ;
+  // --------------------------------------
+set2: // Control LEDG by GPIO
+  if ( reqPower != 0 )
+  {
+    // On
+    RELAY3_LAT = 1;
+    goto _return;
+  }
+  else
+  {
+    // Off
+    RELAY3_LAT = 0;
+    goto _return;
+  }
+
   // --------------------------------------
 set1: // Control LEDG by GPIO
   if ( reqPower != 0 )

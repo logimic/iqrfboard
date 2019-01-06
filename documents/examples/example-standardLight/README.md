@@ -2,7 +2,9 @@
 
 This example shows how to create "Standard light" which means that entire world will know that your device is just a light and will be able to manage it (turn on/off, dim, get status and more). This is possible thanks to standardized API and IQRF gateways.
 
-Standardization does not limit your hardware creativity, your light can be whatever you connect. The software in TR module makes connection with API. In following we will show how to implement two lights on the one board. The lights will be LED2 and LED3.
+Standardization does not limit your hardware creativity, your light can be whatever you connect. The software in TR module makes connection with API.
+
+In following we will show how to implement three lights on the one board. The lights will be LED2, LED3 and external LED on SCL/EQ6 PIN.
 
 ## Links
 
@@ -20,11 +22,13 @@ Standardization does not limit your hardware creativity, your light can be whate
 
 ![](../../files/datasheet/layout.png)
 
-No hardware wiring needed, lights will be demonstrated by LED2 and LED3.
+![](example-standardLight_bb.png)
+
+Connect external LED to SCL/EQ6 PIN.
 
 ## Software in TR module
 
-The [example-standardLight.c](example-standardLight.c) implements two lights on LED2 and LED3 outputs.
+The [example-standardLight.c](example-standardLight.c) implements three lights on LED2, LED3 and SCL/EQ6 outputs.
 Please load this "Custom DPA Handler" to TR module on board. [Load Custom DPA Handler](../../SetupIqrfNetwork.md#load-custom-dpa-handler) manual.
 
 ## API JSON message
@@ -33,7 +37,12 @@ Since we implemented standard light we can use standardized JSON messages for [m
 
 ## Testing Python code
 
-The [example-standardLight.py](example-standardLight.py) turns RED LED on, waits 2 seconds, then turns RED LED off and GREEN LED on, then after 2 seconds turns GREEN LED off.
+The [example-standardLight.py](example-standardLight.py) does:
+
+- LED3=ON
+- LED3=OFF, LED2=ON
+- LED2=OFF, ext. LED=ON
+- ext. LED=OFF
 
 ```py
 #
@@ -70,6 +79,33 @@ LIGHT_ENUM = {
     "req": {
       "nAdr": boardAddr,
       "param": {}
+    },
+    "returnVerbose": True
+  }
+}
+
+LIGHTS_OFF = {
+  "mType": "iqrfLight_SetPower",
+  "data": {
+    "msgId": "testEmbedLight",
+    "req": {
+      "nAdr": boardAddr,
+      "param": {
+        "lights": [
+          {
+            "index": 0,
+            "power": 0
+          },
+          {
+            "index": 1,
+            "power": 0
+          },
+          {
+            "index": 2,
+            "power": 0
+          }                    
+        ]
+      }
     },
     "returnVerbose": True
   }
@@ -151,6 +187,44 @@ LIGHT2_OFF = {
   }
 }
 
+LIGHT3_ON = {
+  "mType": "iqrfLight_SetPower",
+  "data": {
+    "msgId": "testEmbedLight",
+    "req": {
+      "nAdr": boardAddr,
+      "param": {
+        "lights": [
+          {
+            "index": 2,
+            "power": 100
+          }
+        ]
+      }
+    },
+    "returnVerbose": True
+  }
+}
+
+LIGHT3_OFF = {
+  "mType": "iqrfLight_SetPower",
+  "data": {
+    "msgId": "testEmbedLight",
+    "req": {
+      "nAdr": boardAddr,
+      "param": {
+        "lights": [
+          {
+            "index": 2,
+            "power": 0
+          }
+        ]
+      }
+    },
+    "returnVerbose": True
+  }
+}
+
 async def hello():
     # Connect websockets
     async with websockets.connect(
@@ -174,7 +248,14 @@ async def hello():
         # Wait 3 sec
         time.sleep(3)
 
-        # RED LED ON
+        # All lights off
+        await websocket.send(json.dumps(LIGHTS_OFF))
+        print(f"Sent > {LIGHTS_OFF}")
+
+        response = await websocket.recv()
+        print(f"Received < {response}")        
+
+        # LED3 = ON
         await websocket.send(json.dumps(LIGHT1_ON))
         print(f"Sent > {LIGHT1_ON}")
 
@@ -184,14 +265,14 @@ async def hello():
         # Wait 2 sec
         time.sleep(2)
 
-        # RED LED OFF
+        # LED3 = OFF
         await websocket.send(json.dumps(LIGHT1_OFF))
         print(f"Sent > {LIGHT1_OFF}")
 
         response = await websocket.recv()
         print(f"Received < {response}")        
 
-        # GREEN LED ON
+        # LED2 = ON
         await websocket.send(json.dumps(LIGHT2_ON))
         print(f"Sent > {LIGHT2_ON}")
 
@@ -201,12 +282,30 @@ async def hello():
         # Wait 2 sec
         time.sleep(2)
 
-        # GREEN LED OFF
+        # LED2 = OFF
         await websocket.send(json.dumps(LIGHT2_OFF))
         print(f"Sent > {LIGHT2_OFF}")
 
         response = await websocket.recv()
-        print(f"Received < {response}")            
+        print(f"Received < {response}")     
+
+        # Ext. LED = ON
+        await websocket.send(json.dumps(LIGHT3_ON))
+        print(f"Sent > {LIGHT3_ON}")
+
+        response = await websocket.recv()
+        print(f"Received < {response}")     
+
+        # Wait 2 sec
+        time.sleep(2)
+
+        # All lights off
+        await websocket.send(json.dumps(LIGHTS_OFF))
+        print(f"Sent > {LIGHTS_OFF}")
+
+        response = await websocket.recv()
+        print(f"Received < {response}")               
+
 
 asyncio.get_event_loop().run_until_complete(hello())
 ```

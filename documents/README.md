@@ -105,4 +105,4 @@ Now you have fully configured IQRFBB-10 board. You can check operability this wa
 ![image](files/images/SetupIqrfNetwork/50150771-3a33e780-02bf-11e9-89e6-dce0b8d8afeb.png)
 
 ## Examples
-Now we can make from IQRFBB-10 any wireless sensor or actuator by wiring proper sensor or actuators. Let's continue to [our examples](Examples.md)
+Now we can make from IQRFBB-10 any wireless sensor or actuator by wiring proper sensor or actuators. Let's continue to [our examples](Examples1.md)

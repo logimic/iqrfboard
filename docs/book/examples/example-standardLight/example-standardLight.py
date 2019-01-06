@@ -37,6 +37,33 @@ LIGHT_ENUM = {
   }
 }
 
+LIGHTS_OFF = {
+  "mType": "iqrfLight_SetPower",
+  "data": {
+    "msgId": "testEmbedLight",
+    "req": {
+      "nAdr": boardAddr,
+      "param": {
+        "lights": [
+          {
+            "index": 0,
+            "power": 0
+          },
+          {
+            "index": 1,
+            "power": 0
+          },
+          {
+            "index": 2,
+            "power": 0
+          }                    
+        ]
+      }
+    },
+    "returnVerbose": True
+  }
+}
+
 LIGHT1_ON = {
   "mType": "iqrfLight_SetPower",
   "data": {
@@ -113,6 +140,44 @@ LIGHT2_OFF = {
   }
 }
 
+LIGHT3_ON = {
+  "mType": "iqrfLight_SetPower",
+  "data": {
+    "msgId": "testEmbedLight",
+    "req": {
+      "nAdr": boardAddr,
+      "param": {
+        "lights": [
+          {
+            "index": 2,
+            "power": 100
+          }
+        ]
+      }
+    },
+    "returnVerbose": True
+  }
+}
+
+LIGHT3_OFF = {
+  "mType": "iqrfLight_SetPower",
+  "data": {
+    "msgId": "testEmbedLight",
+    "req": {
+      "nAdr": boardAddr,
+      "param": {
+        "lights": [
+          {
+            "index": 2,
+            "power": 0
+          }
+        ]
+      }
+    },
+    "returnVerbose": True
+  }
+}
+
 async def hello():
     # Connect websockets
     async with websockets.connect(
@@ -136,7 +201,14 @@ async def hello():
         # Wait 3 sec
         time.sleep(3)
 
-        # RED LED ON
+        # All lights off
+        await websocket.send(json.dumps(LIGHTS_OFF))
+        print(f"Sent > {LIGHTS_OFF}")
+
+        response = await websocket.recv()
+        print(f"Received < {response}")        
+
+        # LED3 = ON
         await websocket.send(json.dumps(LIGHT1_ON))
         print(f"Sent > {LIGHT1_ON}")
 
@@ -146,14 +218,14 @@ async def hello():
         # Wait 2 sec
         time.sleep(2)
         
-        # RED LED OFF
+        # LED3 = OFF
         await websocket.send(json.dumps(LIGHT1_OFF))
         print(f"Sent > {LIGHT1_OFF}")
 
         response = await websocket.recv()
         print(f"Received < {response}")        
 
-        # GREEN LED ON
+        # LED2 = ON
         await websocket.send(json.dumps(LIGHT2_ON))
         print(f"Sent > {LIGHT2_ON}")
 
@@ -163,11 +235,29 @@ async def hello():
         # Wait 2 sec
         time.sleep(2)
 
-        # GREEN LED OFF
+        # LED2 = OFF
         await websocket.send(json.dumps(LIGHT2_OFF))
         print(f"Sent > {LIGHT2_OFF}")
 
         response = await websocket.recv()
-        print(f"Received < {response}")            
+        print(f"Received < {response}")     
+
+        # Ext. LED = ON
+        await websocket.send(json.dumps(LIGHT3_ON))
+        print(f"Sent > {LIGHT3_ON}")
+
+        response = await websocket.recv()
+        print(f"Received < {response}")     
+
+        # Wait 2 sec
+        time.sleep(2)
+
+        # All lights off
+        await websocket.send(json.dumps(LIGHTS_OFF))
+        print(f"Sent > {LIGHTS_OFF}")
+
+        response = await websocket.recv()
+        print(f"Received < {response}")               
+
 
 asyncio.get_event_loop().run_until_complete(hello())

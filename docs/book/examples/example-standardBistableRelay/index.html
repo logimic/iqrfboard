@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="None">
         <meta name="author" content="Logimic">
-        <link rel="canonical" href="http://logimic.com/iqrfboard/book/examples/example-standardPhotorezistor/">
+        <link rel="canonical" href="http://logimic.com/iqrfboard/book/examples/example-standardBistableRelay/">
         <link rel="shortcut icon" href="../../img/favicon.ico">
         <title>IQRFBB-10</title>
         <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
@@ -106,7 +106,7 @@
         <div class="container">
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-        <li class="main active"><a href="#standard-photorezistor-sensor">Standard Photorezistor Sensor</a></li>
+        <li class="main active"><a href="#standard-bi-stable-relay">Standard Bi-stable Relay</a></li>
             <li><a href="#links">Links</a></li>
             <li><a href="#prerequisities">Prerequisities</a></li>
             <li><a href="#hardware-wiring">Hardware wiring</a></li>
@@ -117,9 +117,8 @@
 </div></div>
                 <div class="col-md-9" role="main">
 
-<h1 id="standard-photorezistor-sensor">Standard Photorezistor Sensor</h1>
-<p><img alt="" src="example-standardPhotorezistor.jpg" /></p>
-<p>This example shows how to create "Standard Photorezistor Sensor" that will be immediately recognized and manageable from IOT world thanks to gateways and standardization.</p>
+<h1 id="standard-bi-stable-relay">Standard Bi-stable Relay</h1>
+<p>This example shows how to manage bi-stable relay on board via standard messages. Bi-stable relay is designed on board and is driven by two digital outputs C1 and C0. Relay state is shown via LD5 and LD6 diod.</p>
 <h2 id="links">Links</h2>
 <ul>
 <li><a href="../../IQRFBB10-Datasheet/">IQRFBB-10 Datasheet</a></li>
@@ -134,19 +133,17 @@
 </ol>
 <h2 id="hardware-wiring">Hardware wiring</h2>
 <p><img alt="" src="../../files/datasheet/layout.png" /></p>
-<p><img alt="" src="example-standardPhotorezistor_bb.png" /></p>
-<p>Photorezistor is connected to GND, VCC and EQ14/C1/AN0. Since the board has LED5 on EQ14, this LED will be indicating a work of photorezistor.</p>
+<p>No special wiring since the relay is on the board. The state of relay is signalized via LD5 and LD6 or you can connect any external cicuit to relay contacts NC1, COM1, NO1 and NC2, COM2, NO2. See drawings.   </p>
 <h2 id="software-in-tr-module">Software in TR module</h2>
-<p>The <a href="example-standardPhotorezistor.c">example-standardPhotorezistor.c</a> implements one binary input.
+<p>The <a href="example-standardBistableRelay">example-standardBistableRelay</a> implements two binary outputs.
 Please load this "Custom DPA Handler" to TR module on board. <a href="../../SetupIqrfNetwork/#load-custom-dpa-handler">Load Custom DPA Handler</a> manual.</p>
 <h2 id="api-json-message">API JSON message</h2>
-<p>Since we implemented standard sensor we can use all standardized JSON messages for <a href="https://docs.iqrfsdk.org/iqrf-gateway-daemon/api.html#sensor">Sensor </a> via JSON API of gateways.</p>
+<p>Since we implemented standard binary output we can use all standardized JSON messages for <a href="https://docs.iqrfsdk.org/iqrf-gateway-daemon/api.html#binaryoutput">Binary Output </a> via JSON API of gateways.</p>
 <h2 id="testing-python-code">Testing Python code</h2>
-<p>The <a href="example-standardPhotorezistor.py">example-standardPhotorezistor.py</a> does following:</p>
+<p>The <a href="example-standardBistableRelay.py">example-standardBistableRelay.py</a> does following:</p>
 <ul>
-<li>Gets number of implemented standard sensors in TR module.</li>
-<li>Reads sensor in loop of 20 measurements</li>
-<li>Displays measured value from JSON message</li>
+<li>Gets number of implemented binary outputs in TR module.</li>
+<li>3 times switches state of bi-stable relay.</li>
 </ul></div>
         </div>
 

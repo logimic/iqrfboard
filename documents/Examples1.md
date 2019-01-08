@@ -33,6 +33,12 @@ This example shows how to create "Standard light" from your board which means th
 This example shows how to create one or more standard binary outputs on the board.
 [Enter example..](examples/example-standardBinOutput/README.md)
 
+## 2. Standard Photorezistor Sensor
+![](examples/example-standardPhotorezistor/photorezistor_120x90.png)
+
+This example shows how to create standard photorezistor sensor.
+[Enter example..](examples/example-standardPhotorezistor/README.md)
+
 # Others..
 
 ## 1. Hall Magnetic Sensor

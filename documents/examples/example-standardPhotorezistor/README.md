@@ -26,7 +26,7 @@ Photorezistor is connected to GND, VCC and EQ14/C1/AN0. Since the board has LED5
 
 ## Software in TR module
 
-The [example-standardPhotorezistor.c](example-standardPhotorezistor) implements one binary input.
+The [example-standardPhotorezistor.c](example-standardPhotorezistor.c) implements one binary input.
 Please load this "Custom DPA Handler" to TR module on board. [Load Custom DPA Handler](../../SetupIqrfNetwork.md#load-custom-dpa-handler) manual.
 
 ## API JSON message

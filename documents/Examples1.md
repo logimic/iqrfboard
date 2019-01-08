@@ -21,25 +21,31 @@ This example explains how to detect digital input on board PIN.
 
 Standard things have pre-defined JSON API and all IQRF gateways know them.  If you implement your device in TR module as **Standard Light**, **Standard Binary Output**, **Standard Sensor** and more you have ensured compatibility of your device with IOT world.
 
-## 1. Standard Light
+## 1. Std. Light
 ![](files/images/iqrfboard_120x100.png)
 
 This example shows how to create "Standard light" from your board which means that entire world will know that your device is just a light and will be able to manage it (turn on/off, dim, get status and more). Your hardware design on the top of board is not limited.
 [Enter example...](examples/example-standardLight/README.md)
 
-## 2. Standard Binary Output
+## 2. Std. Binary Output
 ![](examples/example-standardBinOutput/example-standardBinOutput-120x90.png)
 
 This example shows how to create one or more standard binary outputs on the board.
 [Enter example..](examples/example-standardBinOutput/README.md)
 
-## 2. Standard Photorezistor Sensor
+## 3. Std. Photorezistor Sensor
 ![](examples/example-standardPhotorezistor/photorezistor_120x90.png)
 
 This example shows how to create standard photorezistor sensor.
 [Enter example..](examples/example-standardPhotorezistor/README.md)
 
-# Others..
+## 4. Std. Thermistor Sensor
+![](examples/example-standardThermistor/thermistor_120x90.png)
+
+This example shows how to create standard thermistor sensor.
+[Enter example..](examples/example-standardThermistor/README.md)
+
+# Pure DPA messages
 
 ## 1. Hall Magnetic Sensor
 ![](examples/example-hall/example-hall-120x90.png)

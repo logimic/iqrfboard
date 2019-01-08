@@ -1,4 +1,4 @@
-# 
+#
 # Copyright 2018 Logimic,s.r.o.
 # www.logimic.com
 #
@@ -15,7 +15,6 @@
 # limitations under the License.
 #
 
-# Websockets led-on-off.py
 import asyncio
 import websockets
 import json
@@ -64,11 +63,11 @@ async def hello():
         print(f"Sent > {SENSORS_ENUM}")
 
         response = await websocket.recv()
-        print(f"Received < {response}")         
+        print(f"Received < {response}")
 
         data = json.loads(response)
         numOuts = data["data"]["rsp"]["result"]["sensors"]
-        
+
         print("-------------------------------------")
         print(f"Node has implemented {len(numOuts)} sensors!")
         print("-------------------------------------")
@@ -77,7 +76,7 @@ async def hello():
         # Wait 2 sec
         time.sleep(2)
 
-        count = 0        
+        count = 0
         while (count < 200):
           print (f"The count is:{count}")
           count = count + 1
@@ -86,7 +85,7 @@ async def hello():
           print(f"Sent > {READ_TEMP}")
 
           response = await websocket.recv()
-          print(f"Received < {response}")           
+          print(f"Received < {response}")
 
           data = json.loads(response)
           value = data["data"]["rsp"]["result"]["sensors"][0]["value"]

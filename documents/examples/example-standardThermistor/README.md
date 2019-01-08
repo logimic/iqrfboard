@@ -1,8 +1,6 @@
-# Standard Photorezistor Sensor
+# Standard Thermistor Sensor
 
-![](example-standardPhotorezistor.jpg)
-
-This example shows how to create "Standard Photorezistor Sensor" that will be immediately recognized and manageable from IOT world thanks to gateways and standardization.
+This example shows how to create "Standard Thermistor Sensor" that will be immediately recognized and manageable from IOT world thanks to gateways and standardization.
 
 ## Links
 
@@ -20,13 +18,13 @@ This example shows how to create "Standard Photorezistor Sensor" that will be im
 
 ![](../../files/datasheet/layout.png)
 
-![](example-standardPhotorezistor_bb.png)
+![](example-standardThermistor_bb.png)
 
-Photorezistor is connected to GND, VCC and EQ14/C1/AN0. Since the board has LED5 on EQ14, this LED will be indicating a work of photorezistor.
+Photorezistor is connected to GND, VCC and Q9(SS)/C5/AN4.
 
 ## Software in TR module
 
-The [example-standardPhotorezistor.c](example-standardPhotorezistor) implements one binary input.
+The [example-standardThermistor.c](example-standardThermistor.c) implements one binary input.
 Please load this "Custom DPA Handler" to TR module on board. [Load Custom DPA Handler](../../SetupIqrfNetwork.md#load-custom-dpa-handler) manual.
 
 ## API JSON message
@@ -35,8 +33,8 @@ Since we implemented standard sensor we can use all standardized JSON messages f
 
 ## Testing Python code
 
-The [example-standardPhotorezistor.py](example-standardPhotorezistor.py) does following:
+The [example-standardThermistor.py](example-standardThermistor.py) does following:
 
 - Gets number of implemented standard sensors in TR module.
-- Reads sensor in loop of 20 measurements
+- Reads sensor in loop of 200 measurements
 - Displays measured value from JSON message

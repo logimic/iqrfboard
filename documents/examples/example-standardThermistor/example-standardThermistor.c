@@ -37,7 +37,7 @@
 uns16 sensorValue @ param3;
 
 // Reads sensor value to the sensorValue variable and to responseFRCvalue(2B) variable
-bit Get2_BinaryData_Light();
+bit Get_BinaryData_Temp();
 
 // Read preset PIC ADC for DDC-SE-01
 uns8 ReadAdc();
@@ -126,13 +126,16 @@ bit CustomDpaHandler()
       // Connected TR pins?
       if ( !bufferINFO[5].7 )
       {
-        TRISC.6 = 1;
-        TRISB.4 = 1;
+        //TRISC.6 = 1;
+        //TRISB.4 = 1;
       }
-      TRISA.5 = 1;
+      //TRISA.5 = 1;
 
       // C1 (AN0) as input 
-      TRISA.0 = 1;
+     // TRISA.0 = 1;
+     TRISA.5 = 1;
+   //  TRISC.6 = 1;
+     //TRISB.4 = 1;
 
       // Setup TMR6 to generate ticks on the background (ticks every 10ms)
 #if F_OSC == 16000000
@@ -256,7 +259,7 @@ _ERROR_DATA_LEN:
               // 1st sensor (index 0) selected?
               if ( sensorsBitmap.0 )
               {
-                Get2_BinaryData_Light();
+                Get_BinaryData_Temp();
                 StoreValue( STD_SENSOR_TYPE_BINARYDATA7 );
               }
 
@@ -327,7 +330,7 @@ _KeepSensorIndex:
                 goto DpaHandleReturnFALSE;
 
               case 0:
-                Carry = Get2_BinaryData_Light();
+                Carry = Get_BinaryData_Temp();
                 break;
             }
 
@@ -448,16 +451,15 @@ bit AdjustFrcBinaryData()
 }
 
 //############################################################################################
-// Sensor index 2: returns light intensity indicator value using DDC-SE-01
-bit Get2_BinaryData_Light()
+// Sensor index 0: returns temperature
+bit Get_BinaryData_Temp()
 //############################################################################################
 {
   // Make sure FSR1 is not modified
-
-  // ADC initialization (for more info see PIC datasheet) pin C1 (AN0) as analog input 
-  ANSELA.0 = 1;
-  // ADC setting (AN0 channel)
-  ADCON0 = 0b0.00000.01;
+  // ADC init (for more info see PIC datasheet) pin C5 (AN4) as analog input 
+  ANSELA.5 = 1; 
+  // ADC setting (AN4 channel)
+  ADCON0 = 0b0.00100.01;
   // Read ADC
   sensorValue.low8 = ReadAdc() / 2;
   // Return sensor FRC value

@@ -28,7 +28,7 @@ Connect external LED to SCL/EQ6 PIN.
 
 ## Software in TR module
 
-The [example-standardLight.c](example-standardLight.c) implements three lights on LED2, LED3 and SCL/EQ6 outputs.
+The [example-standardLight.c](../../../examples/standard-light.c) implements three lights on LED2, LED3 and SCL/EQ6 outputs.
 Please load this "Custom DPA Handler" to TR module on board. [Load Custom DPA Handler](../../SetupIqrfNetwork.md#load-custom-dpa-handler) manual.
 
 ## API JSON message

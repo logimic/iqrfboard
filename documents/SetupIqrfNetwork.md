@@ -6,15 +6,6 @@ You can get many pieces of information about IQRF at [iqrf.org](iqrf.org) page. 
 
 The best start with IQRF is with their **DS-START-04** development kit. It helps you to create your first IQRF network for testing purposes. In this tutorial we will show you how to create IQRF network with this kit.
 
-## Links
-* [DS-START-04 development kit page](https://iqrf.org/products/ds-start-04)
-    * [IQRF Quick Start Guide](http://www.iqrf.org/weben/downloads.php?id=235)
-    * [IQRF Startup Package](http://www.iqrf.org/weben/downloads.php?id=82)
-    * [CK-USB-04A (programmer)](https://iqrf.org/products/development-tools/development-kits/ck-usb-04a)
-* [DPA Framework on-line](https://www.iqrf.org/DpaTechGuide/)
-* [IQRF Standards](https://www.iqrfalliance.org/techDocs/)
-* [IQRF Repository API](https://repository.iqrfalliance.org/doc/api/)
-
 ## Install IDE
 
 ![aaa](files/images/SetupIqrfNetwork/iqrf-ide-4.jpg)
@@ -164,3 +155,6 @@ You can load any other Custom DPA Handler from prepared set in IQRF SDK here: **
 ## Your own IQRF devices
 
 Now it's time to build your own IQRF device. The best start is with IQRFBB-10 development board from [Logimic](http://www.logimic.com) because it has many examples and you can reuse board layout and design for your later product development. Let's go with [IQRFBB-10 board](README.md)
+
+## Links
+[Links](Links.md)

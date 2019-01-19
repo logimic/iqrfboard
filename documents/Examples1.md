@@ -10,7 +10,7 @@ Standard things have pre-defined JSON API and all IQRF gateways know them.  If y
 ![](files/images/iqrfboard_120x100.png)
 
 This example shows how to create "Standard light" from your board which means that entire world will know that your device is just a light and will be able to manage it (turn on/off, dim, get status and more). Your hardware design on the top of board is not limited.
-[Enter example...](examples/example-standardLight/README.md)
+[Enter example...](examples-docs/standard-light/README.md)
 
 ## 2. Binary Output
 ![](examples/example-standardBinOutput/example-standardBinOutput-120x90.png)

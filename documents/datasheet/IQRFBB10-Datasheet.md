@@ -28,7 +28,7 @@ IQRFBB10 is development board for prototyping of end devices (nodes) of IQRF net
 
 ## 3. Simple scheme
 
-![](datasheet/schema-simple.png)
+![](schema-simple.png)
 
 _Fig1. Simple schema of IQRF BB-10 board_
 
@@ -135,7 +135,7 @@ TODO
 
 ## 9. Programmer connection
 
-![](datasheet/programmer.png)
+![](programmer.png)
 
 _Fig2. programmer connection with IQRF BB-10 board_
 
@@ -144,7 +144,7 @@ _Fig2. programmer connection with IQRF BB-10 board_
 
 ## 10. Detail scheme
 
-![](datasheet/schema-detail.png)
+![](schema-detail.png)
 
 _Fig3. Detail scheme of IQRF BB-10 board_
 

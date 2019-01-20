@@ -10,7 +10,8 @@
 
 IQRF development board helps you to design IQRF wireless devices like sensors and actuators. Just connect sensors, load software and you get fully working IQRF prototype of device.
 
-[official project pages...](http://logimic.com/iqrfboard)
+[Official project pages...](http://logimic.com/iqrfboard)
+
 [Getting Started and Documentation pages...](http://logimic.com/iqrfboard/book/)
 
 ## Licensing

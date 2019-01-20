@@ -2,7 +2,7 @@
 
 ![](files/images/logimicLogo.png)
 
-- IQRFBB-10 project is powered by [www.logimic.com](www.logimic.com)
+- IQRFBB-10 project is powered by [www.logimic.com](http://www.logimic.com)
 - Orders & Project Presentation [logimic.com/iqrfboard](http://logimic.com/iqrfboard)
 
 ## Licensing

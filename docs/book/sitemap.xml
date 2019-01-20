@@ -2,17 +2,22 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
      <loc>http://logimic.com/iqrfboard/book/</loc>
-     <lastmod>2019-01-09</lastmod>
+     <lastmod>2019-01-20</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>http://logimic.com/iqrfboard/book/Examples1/</loc>
-     <lastmod>2019-01-09</lastmod>
+     <loc>http://logimic.com/iqrfboard/book/Examples/</loc>
+     <lastmod>2019-01-20</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>http://logimic.com/iqrfboard/book/IQRFBB10-Datasheet/</loc>
-     <lastmod>2019-01-09</lastmod>
+     <loc>http://logimic.com/iqrfboard/book/datasheet/IQRFBB10-Datasheet/</loc>
+     <lastmod>2019-01-20</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>http://logimic.com/iqrfboard/book/datasheet/IQRFBB10-Datasheet.pdf</loc>
+     <lastmod>2019-01-20</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
@@ -21,23 +26,23 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>http://logimic.com/iqrfboard/book/Links-IQRFBB-10/</loc>
-     <lastmod>2019-01-09</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
      <loc>http://logimic.com/iqrfboard/book/SetupIqrfNetwork/</loc>
-     <lastmod>2019-01-09</lastmod>
+     <lastmod>2019-01-20</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://logimic.com/iqrfboard/book/IqrfGatewayDaemon/</loc>
-     <lastmod>2019-01-09</lastmod>
+     <lastmod>2019-01-20</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>http://logimic.com/iqrfboard/book/Links/</loc>
+     <lastmod>2019-01-20</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://logimic.com/iqrfboard/book/About/</loc>
-     <lastmod>2019-01-09</lastmod>
+     <lastmod>2019-01-20</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>

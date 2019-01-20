@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <meta name="author" content="Logimic">
+        <link rel="canonical" href="http://logimic.com/iqrfboard/book/datasheet/IQRFBB10-Datasheet/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Data Sheet - IQRFBB-10</title>
+        <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap-3.0.3.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container">
+
+                <!-- Collapsed navigation -->
+                <div class="navbar-header">
+                    <!-- Expander button -->
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="../..">IQRFBB-10</a>
+                </div>
+
+                <!-- Expanded navigation -->
+                <div class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="dropdown active">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">GettingStarted <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../..">Getting Started with IQRFBB-10</a>
+</li>
+                                    
+<li >
+    <a href="../../Examples/">Examples</a>
+</li>
+                                    
+<li class="active">
+    <a href="./">Data Sheet</a>
+</li>
+                                    
+<li >
+    <a href="../IQRFBB10-Datasheet.pdf">Data Sheet (pdf)</a>
+</li>
+                                    
+<li >
+    <a href="http://logimic.com/iqrfboard/index.html#pricing-tables2-16">Buy</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">IQRF Network <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../../SetupIqrfNetwork/">Setup IQRF Network</a>
+</li>
+                                    
+<li >
+    <a href="../../IqrfGatewayDaemon/">IQRF Gateway Daemon</a>
+</li>
+                                </ul>
+                            </li>
+                            <li >
+                                <a href="../../Links/">Links</a>
+                            </li>
+                            <li >
+                                <a href="../../About/">About</a>
+                            </li>
+                            <li >
+                                <a href="https://github.com/logimic/iqrfboard">GitHub Repo</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li >
+                                <a rel="next" href="../../Examples/">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li >
+                                <a rel="prev" href="../IQRFBB10-Datasheet.pdf">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="main active"><a href="#iqrfbb10-data-sheet">IQRFBB10 Data Sheet</a></li>
+            <li><a href="#1-description">1. Description</a></li>
+            <li><a href="#2-specification">2. Specification</a></li>
+            <li><a href="#3-simple-scheme">3. Simple scheme</a></li>
+            <li><a href="#4-features">4. Features</a></li>
+            <li><a href="#5-pins-specification">5. PINs specification</a></li>
+            <li><a href="#6-jumpers">6. Jumpers</a></li>
+            <li><a href="#7-diods">7. Diods</a></li>
+            <li><a href="#8-operation-conditions">8. Operation conditions</a></li>
+            <li><a href="#9-programmer-connection">9. Programmer connection</a></li>
+            <li><a href="#10-detail-scheme">10. Detail scheme</a></li>
+            <li><a href="#11-contacts">11. Contacts</a></li>
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
+
+<h1 id="iqrfbb10-data-sheet">IQRFBB10 Data Sheet</h1>
+<p><strong>Revision:</strong> 1.0, Nov-2018</p>
+<h2 id="1-description">1. Description</h2>
+<p>IQRFBB10 is development board for prototyping of end devices (nodes) of IQRF network. Board includes socket for IQRF transciever module plugin and enables connection of any sensors, acttuators via DI, DIO, or I2C interfaces. Software operation of sensors and data transfer is performed in MCU of IQRF radio transciever module.</p>
+<h2 id="2-specification">2. Specification</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Power supply</strong></td>
+<td></td>
+</tr>
+<tr>
+<td>- Accumulator</td>
+<td>LIP552240, 400 mAh, nominal voltage 3.7 V</td>
+</tr>
+<tr>
+<td>- Via micro USB connector (with charging)</td>
+<td>4.4 V to 6.0 V DC</td>
+</tr>
+<tr>
+<td>- External power supply</td>
+<td>5-12 V</td>
+</tr>
+<tr>
+<td>- External accumulator</td>
+<td>pres X6, nominal voltage 3.7 V</td>
+</tr>
+<tr>
+<td><strong>Supply current</strong></td>
+<td></td>
+</tr>
+<tr>
+<td>-        ???</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Temperature operating</strong></td>
+<td></td>
+</tr>
+<tr>
+<td>- Accumulator not charged</td>
+<td>-20°C to +60°C</td>
+</tr>
+<tr>
+<td>- Accumulator charged</td>
+<td>0 °C to +45 °C</td>
+</tr>
+<tr>
+<td><strong>Storage Temperature</strong></td>
+<td>-20°C to +20°C (1 year), +10°C to +25°C recommended</td>
+</tr>
+<tr>
+<td><strong>Supported TR modules</strong></td>
+<td>TR-76DA and similar</td>
+</tr>
+<tr>
+<td><strong>Dimensions</strong></td>
+<td>60 mm x 85 mm x 23 mm</td>
+</tr>
+<tr>
+<td><strong>Weight</strong></td>
+<td>30g</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="3-simple-scheme">3. Simple scheme</h2>
+<p><img alt="" src="../schema-simple.png" /></p>
+<p><em>Fig1. Simple schema of IQRF BB-10 board</em></p>
+<h2 id="4-features">4. Features</h2>
+<table>
+<thead>
+<tr>
+<th align="left"><strong>Name</strong></th>
+<th align="left"><strong>Type</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">U4</td>
+<td align="left"></td>
+<td>IQRF TR module socket</td>
+</tr>
+<tr>
+<td align="left">Bat1</td>
+<td align="left">LIR2032</td>
+<td>Chargeable battery</td>
+</tr>
+<tr>
+<td align="left">USB</td>
+<td align="left">uUSD_to_DIP</td>
+<td>PCB adapter</td>
+</tr>
+<tr>
+<td align="left">Bist-rel</td>
+<td align="left">ME-6C-L1-03-1a1b</td>
+<td>Bi-stable relay 3V</td>
+</tr>
+<tr>
+<td align="left">RE-STD</td>
+<td align="left">IM-HICPD</td>
+<td>Standard releay</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="5-pins-specification">5. PINs specification</h2>
+<table>
+<thead>
+<tr>
+<th align="left"><strong>Pin</strong></th>
+<th align="left"><strong>Name</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">VCC</td>
+<td align="left"></td>
+<td>Power supply voltage</td>
+</tr>
+<tr>
+<td align="left">GND</td>
+<td align="left"></td>
+<td>Ground</td>
+</tr>
+<tr>
+<td align="left">SCL</td>
+<td align="left"></td>
+<td>I2C clock</td>
+</tr>
+<tr>
+<td align="left">SDA</td>
+<td align="left"></td>
+<td>I2C data</td>
+</tr>
+<tr>
+<td align="left">EQ13</td>
+<td align="left">TA</td>
+<td>General input only pin</td>
+</tr>
+<tr>
+<td align="left">EQ12</td>
+<td align="left">SW1</td>
+<td></td>
+</tr>
+<tr>
+<td align="left">GND</td>
+<td align="left">SW1</td>
+<td>Ground</td>
+</tr>
+<tr>
+<td align="left">NC1</td>
+<td align="left"></td>
+<td>Bi-stable relay TH</td>
+</tr>
+<tr>
+<td align="left">COM1</td>
+<td align="left"></td>
+<td>Bi-stable relay TH</td>
+</tr>
+<tr>
+<td align="left">NO1</td>
+<td align="left"></td>
+<td>Bi-stable relay TH</td>
+</tr>
+<tr>
+<td align="left">NO2</td>
+<td align="left"></td>
+<td></td>
+</tr>
+<tr>
+<td align="left">COM2</td>
+<td align="left"></td>
+<td>Bi-stable relay SMD</td>
+</tr>
+<tr>
+<td align="left">NC2</td>
+<td align="left"></td>
+<td>Bi-stable relay SMD</td>
+</tr>
+<tr>
+<td align="left">RE+</td>
+<td align="left"></td>
+<td>Output for power supply of Bi-stable relay (+/- 3V)</td>
+</tr>
+<tr>
+<td align="left">RE-</td>
+<td align="left"></td>
+<td>Output for power supply of Bi-stable relay (+/- 3V)</td>
+</tr>
+<tr>
+<td align="left">RE</td>
+<td align="left"></td>
+<td>Output for power supply of Bi-stable relay</td>
+</tr>
+<tr>
+<td align="left">RE+++</td>
+<td align="left"></td>
+<td>Output for power supply of Bi-stable relay</td>
+</tr>
+<tr>
+<td align="left">NC4</td>
+<td align="left"></td>
+<td>Standard relay</td>
+</tr>
+<tr>
+<td align="left">COM4</td>
+<td align="left"></td>
+<td>Standard relay</td>
+</tr>
+<tr>
+<td align="left">NO4</td>
+<td align="left"></td>
+<td>Standard relay</td>
+</tr>
+<tr>
+<td align="left">MB1</td>
+<td align="left">C1</td>
+<td></td>
+</tr>
+<tr>
+<td align="left">MB2</td>
+<td align="left">C2</td>
+<td></td>
+</tr>
+<tr>
+<td align="left">MB3</td>
+<td align="left">VO</td>
+<td></td>
+</tr>
+<tr>
+<td align="left">MB4</td>
+<td align="left"></td>
+<td></td>
+</tr>
+<tr>
+<td align="left">MB5</td>
+<td align="left">VCC</td>
+<td></td>
+</tr>
+<tr>
+<td align="left">MB6</td>
+<td align="left"></td>
+<td></td>
+</tr>
+<tr>
+<td align="left">MB7</td>
+<td align="left"></td>
+<td></td>
+</tr>
+<tr>
+<td align="left">MB8</td>
+<td align="left"></td>
+<td></td>
+</tr>
+<tr>
+<td align="left">X13</td>
+<td align="left"></td>
+<td>Contact of Standard relay (paket_2)</td>
+</tr>
+<tr>
+<td align="left">PGM 1</td>
+<td align="left">VCC</td>
+<td></td>
+</tr>
+<tr>
+<td align="left">PGM 2</td>
+<td align="left">GND</td>
+<td></td>
+</tr>
+<tr>
+<td align="left">PGM 3</td>
+<td align="left">SCK</td>
+<td></td>
+</tr>
+<tr>
+<td align="left">PGM 4</td>
+<td align="left">SDI</td>
+<td></td>
+</tr>
+<tr>
+<td align="left">PGM 5</td>
+<td align="left">SDO</td>
+<td></td>
+</tr>
+<tr>
+<td align="left">PGM 6</td>
+<td align="left">SS</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="iqrf-module-pin-mapping">IQRF module PIN mapping</h3>
+<table>
+<thead>
+<tr>
+<th><strong>PIN</strong></th>
+<th><strong>IQRF PIN</strong></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>XQ2</td>
+<td>GND</td>
+<td></td>
+</tr>
+<tr>
+<td>XQ3</td>
+<td>VCC</td>
+<td></td>
+</tr>
+<tr>
+<td>XQ4</td>
+<td>Q4</td>
+<td></td>
+</tr>
+<tr>
+<td>XQ5</td>
+<td>Q5</td>
+<td></td>
+</tr>
+<tr>
+<td>XQ6</td>
+<td>Q6</td>
+<td></td>
+</tr>
+<tr>
+<td>XQ7</td>
+<td>Q7</td>
+<td></td>
+</tr>
+<tr>
+<td>XQ8</td>
+<td>Q8</td>
+<td></td>
+</tr>
+<tr>
+<td>XQ9</td>
+<td>Q9</td>
+<td></td>
+</tr>
+<tr>
+<td>XQ10</td>
+<td>Q10</td>
+<td></td>
+</tr>
+<tr>
+<td>XQ11</td>
+<td>Q11</td>
+<td></td>
+</tr>
+<tr>
+<td>XQ12</td>
+<td>Q12</td>
+<td></td>
+</tr>
+<tr>
+<td>XQ13</td>
+<td>Q13</td>
+<td></td>
+</tr>
+<tr>
+<td>XQ14</td>
+<td>Q14</td>
+<td></td>
+</tr>
+<tr>
+<td>XQ15</td>
+<td>Q15</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="6-jumpers">6. Jumpers</h2>
+<table>
+<thead>
+<tr>
+<th align="left"><strong>Jumper</strong></th>
+<th align="left"><strong>Description</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">JP1</td>
+<td align="left">VCC_SW</td>
+<td>Enable connection of local source 3V. Note: connect local source after un-plug of programmer!</td>
+</tr>
+<tr>
+<td align="left">JP2</td>
+<td align="left"></td>
+<td>Power cupply choise <br> 1-2: LiPol/USB adapter 5V (board works withouth battery) <br>2-3: external power supply 5-16V z X1</td>
+</tr>
+<tr>
+<td align="left">JP3</td>
+<td align="left"></td>
+<td></td>
+</tr>
+<tr>
+<td align="left">JP4</td>
+<td align="left">VCC_SW</td>
+<td>Connects indication of powwer supplyLD4-Y (3V)</td>
+</tr>
+<tr>
+<td align="left">JP5</td>
+<td align="left"></td>
+<td>Host_mode at Android devices if possible</td>
+</tr>
+<tr>
+<td align="left">JP6</td>
+<td align="left">VCC_SW</td>
+<td>Connects battery to power supply</td>
+</tr>
+<tr>
+<td align="left">X6</td>
+<td align="left"></td>
+<td>Connects external Lipol battery</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="7-diods">7. Diods</h2>
+<table>
+<thead>
+<tr>
+<th align="left"><strong>Diod</strong></th>
+<th align="left"><strong>Name</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">LD1</td>
+<td align="left">LED-P</td>
+<td></td>
+</tr>
+<tr>
+<td align="left">LD2</td>
+<td align="left">LED-G</td>
+<td></td>
+</tr>
+<tr>
+<td align="left">LD3</td>
+<td align="left">LED-R</td>
+<td></td>
+</tr>
+<tr>
+<td align="left">LD4</td>
+<td align="left">LED-Y</td>
+<td>Indication of power supply (3V)</td>
+</tr>
+<tr>
+<td align="left">LD5</td>
+<td align="left">LED-B</td>
+<td></td>
+</tr>
+<tr>
+<td align="left">LD6</td>
+<td align="left">LED-W</td>
+<td></td>
+</tr>
+<tr>
+<td align="left">LD7</td>
+<td align="left">LED-O</td>
+<td></td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="8-operation-conditions">8. Operation conditions</h2>
+<p>TODO</p>
+<h2 id="9-programmer-connection">9. Programmer connection</h2>
+<p><img alt="" src="../programmer.png" /></p>
+<p><em>Fig2. programmer connection with IQRF BB-10 board</em></p>
+<ul>
+<li>Connect with <strong>CK-USB-04A</strong> programmer.</li>
+<li>No TR module in programmer.</li>
+</ul>
+<h2 id="10-detail-scheme">10. Detail scheme</h2>
+<p><img alt="" src="../schema-detail.png" /></p>
+<p><em>Fig3. Detail scheme of IQRF BB-10 board</em></p>
+<h2 id="11-contacts">11. Contacts</h2>
+<p><a href="http://www.logimic.com">www.logimic.com</a></p></div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+                <p>Copyright 2018, All rights reserved, Logimic, s.r.o.</p>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js" defer></script>
+        <script src="../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form role="form">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="Keyboard Shortcuts Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Keyboard Shortcuts</h4>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

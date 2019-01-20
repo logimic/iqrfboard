@@ -2,7 +2,7 @@
 
 ![](https://iqrf.org/images/ds-start-04-case.jpg)
 
-You can get many pieces of information about IQRF at [iqrf.org](iqrf.org) page. Simply said IQRF network is mesh kind of network working very well indoor and outdoor (up to 500m). It has one device as **concentrator** connected to gateway or your PC and the rest of devices are **wireless nodes**.
+You can get many pieces of information about IQRF at [iqrf.org](http://iqrf.org) page. Simply said IQRF network is mesh kind of network working very well indoor and outdoor (up to 500m). It has one device as **concentrator** connected to gateway or your PC and the rest of devices are **wireless nodes**.
 
 The best start with IQRF is with their **DS-START-04** development kit. It helps you to create your first IQRF network for testing purposes. In this tutorial we will show you how to create IQRF network with this kit.
 

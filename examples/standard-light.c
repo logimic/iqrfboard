@@ -1,16 +1,18 @@
-// ****************************************************************************
-//   Custom DPA Handler code example - IQRFBB-10 Development Board     *
-// ****************************************************************************
-// Copyright (c) Logimic, s.r.o.
-//
-// File:    example-standardBinOutput.c
-// Version: Revision: 1.0
-// Date:    Date: 2019/01/05
-//
-// Revision history:
-//   2019/01/05  Release for DPA 3.02
-//
-// *********************************************************************
+/**
+* Copyright Logimic,s.r.o., www.logimic.com
+*
+* Licensed under the Apache License, Version 2.0 (the "License");
+* you may not use this file except in compliance with the License.
+* You may obtain a copy of the License at
+*
+*     http://www.apache.org/licenses/LICENSE-2.0
+*
+* Unless required by applicable law or agreed to in writing, software
+* distributed under the License is distributed on an "AS IS" BASIS,
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+* See the License for the specific language governing permissions and
+* limitations under the License.
+*/
 
 // Online DPA documentation http://www.iqrf.org/DpaTechGuide/
 
@@ -21,7 +23,6 @@
 
 // Default IQRF include (modify the path according to your setup)
 #include "include/IQRF_OS/IQRF.h"
-
 // Default DPA header (modify the path according to your setup)
 #include "include/DPA/DPA.h"
 // Default Custom DPA Handler header (modify the path according to your setup)

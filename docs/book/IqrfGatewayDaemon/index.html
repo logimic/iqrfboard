@@ -55,19 +55,19 @@
 </li>
                                     
 <li >
-    <a href="../Examples1/">Examples</a>
+    <a href="../Examples/">Examples</a>
 </li>
                                     
 <li >
-    <a href="../IQRFBB10-Datasheet/">Data Sheet</a>
+    <a href="../datasheet/IQRFBB10-Datasheet/">Data Sheet</a>
+</li>
+                                    
+<li >
+    <a href="../datasheet/IQRFBB10-Datasheet.pdf">Data Sheet (pdf)</a>
 </li>
                                     
 <li >
     <a href="http://logimic.com/iqrfboard/index.html#pricing-tables2-16">Buy</a>
-</li>
-                                    
-<li >
-    <a href="../Links-IQRFBB-10/">Links</a>
 </li>
                                 </ul>
                             </li>
@@ -83,6 +83,9 @@
     <a href="./">IQRF Gateway Daemon</a>
 </li>
                                 </ul>
+                            </li>
+                            <li >
+                                <a href="../Links/">Links</a>
                             </li>
                             <li >
                                 <a href="../About/">About</a>
@@ -104,7 +107,7 @@
                                 </a>
                             </li>
                             <li >
-                                <a rel="prev" href="../About/">
+                                <a rel="prev" href="../Links/">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -117,9 +120,9 @@
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
         <li class="main active"><a href="#iqrf-gateway-daemon">IQRF Gateway Daemon</a></li>
-            <li><a href="#links">Links</a></li>
             <li><a href="#run-daemon">Run Daemon</a></li>
             <li><a href="#websockets-json-api">WebSockets JSON API</a></li>
+            <li><a href="#links">Links</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
@@ -127,12 +130,6 @@
 <h1 id="iqrf-gateway-daemon">IQRF Gateway Daemon</h1>
 <p>IQRF network is hidden behind coordinator connected to your computer via USB, SPI, UART or other types of interface. Communication between your program and coordinator is ensured via <strong>IQRF Gateway Daemon</strong> software module.
 This is Open Source gateway piece of software for communicating (sending and receiving JSON API messages) with IQRF network. This is included in many IQRF gateways and you can also download it and build for your platform.</p>
-<h2 id="links">Links</h2>
-<ul>
-<li><a href="https://gitlab.iqrfsdk.org/gateway/iqrf-daemon">IQRF Gateway Daemon Sources</a></li>
-<li><a href="https://github.com/logimic/iqrfboard/releases">IQRF Gateway Daemon Release for Win</a></li>
-<li><a href="https://docs.iqrfsdk.org/iqrf-gateway-daemon/">IQRF Gateway Daemon Documentation</a></li>
-</ul>
 <h2 id="run-daemon">Run Daemon</h2>
 <p>You can run Daemon on any computer with Lin or Win platform where you have connected concentrator via USB or otherwise. The most simply way is to connect concentrator via USB to your local PC and run Daemon here.</p>
 <h3 id="windows-developers">Windows Developers</h3>
@@ -225,7 +222,9 @@ asyncio.get_event_loop().run_until_complete(hello())
 <ul>
 <li>Run it <code>$ py ./GreenLedOn.py</code> and the green LED on coordinator turns on.</li>
 <li>Changing <strong>nAdr</strong> will address command to other node, the <strong>"onOff": False</strong> will turn LED off.</li>
-</ul></div>
+</ul>
+<h2 id="links">Links</h2>
+<p><a href="../Links/">Links</a></p></div>
         </div>
 
         <footer class="col-md-12">

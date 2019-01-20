@@ -1,6 +1,5 @@
 # 
-# Copyright 2018 Logimic,s.r.o.
-# www.logimic.com
+# Copyright Logimic,s.r.o., www.logimic.com
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -15,7 +14,6 @@
 # limitations under the License.
 #
 
-# Websockets led-on-off.py
 import asyncio
 import websockets
 import json

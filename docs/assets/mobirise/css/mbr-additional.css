@@ -1811,29 +1811,59 @@ body {
 .cid-r39s6swQQt .mbr-section-btn {
   color: #ffffff;
 }
-.cid-rgDgqxECdb {
+.cid-rgIw2tREin {
   background-image: url("../../../assets/images/mbr-1920x1024.jpg");
 }
+.cid-rgIw2tREin .media-container-row {
+  flex-direction: row-reverse;
+}
 @media (min-width: 992px) {
-  .cid-rgDgqxECdb .mbr-figure {
+  .cid-rgIw2tREin .mbr-figure {
     padding-right: 4rem;
+    padding-right: 0;
+    padding-left: 4rem;
   }
 }
 @media (max-width: 991px) {
-  .cid-rgDgqxECdb .mbr-figure {
+  .cid-rgIw2tREin .mbr-figure {
     padding-bottom: 3rem;
   }
 }
 @media (max-width: 767px) {
-  .cid-rgDgqxECdb .mbr-text {
+  .cid-rgIw2tREin .mbr-text {
     text-align: center;
   }
 }
-.cid-rgDgqxECdb H1 {
+.cid-rgIw2tREin H1 {
   color: #ffffff;
 }
-.cid-rgDgqxECdb .mbr-text,
-.cid-rgDgqxECdb .mbr-section-btn {
+.cid-rgIw2tREin .mbr-text,
+.cid-rgIw2tREin .mbr-section-btn {
+  color: #ffffff;
+}
+.cid-rgJi77ikSq {
+  background-image: url("../../../assets/images/mbr-1920x1024.jpg");
+}
+@media (min-width: 992px) {
+  .cid-rgJi77ikSq .mbr-figure {
+    padding-right: 4rem;
+  }
+}
+@media (max-width: 991px) {
+  .cid-rgJi77ikSq .mbr-figure {
+    padding-bottom: 3rem;
+  }
+}
+@media (max-width: 767px) {
+  .cid-rgJi77ikSq .mbr-text {
+    text-align: center;
+  }
+}
+.cid-rgJi77ikSq H1 {
+  color: #ffffff;
+}
+.cid-rgJi77ikSq .mbr-text,
+.cid-rgJi77ikSq .mbr-section-btn {
   color: #ffffff;
 }
 .cid-rgDbe1hgjZ {
@@ -1864,6 +1894,31 @@ body {
 }
 .cid-rgDbe1hgjZ .mbr-text,
 .cid-rgDbe1hgjZ .mbr-section-btn {
+  color: #ffffff;
+}
+.cid-rgDgqxECdb {
+  background-image: url("../../../assets/images/mbr-1920x1024.jpg");
+}
+@media (min-width: 992px) {
+  .cid-rgDgqxECdb .mbr-figure {
+    padding-right: 4rem;
+  }
+}
+@media (max-width: 991px) {
+  .cid-rgDgqxECdb .mbr-figure {
+    padding-bottom: 3rem;
+  }
+}
+@media (max-width: 767px) {
+  .cid-rgDgqxECdb .mbr-text {
+    text-align: center;
+  }
+}
+.cid-rgDgqxECdb H1 {
+  color: #ffffff;
+}
+.cid-rgDgqxECdb .mbr-text,
+.cid-rgDgqxECdb .mbr-section-btn {
   color: #ffffff;
 }
 .cid-rgDqusNS3h {

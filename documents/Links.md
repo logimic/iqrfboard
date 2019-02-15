@@ -20,6 +20,7 @@
 
 ## IQRF General Links
 
+* [IQMESH Network Deployment](https://www.iqrf.org/support/download&kat=54&ids=564)
 * [DS-START-04 development kit page](https://iqrf.org/products/ds-start-04)
     * [IQRF Quick Start Guide](http://www.iqrf.org/weben/downloads.php?id=235)
     * [IQRF Startup Package](http://www.iqrf.org/weben/downloads.php?id=82)
